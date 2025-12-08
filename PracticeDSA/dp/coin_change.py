@@ -1,18 +1,28 @@
 
 def coin_change(coins, amount):
     """
-    Calculates the fewest number of coins needed to make up a given amount.
+    Strategy: Top-Down Dynamic Programming (Memoization)
+    ----------------------------------------------------
+    1. Define State: dp[i] = Min coins to make amount 'i'.
+    2. Base Cases:
+       - amount == 0 -> 0 coins (Success).
+       - amount < 0  -> -1 (Impossible).
+    3. Recurrence:
+       - Try every coin 'c' in the list.
+       - Result = 1 + coin_change(amount - c)
+       - Take the minimum of all valid results.
+    4. Memoization: Store results in a table of size (amount + 1) to avoid 
+       re-calculating the same sub-problems.
 
-    This function uses a top-down dynamic programming approach with memoization
-    to find the optimal solution.
-
-    Args:
-        coins: A list of coin denominations available.
-        amount: The target amount to make change for.
-
-    Returns:
-        The minimum number of coins required, or -1 if the amount
-        cannot be made up.
+    Complexity Analysis:
+    --------------------
+    Time Complexity: O(A * N)
+       - A = Amount, N = Number of coins.
+       - We solve 'A' sub-problems. Each sub-problem iterates through 'N' coins.
+    
+    Space Complexity: O(A)
+       - O(A) for the memoization table.
+       - O(A) for the recursion stack (worst case depth).
 
     Example Trace for `coin_change([1, 2], 3)`:
       - The goal is to solve for amount=3.

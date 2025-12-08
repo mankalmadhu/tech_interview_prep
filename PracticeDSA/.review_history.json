@@ -39,6 +39,71 @@
       "level": 1,
       "last_reviewed": "2025-12-08",
       "next_review": "2025-12-09"
+    },
+    "search_n_sort/binary_search.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "dp/coin_change.py": {
+      "level": 1,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-09"
+    },
+    "arrays/suqare_sort.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "arrays/max_min_sum.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "arrays/max_contigious_sum.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "arrays/number_occurence.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "arrays/postivie_negative.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "math/highest_score.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "math/is_rectangle.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "math/palindrome_integer.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "arrays/ar1.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "random/r2.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "review_scheduler.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
     }
   }
 }
