@@ -1,0 +1,44 @@
+{
+  "reviews": {
+    "arrays/array_elem_greater_than_p.py": {
+      "level": 1,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-09"
+    },
+    "main.py": {
+      "level": 1,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-09"
+    },
+    "two_pointer/remove_duplicates.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "arrays/noble_integer.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "arrays/rect_conc_pattern.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "graphs/connected_components.py": {
+      "level": 1,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-09"
+    },
+    "arrays/even_product.py": {
+      "level": 2,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-11"
+    },
+    "search_n_sort/ship_weight_transport.py": {
+      "level": 1,
+      "last_reviewed": "2025-12-08",
+      "next_review": "2025-12-09"
+    }
+  }
+}

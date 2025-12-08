@@ -40,8 +40,7 @@ def generate_pattern(n):
       # Center is at position (n-1, n-1)
       distance_from_center = max(abs(i - (n - 1)), abs(j - (n - 1)))
       # Value at each position is 1 + distance_from_center
-      matrix[i][
-          j] = 1 + distance_from_center  # n-distance_from_center to invert the pattern
+      matrix[i][j] = 1 + distance_from_center  # n-distance_from_center to invert the pattern
 
   return matrix
 
