@@ -4,27 +4,48 @@ class Solution:
   # https://www.interviewbit.com/problems/largest-number/
   def largestNumber(self, A):
     """
-    The key to understanding the correct approach is to stop thinking about a fixed set of sorting rules and instead focus on a single, powerful pairwise comparison.
+    Arranges a list of non-negative integers to form the largest number.
 
-    For the numbers 3, 30, and 34, the sorting algorithm will perform a series of comparisons based on their concatenated forms:
-    Compare 3 and 30:
-    str(3) + str(30) = "330"
-    str(30) + str(3) = "303"
-    "330" is lexicographically greater than "303".
-    Conclusion: 3 should come before 30.
-    Compare 3 and 34:
-    str(3) + str(34) = "334"
-    str(34) + str(3) = "343"
-    "343" is lexicographically greater than "334".
-    Conclusion: 34 should come before 3.
-    Compare 30 and 34:
-    str(30) + str(34) = "3034"
-    str(34) + str(30) = "3430"
-    "3430" is lexicographically greater than "3034".
-    Conclusion: 34 should come before 30.
-    This series of comparisons establishes a clear and consistent transitive order. The number 34 must be placed before both 3 and 30. And 3 must be placed before 30.
+        Strategy: Sorting with Custom Comparator
+        ----------------------------------------
+        1. Problem: Standard lexicographical sort fails (e.g., "30" > "3" is True, 
+           but "330" > "303", so 3 should come before 30).
+        2. Solution: To decide if X comes before Y, we compare the concatenated 
+           combinations: (X + Y) vs (Y + X).
+           - If (str(X) + str(Y)) > (str(Y) + str(X)), then X comes first.
+           - If (str(X) + str(Y)) < (str(Y) + str(X)), then Y comes first.
+        3. Edge Case: If the result starts with '0' (e.g., input was [0, 0]), 
+           return "0".
 
+        Complexity Analysis:
+        --------------------
+        Time Complexity: O(N * log N * K)
+           - N is the number of elements. K is the max length of a number.
+           - Sorting takes O(N log N) comparisons. Each comparison takes O(K) 
+             for string concatenation.
+        Space Complexity: O(N)
+           - To store the string representations.
 
+        Example Trace:
+        --------------
+        Input: [3, 30, 34]
+        
+        1. Compare 3 and 30:
+           - "3" + "30" = "330"
+           - "30" + "3" = "303"
+           - "330" > "303" -> [3, 30] (3 comes before 30)
+
+        2. Compare 30 and 34:
+           - "30" + "34" = "3034"
+           - "34" + "30" = "3430"
+           - "3430" > "3034" -> [34, 30] (34 comes before 30)
+
+        3. Compare 3 and 34:
+           - "3" + "34" = "334"
+           - "34" + "3" = "343"
+           - "343" > "334" -> [34, 3] (34 comes before 3)
+
+        Sorted Result: [34, 3, 30] -> Concatenated: "34330"
     """
 
     from functools import cmp_to_key
