@@ -4,6 +4,34 @@ class Solution:
     # @return a list of integers
     
     def maxset(self, A):
+        """
+        Finds the contiguous subarray of non-negative integers with the maximum sum.
+
+        Strategy: Linear Scan with State Tracking
+        -----------------------------------------
+        1. We iterate through the array, tracking a 'current_sum' and 'current_start'.
+        2. Negative Numbers: act as delimiters.
+           - When encountered, the current subarray ends.
+           - We reset 'current_sum' to 0 and 'current_start' to i + 1.
+        3. Positive Numbers: extend the current subarray.
+           - We add to 'current_sum'.
+           - We compare with 'max_sum' to update the best found so far.
+
+        Tie-Breaking Rules:
+        -------------------
+        1. Max Sum: The subarray with the larger sum wins.
+        2. Max Length: If sums are equal, the longer subarray wins.
+        3. Min Start Index: If sums and lengths are equal, the one that appeared 
+           earlier wins. (Handled implicitly by not updating on strict equality).
+
+        Complexity Analysis:
+        --------------------
+        Time Complexity: O(N)
+           - Single pass through the array.
+        Space Complexity: O(1)
+           - We only store pointers (start, end, max_sum), not a new array 
+             (until the final return slice).
+        """
         max_sum = -1
         cur_sum = 0
         reset_index = 0
