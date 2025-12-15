@@ -146,7 +146,8 @@
     "two_pointer/triplet_sum.py": {
       "level": 5,
       "last_reviewed": "2025-12-14",
-      "next_review": "2025-12-24"
+      "next_review": "2025-12-24",
+      "filepath": "two_pointer/triplet_sum.py"
     },
     "strings/paren_min_number.py": {
       "level": 5,
@@ -261,6 +262,47 @@
       "last_reviewed": "2025-12-12",
       "next_review": "2025-12-22",
       "filepath": "strings/amazing_substring.py"
+    },
+    "strings/salutes.py": {
+      "level": 3,
+      "last_reviewed": "2025-12-14",
+      "next_review": "2025-12-24",
+      "filepath": "strings/salutes.py"
+    },
+    "search_n_sort/max_blade_height.py": {
+      "level": 3,
+      "last_reviewed": "2025-12-14",
+      "next_review": "2025-12-24",
+      "filepath": "search_n_sort/max_blade_height.py"
+    },
+    "greedy_algo/generate_parenthesis.py": {
+      "level": 3,
+      "last_reviewed": "2025-12-14",
+      "next_review": "2025-12-24",
+      "filepath": "greedy_algo/generate_parenthesis.py"
+    },
+    "dp/lcs.py": {
+      "level": 3,
+      "last_reviewed": "2025-12-14",
+      "next_review": "2025-12-24",
+      "filepath": "dp/lcs.py"
+    },
+    "graphs/bfs.py": {
+      "level": 3,
+      "last_reviewed": "2025-12-14",
+      "next_review": "2025-12-24",
+      "filepath": "graphs/bfs.py"
+    },
+    "graphs/dfs.py": {
+      "level": 3,
+      "last_reviewed": "2025-12-14",
+      "next_review": "2025-12-24",
+      "filepath": "graphs/dfs.py"
+    },
+    "backtrack/powerset.py": {
+      "level": 3,
+      "last_reviewed": "2025-12-15",
+      "next_review": "2025-12-25"
     }
   }
 }
