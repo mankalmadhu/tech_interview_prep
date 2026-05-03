@@ -11,6 +11,12 @@ def build_powerset(nums):
     Returns:
         A list of lists, where each inner list is a unique subset of `nums`.
 
+    Complexity:
+        - Time: O(N * 2^N) because the binary decision tree creates 2^N paths, 
+          and at each leaf node, making a deep copy of the subset takes O(N) time.
+        - Space: O(N) auxiliary space. The deepest the recursion stack will ever 
+          get is N frames, and the current_subset never exceeds N items.
+
     Trace for nums = [1, 2, 3]:
         The process starts with an initial call to `backtrack(index=0, current_subset=[])`.
 
