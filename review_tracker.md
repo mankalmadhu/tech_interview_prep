@@ -9,3 +9,4 @@
 | PracticeDSA/backtrack/powerset.py | 2026-05-03 | 2026-05-17 | 4 | Backtracking/Subsets |
 | PracticeDSA/search_n_sort/find_min_rotated.py | 2026-05-08 | 2026-05-15 | 3 | Binary Search/Rotated Array |
 | PracticeDSA/graphs/num_islands.py | 2026-05-12 | 2026-06-11 | 5 | Graphs/DFS |
+| PracticeDSA/arrays/top_k_frequent.py | 2026-05-12 | 2026-06-11 | 5 | Arrays/Heaps/Bucket Sort |
