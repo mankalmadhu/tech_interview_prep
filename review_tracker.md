@@ -12,8 +12,8 @@
 | PracticeDSA/arrays/top_k_frequent.py | 2026-05-12 | 2026-06-11 | 5 | Arrays/Heaps/Bucket Sort |
 | PracticeDSA/dp/step_climb.py | 2026-05-12 | 2026-06-11 | 5 | DP/Fibonacci |
 | PracticeDSA/arrays/ar1.py | 2026-05-12 | 2026-05-13 | 1 | Arrays |
-| PracticeDSA/arrays/array_elem_greater_than_p.py | 2026-05-12 | 2026-05-13 | 1 | Arrays |
-| PracticeDSA/arrays/bulbs_on.py | 2026-05-12 | 2026-05-13 | 1 | Arrays |
+| PracticeDSA/arrays/array_elem_greater_than_p.py | 2026-05-13 | 2026-06-12 | 5 | Arrays |
+| PracticeDSA/arrays/bulbs_on.py | 2026-05-13 | 2026-06-12 | 5 | Arrays |
 | PracticeDSA/arrays/even_product.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
 | PracticeDSA/arrays/flip.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
 | PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
@@ -70,7 +70,7 @@
 | PracticeDSA/strings/paren_min_number.py | 2026-05-12 | 2026-06-01 | 1 | Strings |
 | PracticeDSA/strings/salutes.py | 2026-05-12 | 2026-06-01 | 1 | Strings |
 | PracticeDSA/two_pointer/diffk.py | 2026-05-12 | 2026-06-01 | 1 | Two Pointer |
-| PracticeDSA/two_pointer/longest_substring.py | 2026-05-12 | 2026-06-02 | 1 | Two Pointer |
+| PracticeDSA/two_pointer/longest_substring.py | 2026-05-14 | 2026-06-13 | 5 | Two Pointer |
 | PracticeDSA/two_pointer/merge_sorted_lists.py | 2026-05-12 | 2026-06-02 | 1 | Two Pointer |
 | PracticeDSA/two_pointer/merge_soted_lists.py | 2026-05-12 | 2026-06-02 | 1 | Two Pointer |
 | PracticeDSA/two_pointer/remove_duplicates.py | 2026-05-12 | 2026-06-03 | 1 | Two Pointer |
