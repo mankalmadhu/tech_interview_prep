@@ -16,7 +16,7 @@
 | PracticeDSA/arrays/bulbs_on.py | 2026-05-13 | 2026-06-12 | 5 | Arrays |
 | PracticeDSA/arrays/even_product.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
 | PracticeDSA/arrays/flip.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
-| PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
+| PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
 | PracticeDSA/arrays/log_sorting.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
 | PracticeDSA/arrays/majority_elem_in_arr.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
 | PracticeDSA/arrays/max_contigious_sum.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
