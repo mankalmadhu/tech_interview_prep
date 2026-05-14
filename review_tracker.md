@@ -78,3 +78,4 @@
 | PracticeDSA/arrays/merge_intervals.py | 2026-05-13 | 2026-06-12 | 5 | Arrays/Sorting |
 | PracticeDSA/stacks/valid_parentheses.py | 2026-05-14 | 2026-06-13 | 5 | Stacks |
 | PracticeDSA/arrays/buy_sell_stock.py | 2026-05-14 | 2026-06-13 | 5 | Arrays/Sliding Window |
+| PracticeDSA/arrays/two_sum.py | 2026-05-15 | 2026-06-14 | 5 | Arrays/Hash Map |
