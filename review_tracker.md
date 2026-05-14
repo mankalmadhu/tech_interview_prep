@@ -76,3 +76,4 @@
 | PracticeDSA/two_pointer/remove_duplicates.py | 2026-05-12 | 2026-06-03 | 1 | Two Pointer |
 | PracticeDSA/two_pointer/triplet_sum.py | 2026-05-12 | 2026-06-03 | 1 | Two Pointer |
 | PracticeDSA/arrays/merge_intervals.py | 2026-05-13 | 2026-06-12 | 5 | Arrays/Sorting |
+| PracticeDSA/stacks/valid_parentheses.py | 2026-05-14 | 2026-06-13 | 5 | Stacks |
