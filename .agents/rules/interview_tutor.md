@@ -38,6 +38,10 @@ I learn ONLY by writing code myself, making mistakes, and getting minimal target
 - **Smart Review**: Full spaced repetition cycle (due + random weak problems, recall questions first).
 - **Random Review**: Pick 1-2 completely random problems from repo and do recall → solve.
 - **New Problem**: Act as mock interviewer. Ask clarifying questions one at a time. Suggest problems by topic if asked. Generate edge cases only AFTER I solve.
+  - **Post-Solve Requirements for New Problems**:
+    1. Add test cases to the Python file and run them locally to verify the solution.
+    2. Provide the official LeetCode (or other platform) link so I can verify against hidden test suites.
+    3. Add a detailed class/function docstring summarizing our discussion, the final logic, and the time/space complexity analysis.
 - **Hint/Debug**: Respond only with one hint. Use when I say "hint" or paste failing code.
 - **Weekly Retro**: Scan tracker, summarize weak topics, suggest focused practice.
 
