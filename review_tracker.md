@@ -6,9 +6,9 @@
 | PracticeDSA/two_pointer/max_aread.py | 2026-05-02 | 2026-06-01 | 5 | Two Pointers |
 | PracticeDSA/strings/character_replacement.py | 2026-05-14 | 2026-06-13 | 5 | Strings/Sliding Window |
 | PracticeDSA/linked_list/linked_list_cycle.py | 2026-05-03 | 2026-06-02 | 5 | Linked List/Fast & Slow Pointers |
-| PracticeDSA/backtrack/powerset.py | 2026-05-03 | 2026-05-17 | 4 | Backtracking/Subsets |
+| PracticeDSA/backtrack/powerset.py | 2026-05-15 | 2026-06-14 | 5 | Backtracking/Subsets |
 | PracticeDSA/search_n_sort/find_min_rotated.py | 2026-05-15 | 2026-06-14 | 5 | Binary Search/Rotated Array |
-| PracticeDSA/graphs/num_islands.py | 2026-05-12 | 2026-06-11 | 5 | Graphs/DFS |
+| PracticeDSA/graphs/num_islands.py | 2026-05-16 | 2026-06-15 | 5 | Graphs/DFS |
 | PracticeDSA/arrays/top_k_frequent.py | 2026-05-12 | 2026-06-11 | 5 | Arrays/Heaps/Bucket Sort |
 | PracticeDSA/dp/step_climb.py | 2026-05-12 | 2026-06-11 | 5 | DP/Fibonacci |
 | PracticeDSA/arrays/ar1.py | 2026-05-12 | 2026-05-13 | 1 | Arrays |
@@ -18,7 +18,7 @@
 | PracticeDSA/arrays/flip.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
 | PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
 | PracticeDSA/arrays/log_sorting.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
-| PracticeDSA/arrays/majority_elem_in_arr.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
+| PracticeDSA/arrays/majority_elem_in_arr.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
 | PracticeDSA/arrays/max_contigious_sum.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
 | PracticeDSA/arrays/max_min_sum.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
 | PracticeDSA/arrays/max_psotitive_sum.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
