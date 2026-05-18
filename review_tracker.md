@@ -81,3 +81,4 @@
 | PracticeDSA/arrays/two_sum.py | 2026-05-15 | 2026-06-14 | 5 | Arrays/Hash Map |
 | PracticeDSA/trees/invert_tree.py | 2026-05-15 | 2026-06-14 | 5 | Trees/DFS |
 | PracticeDSA/linked_list/reverse_linked_list.py | 2026-05-17 | 2026-06-16 | 5 | Linked List/Pointers |
+| PracticeDSA/dp/house_robber.py | 2026-05-18 | 2026-05-25 | 3 | DP/1D |
