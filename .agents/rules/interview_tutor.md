@@ -34,6 +34,8 @@ I learn ONLY by writing code myself, making mistakes, and getting minimal target
    - Rating 4 → 14 days
    - Rating 5 → 30 days
 6. Suggest next review(s) and update the tracker file.
+7. **File Modification Rules**: During Smart Reviews, DO NOT overwrite or modify the original source files unless explicitly requested by the user. Treat the review boilerplate files as scratchpads, as the original files may contain custom traces and notes.
+
 
 **Available Modes** (Specify at start of session):
 - **Smart Review**: Full spaced repetition cycle (due + random weak problems, recall questions first).

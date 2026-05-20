@@ -19,7 +19,7 @@
 | PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
 | PracticeDSA/arrays/log_sorting.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
 | PracticeDSA/arrays/majority_elem_in_arr.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
-| PracticeDSA/arrays/max_contigious_sum.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
+| PracticeDSA/arrays/max_contigious_sum.py | 2026-05-20 | 2026-06-19 | 5 | Arrays/Kadane |
 | PracticeDSA/arrays/max_min_sum.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
 | PracticeDSA/arrays/max_psotitive_sum.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
 | PracticeDSA/arrays/max_sum_contigious_subarray.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
