@@ -46,7 +46,7 @@
 | PracticeDSA/greedy_algo/generate_parenthesis.py | 2026-05-12 | 2026-05-23 | 1 | Greedy Algo |
 | PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-05-12 | 2026-05-24 | 1 | Greedy Algo |
 | PracticeDSA/greedy_algo/majority_element.py | 2026-05-12 | 2026-05-24 | 1 | Greedy Algo |
-| PracticeDSA/math/gcd.py | 2026-05-12 | 2026-05-24 | 1 | Math |
+| PracticeDSA/math/gcd.py | 2026-05-20 | 2026-06-19 | 5 | Math |
 | PracticeDSA/math/highest_score.py | 2026-05-12 | 2026-05-25 | 1 | Math |
 | PracticeDSA/math/is_rectangle.py | 2026-05-12 | 2026-05-25 | 1 | Math |
 | PracticeDSA/math/palindrome_integer.py | 2026-05-12 | 2026-05-25 | 1 | Math |
