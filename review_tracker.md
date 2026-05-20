@@ -84,3 +84,4 @@
 | PracticeDSA/dp/house_robber.py | 2026-05-18 | 2026-05-25 | 3 | DP/1D |
 | PracticeDSA/stacks/daily_temperatures.py | 2026-05-19 | 2026-05-26 | 3 | Stacks/Monotonic Stack |
 | PracticeDSA/trees/level_order_traversal.py | 2026-05-19 | 2026-06-02 | 4 | Trees/BFS |
+| PracticeDSA/graphs/course_schedule.py | 2026-05-19 | 2026-05-26 | 3 | Graphs/Cycle Detection |
