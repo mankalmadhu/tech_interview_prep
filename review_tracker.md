@@ -15,7 +15,7 @@
 | PracticeDSA/arrays/array_elem_greater_than_p.py | 2026-05-13 | 2026-06-12 | 5 | Arrays |
 | PracticeDSA/arrays/bulbs_on.py | 2026-05-13 | 2026-06-12 | 5 | Arrays |
 | PracticeDSA/arrays/even_product.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
-| PracticeDSA/arrays/flip.py | 2026-05-12 | 2026-05-14 | 1 | Arrays |
+| PracticeDSA/arrays/flip.py | 2026-05-22 | 2026-06-21 | 5 | Arrays/Kadane |
 | PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
 | PracticeDSA/arrays/log_sorting.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
 | PracticeDSA/arrays/majority_elem_in_arr.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
@@ -35,8 +35,8 @@
 | PracticeDSA/arrays/triplet_sum_in_range.py | 2026-05-12 | 2026-05-20 | 1 | Arrays |
 | PracticeDSA/backtrack/permutations.py | 2026-05-20 | 2026-06-19 | 5 | Backtrack |
 | PracticeDSA/bit_manipulation/number_of_one_bits.py | 2026-05-18 | 2026-06-17 | 5 | Bit Manipulation |
-| PracticeDSA/bit_manipulation/single_number.py | 2026-05-12 | 2026-05-21 | 1 | Bit Manipulation |
-| PracticeDSA/dp/coin_change.py | 2026-05-12 | 2026-05-21 | 1 | Dp |
+| PracticeDSA/bit_manipulation/single_number.py | 2026-05-21 | 2026-06-20 | 5 | Bit Manipulation |
+| PracticeDSA/dp/coin_change.py | 2026-05-21 | 2026-06-20 | 5 | Dp |
 | PracticeDSA/dp/knapsack_01.py | 2026-05-12 | 2026-05-21 | 1 | Dp |
 | PracticeDSA/dp/lcs.py | 2026-05-12 | 2026-05-22 | 1 | Dp |
 | PracticeDSA/graphs/bfs.py | 2026-05-12 | 2026-05-22 | 1 | Graphs |
