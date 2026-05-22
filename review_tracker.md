@@ -22,9 +22,9 @@
 | PracticeDSA/arrays/max_contigious_sum.py | 2026-05-20 | 2026-06-19 | 5 | Arrays/Kadane |
 | PracticeDSA/arrays/max_min_sum.py | 2026-05-22 | 2026-06-21 | 5 | Arrays |
 | PracticeDSA/arrays/max_psotitive_sum.py | 2026-05-23 | 2026-06-22 | 5 | Arrays |
-| PracticeDSA/arrays/max_sum_contigious_subarray.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
+| PracticeDSA/arrays/max_sum_contigious_subarray.py | 2026-05-23 | 2026-06-22 | 5 | Arrays/Kadane Duplicate |
 | PracticeDSA/arrays/missing_positive_int.py | 2026-05-17 | 2026-06-16 | 5 | Arrays |
-| PracticeDSA/arrays/noble_integer.py | 2026-05-12 | 2026-05-17 | 1 | Arrays |
+| PracticeDSA/arrays/noble_integer.py | 2026-05-23 | 2026-06-22 | 5 | Arrays Duplicate |
 | PracticeDSA/arrays/number_occurence.py | 2026-05-12 | 2026-05-17 | 1 | Arrays |
 | PracticeDSA/arrays/pick_both_sides.py | 2026-05-12 | 2026-05-18 | 1 | Arrays |
 | PracticeDSA/arrays/postivie_negative.py | 2026-05-12 | 2026-05-18 | 1 | Arrays |
