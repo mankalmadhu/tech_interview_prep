@@ -11,7 +11,7 @@
 | PracticeDSA/graphs/num_islands.py | 2026-05-16 | 2026-06-15 | 5 | Graphs/DFS |
 | PracticeDSA/arrays/top_k_frequent.py | 2026-05-12 | 2026-06-11 | 5 | Arrays/Heaps/Bucket Sort |
 | PracticeDSA/dp/step_climb.py | 2026-05-12 | 2026-06-11 | 5 | DP/Fibonacci |
-| PracticeDSA/arrays/ar1.py | 2026-05-12 | 2026-05-13 | 1 | Arrays |
+| PracticeDSA/arrays/ar1.py | 2026-05-22 | 2026-06-21 | 5 | Arrays |
 | PracticeDSA/arrays/array_elem_greater_than_p.py | 2026-05-13 | 2026-06-12 | 5 | Arrays |
 | PracticeDSA/arrays/bulbs_on.py | 2026-05-13 | 2026-06-12 | 5 | Arrays |
 | PracticeDSA/arrays/even_product.py | 2026-05-22 | 2026-06-21 | 5 | Arrays/Combinatorics |
@@ -20,8 +20,8 @@
 | PracticeDSA/arrays/log_sorting.py | 2026-05-22 | 2026-06-21 | 5 | Arrays/Sorting |
 | PracticeDSA/arrays/majority_elem_in_arr.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
 | PracticeDSA/arrays/max_contigious_sum.py | 2026-05-20 | 2026-06-19 | 5 | Arrays/Kadane |
-| PracticeDSA/arrays/max_min_sum.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
-| PracticeDSA/arrays/max_psotitive_sum.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
+| PracticeDSA/arrays/max_min_sum.py | 2026-05-22 | 2026-06-21 | 5 | Arrays |
+| PracticeDSA/arrays/max_psotitive_sum.py | 2026-05-23 | 2026-06-22 | 5 | Arrays |
 | PracticeDSA/arrays/max_sum_contigious_subarray.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
 | PracticeDSA/arrays/missing_positive_int.py | 2026-05-17 | 2026-06-16 | 5 | Arrays |
 | PracticeDSA/arrays/noble_integer.py | 2026-05-12 | 2026-05-17 | 1 | Arrays |
