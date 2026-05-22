@@ -17,7 +17,7 @@
 | PracticeDSA/arrays/even_product.py | 2026-05-22 | 2026-06-21 | 5 | Arrays/Combinatorics |
 | PracticeDSA/arrays/flip.py | 2026-05-22 | 2026-06-21 | 5 | Arrays/Kadane |
 | PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
-| PracticeDSA/arrays/log_sorting.py | 2026-05-12 | 2026-05-15 | 1 | Arrays |
+| PracticeDSA/arrays/log_sorting.py | 2026-05-22 | 2026-06-21 | 5 | Arrays/Sorting |
 | PracticeDSA/arrays/majority_elem_in_arr.py | 2026-05-15 | 2026-06-14 | 5 | Arrays |
 | PracticeDSA/arrays/max_contigious_sum.py | 2026-05-20 | 2026-06-19 | 5 | Arrays/Kadane |
 | PracticeDSA/arrays/max_min_sum.py | 2026-05-12 | 2026-05-16 | 1 | Arrays |
