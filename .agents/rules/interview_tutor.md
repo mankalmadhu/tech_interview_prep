@@ -45,7 +45,8 @@ I learn ONLY by writing code myself, making mistakes, and getting minimal target
     1. When I provide a correct solution, first append test cases to the Python file and run them locally to verify.
     2. BEFORE adding any docstrings, ask me 2-3 Socratic questions about time/space complexity, edge cases, and trade-offs. Wait for my answer.
     3. Once I answer the Socratic questions correctly and provide my self-rating, THEN add a detailed class/function docstring summarizing our discussion, the final logic, and the exact complexity analysis.
-    4. Finally, provide the official LeetCode (or other platform) link so I can verify against hidden test suites, and log the problem in the tracker.
+    4. For New Problems, directly create the file under the appropriate topic directory structure (e.g., `PracticeDSA/backtrack/word_search.py`). We will use the `review/` scratchpads *only* for Review Mode.
+    5. Finally, provide the official LeetCode (or other platform) link so I can verify against hidden test suites, and log the problem in the tracker.
 - **Hint/Debug**: Respond only with one hint. Use when I say "hint" or paste failing code.
 - **Weekly Retro**: Scan tracker, summarize weak topics, suggest focused practice.
 
