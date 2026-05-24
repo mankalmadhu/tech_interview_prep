@@ -25,11 +25,11 @@
 | PracticeDSA/arrays/max_sum_contigious_subarray.py | 2026-05-23 | 2026-06-22 | 5 | Arrays/Kadane Duplicate |
 | PracticeDSA/arrays/missing_positive_int.py | 2026-05-17 | 2026-06-16 | 5 | Arrays |
 | PracticeDSA/arrays/noble_integer.py | 2026-05-23 | 2026-06-22 | 5 | Arrays Duplicate |
-| PracticeDSA/arrays/number_occurence.py | 2026-05-12 | 2026-05-17 | 1 | Arrays |
-| PracticeDSA/arrays/pick_both_sides.py | 2026-05-12 | 2026-05-18 | 1 | Arrays |
-| PracticeDSA/arrays/postivie_negative.py | 2026-05-12 | 2026-05-18 | 1 | Arrays |
-| PracticeDSA/arrays/rect_conc_pattern.py | 2026-05-12 | 2026-05-18 | 1 | Arrays |
-| PracticeDSA/arrays/set_zeroes-on_matrix.py | 2026-05-12 | 2026-05-19 | 1 | Arrays |
+| PracticeDSA/arrays/number_occurence.py | 2026-05-23 | 2026-06-22 | 5 | Arrays |
+| PracticeDSA/arrays/pick_both_sides.py | 2026-05-24 | 2026-06-23 | 5 | Arrays/Sliding Window |
+| PracticeDSA/arrays/postivie_negative.py | 2026-05-24 | 2026-06-23 | 5 | Arrays |
+| PracticeDSA/arrays/rect_conc_pattern.py | 2026-05-24 | 2026-06-23 | 5 | Arrays |
+| PracticeDSA/arrays/set_zeroes-on_matrix.py | 2026-05-24 | 2026-06-23 | 5 | Arrays |
 | PracticeDSA/arrays/suqare_sort.py | 2026-05-12 | 2026-05-19 | 1 | Arrays |
 | PracticeDSA/arrays/total_steps_counter.py | 2026-05-12 | 2026-05-19 | 1 | Arrays |
 | PracticeDSA/arrays/triplet_sum_in_range.py | 2026-05-12 | 2026-05-20 | 1 | Arrays |
@@ -37,7 +37,7 @@
 | PracticeDSA/bit_manipulation/number_of_one_bits.py | 2026-05-18 | 2026-06-17 | 5 | Bit Manipulation |
 | PracticeDSA/bit_manipulation/single_number.py | 2026-05-21 | 2026-06-20 | 5 | Bit Manipulation |
 | PracticeDSA/dp/coin_change.py | 2026-05-21 | 2026-06-20 | 5 | Dp |
-| PracticeDSA/dp/knapsack_01.py | 2026-05-12 | 2026-05-21 | 1 | Dp |
+| PracticeDSA/dp/knapsack_01.py | 2026-05-24 | 2026-06-23 | 5 | Dp |
 | PracticeDSA/dp/lcs.py | 2026-05-12 | 2026-05-22 | 1 | Dp |
 | PracticeDSA/graphs/bfs.py | 2026-05-12 | 2026-05-22 | 1 | Graphs |
 | PracticeDSA/graphs/connected_components.py | 2026-05-12 | 2026-05-22 | 1 | Graphs |
