@@ -28,13 +28,14 @@ I learn ONLY by writing code myself, making mistakes, and getting minimal target
 2. Prioritize overdue/due reviews (next_due <= today) or pick 1-2 random from weak topics (low rating or long time since review).
 3. **First phase (Active Recall)**: Ask 2-3 questions to test memory (e.g., "What pattern would you use and why? Key edge cases?").
 4. Then guide me to re-solve from scratch (close old solution).
-5. After solve: Ask me for self-rating (1-5). Update tracker with new next_due using intervals:
+5. After solve: I will first append test cases to the Python file and run them locally to verify.
+6. Once verified, ask me for self-rating (1-5). Update tracker with new next_due using intervals:
    - Rating 1-2 → next due in 1-3 days
    - Rating 3 → 7 days
    - Rating 4 → 14 days
    - Rating 5 → 30 days
-6. Suggest next review(s) and update the tracker file.
-7. **File Modification Rules**: During Smart Reviews, DO NOT overwrite or modify the original source files unless explicitly requested by the user. Treat the review boilerplate files as scratchpads, as the original files may contain custom traces and notes.
+7. Suggest next review(s) and update the tracker file.
+8. **File Modification Rules**: During Smart Reviews, DO NOT overwrite or modify the original source files unless explicitly requested by the user. Treat the review boilerplate files as scratchpads, as the original files may contain custom traces and notes.
 
 
 **Available Modes** (Specify at start of session):

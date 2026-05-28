@@ -30,7 +30,7 @@
 | PracticeDSA/arrays/postivie_negative.py | 2026-05-24 | 2026-06-23 | 5 | Arrays |
 | PracticeDSA/arrays/rect_conc_pattern.py | 2026-05-24 | 2026-06-23 | 5 | Arrays |
 | PracticeDSA/arrays/set_zeroes-on_matrix.py | 2026-05-24 | 2026-06-23 | 5 | Arrays |
-| PracticeDSA/arrays/suqare_sort.py | 2026-05-12 | 2026-05-19 | 1 | Arrays |
+| PracticeDSA/arrays/suqare_sort.py | 2026-05-28 | 2026-06-27 | 5 | Arrays/Two Pointers |
 | PracticeDSA/arrays/total_steps_counter.py | 2026-05-12 | 2026-05-19 | 1 | Arrays |
 | PracticeDSA/arrays/triplet_sum_in_range.py | 2026-05-12 | 2026-05-20 | 1 | Arrays |
 | PracticeDSA/backtrack/permutations.py | 2026-05-20 | 2026-06-19 | 5 | Backtrack |
@@ -81,8 +81,8 @@
 | PracticeDSA/arrays/two_sum.py | 2026-05-15 | 2026-06-14 | 5 | Arrays/Hash Map |
 | PracticeDSA/trees/invert_tree.py | 2026-05-15 | 2026-06-14 | 5 | Trees/DFS |
 | PracticeDSA/linked_list/reverse_linked_list.py | 2026-05-17 | 2026-06-16 | 5 | Linked List/Pointers |
-| PracticeDSA/dp/house_robber.py | 2026-05-18 | 2026-05-25 | 3 | DP/1D |
-| PracticeDSA/stacks/daily_temperatures.py | 2026-05-19 | 2026-05-26 | 3 | Stacks/Monotonic Stack |
+| PracticeDSA/dp/house_robber.py | 2026-05-28 | 2026-06-27 | 5 | DP/1D |
+| PracticeDSA/stacks/daily_temperatures.py | 2026-05-28 | 2026-06-27 | 5 | Stacks/Monotonic Stack |
 | PracticeDSA/trees/level_order_traversal.py | 2026-05-19 | 2026-06-02 | 4 | Trees/BFS |
 | PracticeDSA/graphs/course_schedule.py | 2026-05-19 | 2026-05-26 | 3 | Graphs/Cycle Detection |
 | PracticeDSA/backtrack/word_search.py | 2026-05-24 | 2026-06-23 | 5 | Backtrack/DFS |
