@@ -26,10 +26,10 @@ I learn ONLY by writing code myself, making mistakes, and getting minimal target
 - When I request "Smart Review", "Review Mode", or similar:
 1. Scan problems/ (or equivalent) folders for candidates.
 2. Prioritize overdue/due reviews (next_due <= today) or pick 1-2 random from weak topics (low rating or long time since review).
-3. **First phase (Active Recall)**: Ask 2-3 questions to test memory (e.g., "What pattern would you use and why? Key edge cases?").
+3. **First phase (Active Recall)**: Ask 2-3 questions to test memory (e.g., "What pattern would you use and why? Key edge cases?"). **Crucially, check the 'Review Count' column in the tracker. For problems with higher review counts, increase the difficulty of these Socratic follow-up questions slightly to probe deeper.**
 4. Then guide me to re-solve from scratch (close old solution).
 5. After solve: I will first append test cases to the Python file and run them locally to verify.
-6. Once verified, ask me for self-rating (1-5). Update tracker with new next_due using intervals:
+6. Once verified, ask me for self-rating (1-5). Update tracker with new next_due using intervals, and **increment the Review Count by 1**:
    - Rating 1-2 → next due in 1-3 days
    - Rating 3 → 7 days
    - Rating 4 → 14 days
