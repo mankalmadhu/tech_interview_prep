@@ -38,12 +38,12 @@
 | PracticeDSA/bit_manipulation/single_number.py | 2026-05-21 | 2026-06-20 | 5 | 1 | Bit Manipulation |
 | PracticeDSA/dp/coin_change.py | 2026-05-21 | 2026-06-20 | 5 | 1 | Dp |
 | PracticeDSA/dp/knapsack_01.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Dp |
-| PracticeDSA/dp/lcs.py | 2026-05-30 | 2026-06-29 | 5 | 2 | Dp |
+| PracticeDSA/dp/lcs.py | 2026-05-12 | 2026-06-22 | 5 | 1 | Dp |
 | PracticeDSA/graphs/bfs.py | 2026-05-12 | 2026-05-22 | 1 | 1 | Graphs |
 | PracticeDSA/graphs/connected_components.py | 2026-05-12 | 2026-05-22 | 1 | 1 | Graphs |
 | PracticeDSA/graphs/dfs.py | 2026-05-12 | 2026-05-23 | 1 | 1 | Graphs |
 | PracticeDSA/graphs/dijkstras.py | 2026-05-12 | 2026-05-23 | 1 | 1 | Graphs |
-| PracticeDSA/greedy_algo/generate_parenthesis.py | 2026-05-12 | 2026-05-23 | 1 | 1 | Greedy Algo |
+| PracticeDSA/backtrack/generate_parenthesis.py | 2026-05-31 | 2026-06-30 | 5 | 1 | Backtrack |
 | PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-05-12 | 2026-05-24 | 1 | 1 | Greedy Algo |
 | PracticeDSA/greedy_algo/majority_element.py | 2026-05-12 | 2026-05-24 | 1 | 1 | Greedy Algo |
 | PracticeDSA/math/gcd.py | 2026-05-20 | 2026-06-19 | 5 | 1 | Math |
@@ -84,6 +84,6 @@
 | PracticeDSA/dp/house_robber.py | 2026-05-28 | 2026-06-27 | 5 | 1 | DP/1D |
 | PracticeDSA/stacks/daily_temperatures.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Stacks/Monotonic Stack |
 | PracticeDSA/trees/level_order_traversal.py | 2026-05-19 | 2026-06-02 | 4 | 1 | Trees/BFS |
-| PracticeDSA/graphs/course_schedule.py | 2026-05-30 | 2026-06-13 | 4 | 2 | Graphs/Cycle Detection |
+| PracticeDSA/graphs/course_schedule.py | 2026-05-19 | 2026-05-26 | 3 | 1 | Graphs/Cycle Detection |
 | PracticeDSA/backtrack/word_search.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Backtrack/DFS |
 | PracticeDSA/trees/lowest_common_ancestor.py | 2026-05-25 | 2026-06-08 | 4 | 1 | Trees/DFS |
