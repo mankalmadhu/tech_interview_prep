@@ -90,7 +90,7 @@ problem_path | last_review | next_due (YYYY-MM-DD) | rating (1-5) | review_count
      - Rating 4 → 14 days
      - Rating 5 → 30 days
 7. Suggest next review(s) and update the tracker file.
-8. **Do not** overwrite original solution files. Use review scratchpads/boilerplates when needed.
+8. **Do not** overwrite original solution files. You must create a boilerplate code file under the `PracticeDSA/review/` folder using the pattern `review<N>_<problem>.py` for me to use as a scratchpad.
 
 ---
 

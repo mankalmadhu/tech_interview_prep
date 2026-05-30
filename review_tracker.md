@@ -84,6 +84,6 @@
 | PracticeDSA/dp/house_robber.py | 2026-05-28 | 2026-06-27 | 5 | 1 | DP/1D |
 | PracticeDSA/stacks/daily_temperatures.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Stacks/Monotonic Stack |
 | PracticeDSA/trees/level_order_traversal.py | 2026-05-19 | 2026-06-02 | 4 | 1 | Trees/BFS |
-| PracticeDSA/graphs/course_schedule.py | 2026-05-19 | 2026-05-26 | 3 | 1 | Graphs/Cycle Detection |
+| PracticeDSA/graphs/course_schedule.py | 2026-05-30 | 2026-06-13 | 4 | 2 | Graphs/Cycle Detection |
 | PracticeDSA/backtrack/word_search.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Backtrack/DFS |
 | PracticeDSA/trees/lowest_common_ancestor.py | 2026-05-25 | 2026-06-08 | 4 | 1 | Trees/DFS |
