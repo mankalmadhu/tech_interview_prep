@@ -40,9 +40,9 @@
 | PracticeDSA/dp/knapsack_01.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Dp |
 | PracticeDSA/dp/lcs.py | 2026-05-12 | 2026-06-22 | 5 | 1 | Dp |
 | PracticeDSA/graphs/bfs.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Graphs |
-| PracticeDSA/graphs/connected_components.py | 2026-05-12 | 2026-05-22 | 1 | 1 | Graphs |
+| PracticeDSA/graphs/connected_components.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Graphs |
 | PracticeDSA/graphs/dfs.py | 2026-05-12 | 2026-05-23 | 1 | 1 | Graphs |
-| PracticeDSA/graphs/dijkstras.py | 2026-05-12 | 2026-05-23 | 1 | 1 | Graphs |
+| PracticeDSA/graphs/dijkstras.py | 2026-05-31 | 2026-06-14 | 4 | 2 | Graphs |
 | PracticeDSA/backtrack/generate_parenthesis.py | 2026-05-31 | 2026-06-30 | 5 | 1 | Backtrack |
 | PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-05-12 | 2026-05-24 | 1 | 1 | Greedy Algo |
 | PracticeDSA/greedy_algo/majority_element.py | 2026-05-12 | 2026-05-24 | 1 | 1 | Greedy Algo |

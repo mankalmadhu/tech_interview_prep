@@ -187,3 +187,61 @@ def get_path(predecessor, start, end):
   path.append(start)
   path.reverse()
   return path
+
+
+from typing import List, Tuple, Dict
+
+class Solution:
+    def shortestPath(self, n: int, edges: List[Tuple[int, int, int]], start: int) -> Tuple[Dict[int, int], Dict[int, int]]:
+        """
+        Dijkstra's Algorithm (Edge List Input)
+        
+        Discussion Summary:
+        - Time Complexity: O((V + E) * log V)
+          We process each node and each edge, and every successful edge relaxation pushes a 
+          new distance into the Min-Heap, taking O(log V) time.
+        - Space Complexity: O(V + E) for the adjacency list and O(V) for the Min-Heap and sets.
+        
+        Negative Weights Edge Case:
+        - Dijkstra's strictly assumes that once a node is popped from the Min-Heap, 
+          its shortest path is 100% FINAL (Greedy choice). 
+        - If negative weights exist, this assumption is broken because a seemingly 
+          longer path might later hit a massive negative edge and become the true shortest path.
+        - For graphs with negative weights, you MUST use the Bellman-Ford algorithm instead.
+
+        Implementation Notes:
+        - The heavy use of `dict.get(..., default)` gracefully handles "sink" nodes that 
+          never appear as sources in the edge list, removing the need to pre-initialize 
+          every node manually.
+        """
+        distances = {node[0]: float('inf') for node in edges}
+        distances[start] = 0
+        adj = {node[0]: [] for node in edges}
+        
+        for node in edges:
+            adj[node[0]].append((node[1], node[2]))
+            
+        min_priority_queue = [(0, start)]
+        prdecessor = {}
+        visited = set()
+
+        while min_priority_queue:
+            cur_dist, cur_node = heapq.heappop(min_priority_queue)
+
+            if cur_node in visited:
+                continue
+            
+            visited.add(cur_node)
+
+            if not adj.get(cur_node):
+                continue
+
+            for neighbor, weight in adj.get(cur_node):
+                new_dist = cur_dist + weight      
+
+                if new_dist < distances.get(neighbor, float('inf')):
+                    distances[neighbor] = new_dist
+                    prdecessor[neighbor] = cur_node
+                    heapq.heappush(min_priority_queue, (new_dist, neighbor))
+                    
+        return distances, prdecessor
