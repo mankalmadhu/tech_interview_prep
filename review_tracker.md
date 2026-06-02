@@ -56,7 +56,7 @@
 | PracticeDSA/math/step_by_step.py | 2026-06-02 | 2026-06-16 | 4 | 2 | Math |
 | PracticeDSA/random/r1.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Random |
 | PracticeDSA/random/r2.py | 2026-05-12 | 2026-05-27 | 1 | 1 | Random |
-| PracticeDSA/search_n_sort/binary_search.py | 2026-05-12 | 2026-05-28 | 1 | 1 | Search N Sort |
+| PracticeDSA/search_n_sort/binary_search.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Search N Sort |
 | PracticeDSA/search_n_sort/bubble_sort.py | 2026-05-12 | 2026-05-28 | 1 | 1 | Search N Sort |
 | PracticeDSA/search_n_sort/insertion_sort.py | 2026-05-12 | 2026-05-29 | 1 | 1 | Search N Sort |
 | PracticeDSA/search_n_sort/kth_smallest_elem.py | 2026-05-12 | 2026-05-29 | 1 | 1 | Search N Sort |
