@@ -1,9 +1,17 @@
 class Solution:
 
   def primeSum(self, A):
+    """
+    Returns two prime numbers whose sum is exactly A.
+    Returns the lexicographically smallest pair.
+
+    Complexity Analysis:
+    --------------------
+    - Sieve of Eratosthenes: O(N log(log N)) Time | O(N) Space
+    - Two-Pointer Search: O(P) Time | O(1) Space (where P is number of primes <= A)
+    """
     primes = self.build_prime_list(A)
-    primaePairs = self.sum_primes_list(primes, A)
-    return primaePairs[0] if primaePairs else []
+    return self.sum_primes_list(primes, A)
 
   def build_prime_list(self, n):
     if n < 2:
@@ -28,21 +36,14 @@ class Solution:
   def sum_primes_list(self, primes, n):
     left = 0
     right = len(primes) - 1
-    primesPairs = []
     while left <= right:
       if primes[left] + primes[right] == n:
-        primesPairs.append((primes[left], primes[right]))
-        left += 1
-        right -= 1
+        return [primes[left], primes[right]]
       elif primes[left] + primes[right] < n:
         left += 1
       else:
         right -= 1
-
-    if primesPairs:
-      primesPairs.sort(key=lambda x: (x[0], x[1]))
-
-    return primesPairs
+    return []
 
 
 if __name__ == "__main__":
