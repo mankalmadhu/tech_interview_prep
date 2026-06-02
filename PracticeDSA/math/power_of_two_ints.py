@@ -6,6 +6,11 @@ class Solution:
         """
         Checks if A can be expressed as x^y where x > 0 and y > 1.
 
+        Essence of the Solution:
+        - We take the log of the number for different bases.
+        - If for any of the bases the log value is an integer, then we have our answer.
+        - The bases to look at are upper-bounded by the square root of the number.
+
         Strategy: Brute Force on Base
         -----------------------------
         We iterate through possible bases 'i' starting from 2.

@@ -47,10 +47,10 @@
 | PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Greedy Algo |
 
 | PracticeDSA/math/gcd.py | 2026-05-20 | 2026-06-19 | 5 | 1 | Math |
-| PracticeDSA/math/highest_score.py | 2026-05-12 | 2026-05-25 | 1 | 1 | Math |
-| PracticeDSA/math/is_rectangle.py | 2026-05-12 | 2026-05-25 | 1 | 1 | Math |
+| PracticeDSA/math/highest_score.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Math |
+| PracticeDSA/math/is_rectangle.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Math |
 | PracticeDSA/math/palindrome_integer.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Math |
-| PracticeDSA/math/power_of_two_ints.py | 2026-05-12 | 2026-05-26 | 1 | 1 | Math |
+| PracticeDSA/math/power_of_two_ints.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Math |
 | PracticeDSA/math/prime_sum_of_num.py | 2026-05-12 | 2026-05-26 | 1 | 1 | Math |
 | PracticeDSA/math/reaarange_array.py | 2026-05-12 | 2026-05-26 | 1 | 1 | Math |
 | PracticeDSA/math/step_by_step.py | 2026-05-12 | 2026-05-27 | 1 | 1 | Math |
