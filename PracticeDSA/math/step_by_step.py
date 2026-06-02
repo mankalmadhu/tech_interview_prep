@@ -5,52 +5,47 @@ class Solution:
   def solve(self, A):
     """
     Calculates the minimum steps to reach target A from 0.
-        On the i-th step, you must move exactly i positions left or right.
+    On the i-th step, you must move exactly i positions left or right.
 
-        Strategy: Math + Parity Check
-        -----------------------------
-        1. Base Requirement: The sum of steps 1..n must be at least abs(A).
-           Sum = n * (n + 1) / 2 >= target
-           
-        2. Optimization: We solve the quadratic equation n^2 + n - 2*target = 0 
-           to find the approximate starting 'n' immediately.
+    Essence of the Algorithm:
+    -------------------------
+    1. If we were to only move in the positive direction, it suffices to find the 
+       number of steps using the natural sum formula: n * (n + 1) // 2.
+    2. Since we have the option to move in the negative direction, we first calculate 
+       the quadratic root for the equation: n * (n + 1) // 2 <= target to get a baseline 'n'.
+    3. We increment 'n' in a while loop to ensure our sum just reaches or overshoots the target.
+    4. Now since we overshot, we must find a step 'k' to flip to the negative direction. 
+       Because flipping a step from +k to -k reduces our total sum by exactly 2k 
+       (which is always an EVEN amount), the difference between our total sum and 
+       the target MUST be even.
+    5. If the difference is odd, we keep incrementing our total steps 'n' until the 
+       difference becomes even. The first 'n' that satisfies this condition is guaranteed 
+       to be the minimum number of steps, because we test 'n' in monotonically increasing order.
 
-        3. Parity Logic (The Crucial Step):
-           - Let 'S' be the sum of steps 1..n.
-           - We want to reach 'target' by assigning signs: ±1 ±2 ... ±n = target.
-           - Changing a step 'k' from +k to -k reduces the sum S by 2k.
-           - Since 2k is always EVEN, flipping signs only changes the total sum 
-             by an even amount.
-           - Therefore, we can only reach 'target' if the difference (S - target) 
-             is an EVEN number.
-           - If (S - target) is odd, we increment n until the difference becomes even.
+    Complexity Analysis:
+    --------------------
+    Time Complexity: O(1) effectively (quadratic formula gives near-instant answer).
+    Space Complexity: O(1)
 
-        Complexity Analysis:
-        --------------------
-        Time Complexity: O(1) 
-           - The quadratic formula gives the answer instantly. The fix-up loop runs 
-             at most 2-3 times.
-        Space Complexity: O(1).
+    Example Trace (Target = 2):
+    ---------------------------
+    1. Base 'n' where Sum >= 2:
+       - n=1: Sum=1. (Too small)
+       - n=2: Sum=3. (3 >= 2. OK).
+       
+    2. Check Parity (Sum - Target):
+       - Current Sum (3) - Target (2) = 1.
+       - 1 is ODD. We cannot hit exactly 2 because flipping any step subtracts an EVEN amount.
+       - Increment n -> 3.
 
-        Example Trace (Target = 2):
-        ---------------------------
-        1. Find min n where Sum >= 2:
-           - n=1: Sum=1. (Too small)
-           - n=2: Sum=3. (3 >= 2. OK).
-           
-        2. Check Parity (Sum - Target):
-           - Current Sum (3) - Target (2) = 1.
-           - 1 is ODD. We cannot reach 2 from 3 by flipping signs.
-           - Increment n -> 3.
-
-        3. Next n (n=3):
-           - New Sum = 1+2+3 = 6.
-           - Diff = 6 - 2 = 4.
-           - 4 is EVEN. (We can flip signs to subtract 4 from sum).
-           - Logic: We need to subtract 4 total. Flip '2' to '-2' (change is 2*2=4).
-           - Moves: +1 -2 +3 = 2.
-        
-        Result: 3 steps.
+    3. Next 'n' (n=3):
+       - New Sum = 1+2+3 = 6.
+       - Diff = 6 - 2 = 4.
+       - 4 is EVEN. (We can mathematically flip a step to subtract exactly 4).
+       - Logic: We need to subtract 4. Flipping step 'k' subtracts 2k. So 2k = 4 -> k = 2.
+       - Verify by flipping step 2 to negative: +1 - 2 + 3 = 2. Target reached!
+    
+    Result: 3 steps.
     """
 
     if A == 0:
