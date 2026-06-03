@@ -32,7 +32,7 @@
 | PracticeDSA/arrays/set_zeroes-on_matrix.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/suqare_sort.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Arrays/Two Pointers |
 | PracticeDSA/arrays/total_steps_counter.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Arrays |
-| PracticeDSA/arrays/triplet_sum_in_range.py | 2026-05-12 | 2026-05-20 | 1 | 1 | Arrays |
+
 | PracticeDSA/backtrack/permutations.py | 2026-05-20 | 2026-06-19 | 5 | 1 | Backtrack |
 | PracticeDSA/bit_manipulation/number_of_one_bits.py | 2026-05-18 | 2026-06-17 | 5 | 1 | Bit Manipulation |
 | PracticeDSA/bit_manipulation/single_number.py | 2026-05-21 | 2026-06-20 | 5 | 1 | Bit Manipulation |
