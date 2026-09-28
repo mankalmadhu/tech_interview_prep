@@ -47,9 +47,9 @@ def permute(nums):
         as the initial numbers, until all N! permutations are found.
 
         Algorithm: Backtracking (Choose -> Explore -> Un-choose)
-        - Time Complexity: O(N * N!). There are N! permutations. For each permutation, 
+        - Time Complexity: O(N * N!). There are N! permutations. For each permutation,
           it takes O(N) time to copy the path (`cur[:]`) into the result list.
-        - Space Complexity: O(N) for the recursion stack and the `cur` path, plus O(N) 
+        - Space Complexity: O(N) for the recursion stack and the `cur` path, plus O(N)
           for the `used` set. (Excluding the O(N * N!) space used to hold the final output).
 
         Note for Next Review:
@@ -74,10 +74,10 @@ def backtrack(current_permutation, used, result, nums):
         # Choose
         current_permutation.append(nums[i])
         used.add(i)
-        
+
         # Explore
         backtrack(current_permutation, used, result, nums)
-        
+
         # Un-choose (Backtrack)
         used.remove(i)
         current_permutation.pop()

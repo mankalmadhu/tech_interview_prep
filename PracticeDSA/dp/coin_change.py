@@ -1,4 +1,3 @@
-
 def coin_change(coins, amount):
     """
     Strategy: Top-Down Dynamic Programming (Memoization)
@@ -11,7 +10,7 @@ def coin_change(coins, amount):
        - Try every coin 'c' in the list.
        - Result = 1 + coin_change(amount - c)
        - Take the minimum of all valid results.
-    4. Memoization: Store results in a table of size (amount + 1) to avoid 
+    4. Memoization: Store results in a table of size (amount + 1) to avoid
        re-calculating the same sub-problems.
 
     Complexity Analysis:
@@ -19,7 +18,7 @@ def coin_change(coins, amount):
     Time Complexity: O(A * N)
        - A = Amount, N = Number of coins.
        - We solve 'A' sub-problems. Each sub-problem iterates through 'N' coins.
-    
+
     Space Complexity: O(A)
        - O(A) for the memoization table.
        - O(A) for the recursion stack (worst case depth).
@@ -41,22 +40,22 @@ def coin_change(coins, amount):
     return coin_change_recursive(coins, amount, memo)
 
 
-def coin_change_recursive(coins, amount ,memo):
+def coin_change_recursive(coins, amount, memo):
     if amount == 0:
         return 0
-    
+
     if amount < 0:
         return -1
-    
+
     if memo[amount] != -1:
         return memo[amount]
-    
+
     min_coins = -1
 
     for coin in coins:
         result = coin_change_recursive(coins, amount - coin, memo)
         if result != -1:
             min_coins = min(min_coins, result + 1) if min_coins != -1 else result + 1
-    
+
     memo[amount] = min_coins
     return memo[amount]

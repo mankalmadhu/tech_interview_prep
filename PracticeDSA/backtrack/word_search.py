@@ -13,10 +13,11 @@ Complexity Analysis:
 - Space Complexity: O(L) where L is the length of the word. This is the maximum depth of the call stack. Auxiliary space is O(1) due to in-place marking.
 """
 
+
 class Solution:
     def exist(self, board: list[list[str]], word: str) -> bool:
         if not word:
-            return False 
+            return False
 
         for i in range(len(board)):
             for j in range(len(board[0])):
@@ -30,20 +31,22 @@ class Solution:
         if i >= len(word):
             return True
 
-        if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] == '#':
-            return False       
+        if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] == "#":
+            return False
 
         backup = grid[r][c]
         if backup == word[i]:
-            grid[r][c] = '#'
+            grid[r][c] = "#"
             i += 1
 
-            char_found = (self.dfs(grid, r + 1, c, word, i) or
-                          self.dfs(grid, r - 1, c, word, i) or
-                          self.dfs(grid, r, c + 1, word, i) or
-                          self.dfs(grid, r, c - 1, word, i))
-            
+            char_found = (
+                self.dfs(grid, r + 1, c, word, i)
+                or self.dfs(grid, r - 1, c, word, i)
+                or self.dfs(grid, r, c + 1, word, i)
+                or self.dfs(grid, r, c - 1, word, i)
+            )
+
             grid[r][c] = backup
             return char_found
-        
+
         return False

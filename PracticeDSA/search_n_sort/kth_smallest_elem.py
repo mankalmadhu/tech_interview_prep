@@ -1,4 +1,4 @@
-#https://www.interviewbit.com/problems/kth-smallest-element-in-the-array/
+# https://www.interviewbit.com/problems/kth-smallest-element-in-the-array/
 class Solution:
     # @param A : tuple of integers
     # @param B : integer
@@ -9,20 +9,20 @@ class Solution:
 
         Strategy: Binary Search on Answer (Value Range)
         -----------------------------------------------
-        Instead of sorting the array (which takes O(N log N)), we search the 
+        Instead of sorting the array (which takes O(N log N)), we search the
         range of possible values [min(A), max(A)].
 
         1. Range Definition:
            - Low = min(A), High = max(A).
-        
+
         2. The Search Loop:
            - Pick a candidate value 'mid'.
            - Count how many numbers in A are less than or equal to 'mid'.
            - Decision:
-             - If count < B: 'mid' is too small. We need more numbers. 
+             - If count < B: 'mid' is too small. We need more numbers.
                Move low to mid + 1.
-             - If count >= B: 'mid' is large enough to cover the B-th rank. 
-               It could be the answer, or the answer is smaller. 
+             - If count >= B: 'mid' is large enough to cover the B-th rank.
+               It could be the answer, or the answer is smaller.
                Move high to mid (keep mid as a candidate).
 
         Complexity Analysis:
@@ -30,17 +30,17 @@ class Solution:
         Time Complexity: O(N * log(max(A) - min(A)))
            - The search space is the range of values (R). Binary search takes O(log R).
            - Each step involves a linear scan of A, taking O(N).
-        
+
         Space Complexity: O(1)
            - No auxiliary data structures used.
 
         Example Trace (A = [2, 1, 4, 3, 2], B = 3):
         -------------------------------------------
-        Target: We want the 3rd smallest element. 
+        Target: We want the 3rd smallest element.
         (Sorted A would be [1, 2, 2, 3, 4], so answer should be 2).
         Initial: low = 1, high = 4.
 
-        Iter 1: 
+        Iter 1:
           mid = (1 + 4) // 2 = 2
           Count numbers in A <= 2: [2, 1, 2] -> count is 3.
           Since count (3) >= B (3), it means the 3rd smallest is <= 2.
@@ -60,17 +60,18 @@ class Solution:
         low = min(A)
         high = max(A)
         while low < high:
-            mid = (low+high)//2
+            mid = (low + high) // 2
             count = 0
             for num in A:
                 if num <= mid:
                     count += 1
             if count < B:
-                low = mid+1
+                low = mid + 1
             else:
                 high = mid
-        
+
         return low
+
 
 class QuickSelectSolution:
     def kthsmallest(self, A: list[int], B: int) -> int:
@@ -101,7 +102,7 @@ class QuickSelectSolution:
         Initial: left=0, right=2, k=1.
 
         1. partition(A, 0, 2):
-           - pivot = A[2] = 2. 
+           - pivot = A[2] = 2.
            - i (boundary for smaller elements) starts at -1.
            - Loop j from 0 to 1:
              - j=0: A[0]=3 (Not <= 2).
@@ -119,7 +120,7 @@ class QuickSelectSolution:
            - left == right, we've converged!
            - Return A[0], which is 1.
         """
-        return self.quickselect(A, 0, len(A)-1, B)
+        return self.quickselect(A, 0, len(A) - 1, B)
 
     def partition(self, A: list[int], left: int, right: int) -> int:
         pivot = A[right]
@@ -130,15 +131,15 @@ class QuickSelectSolution:
                 i += 1
                 A[i], A[j] = A[j], A[i]
 
-        A[i+1], A[right] = A[right], A[i+1]
+        A[i + 1], A[right] = A[right], A[i + 1]
         return i + 1
-    
+
     def quickselect(self, A: list[int], left: int, right: int, k: int) -> int:
         if left == right:
             return A[left]
-        
+
         pivot_idx = self.partition(A, left, right)
-        
+
         # Calculate rank relative to the current sub-array
         rank = pivot_idx - left + 1
 

@@ -17,7 +17,7 @@ class Solution:
         """
         n = len(temperatures)
         result = [0] * n
-        stack = [] 
+        stack = []
 
         for i in range(n):
             while stack and temperatures[i] > temperatures[stack[-1]]:
@@ -26,9 +26,19 @@ class Solution:
             stack.append(i)
         return result
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     sol = Solution()
-    print("Test 1: [73,74,75,71,69,72,76,73] -> Expected: [1,1,4,2,1,1,0,0], Got:", sol.dailyTemperatures([73,74,75,71,69,72,76,73]))
-    print("Test 2: [30,40,50,60]             -> Expected: [1,1,1,0], Got:", sol.dailyTemperatures([30,40,50,60]))
-    print("Test 3: [30,30,30]                -> Expected: [0,0,0], Got:", sol.dailyTemperatures([30,30,30]))
+    print(
+        "Test 1: [73,74,75,71,69,72,76,73] -> Expected: [1,1,4,2,1,1,0,0], Got:",
+        sol.dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]),
+    )
+    print(
+        "Test 2: [30,40,50,60]             -> Expected: [1,1,1,0], Got:",
+        sol.dailyTemperatures([30, 40, 50, 60]),
+    )
+    print(
+        "Test 3: [30,30,30]                -> Expected: [0,0,0], Got:",
+        sol.dailyTemperatures([30, 30, 30]),
+    )
     print("All tests executed!")

@@ -7,6 +7,7 @@
 
 from collections import deque
 
+
 class Solution:
     def levelOrder(self, root) -> list[list[int]]:
         """
@@ -19,11 +20,12 @@ class Solution:
 
         Implementation Note:
         - We use collections.deque for O(1) pops from the left.
-        - Taking `l = len(q)` strictly at the start of the while loop guarantees we only process 
+        - Taking `l = len(q)` strictly at the start of the while loop guarantees we only process
           nodes from the current level before moving on to the children.
         """
         res = []
-        if not root: return res
+        if not root:
+            return res
 
         q = deque([root])
         while q:
@@ -33,11 +35,14 @@ class Solution:
                 node = q.popleft()
                 level.append(node.val)
 
-                if node.left: q.append(node.left)
-                if node.right: q.append(node.right)
-            
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+
             res.append(level)
         return res
+
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -45,9 +50,10 @@ class TreeNode:
         self.left = left
         self.right = right
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     sol = Solution()
-    
+
     # Test 1: [3,9,20,null,null,15,7]
     root1 = TreeNode(3)
     root1.left = TreeNode(9)

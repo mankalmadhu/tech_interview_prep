@@ -6,5 +6,5 @@ class Solution:
         result = 0
         for num in A:
             result ^= num
-            
+
         return result

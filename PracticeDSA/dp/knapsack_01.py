@@ -1,4 +1,3 @@
-
 """
 The Setup
 values: [10, 40, 30]
@@ -100,54 +99,56 @@ The function returns 40. Notice how every time we computed a result for a (n, c)
 
 
 def knapsack_01(values, weights, capacity):
-  n = len(values)
-  memo = [[-1 for _ in range(capacity + 1)] for _ in range(n + 1)]
-  return knapsack_01_recursive(values, weights, capacity, n, memo)
+    n = len(values)
+    memo = [[-1 for _ in range(capacity + 1)] for _ in range(n + 1)]
+    return knapsack_01_recursive(values, weights, capacity, n, memo)
 
 
 def knapsack_01_recursive(values, weights, capacity, n, memo):
-  if n == 0 or capacity == 0:
-    return 0
+    if n == 0 or capacity == 0:
+        return 0
 
-  if memo[n][capacity] != -1:
-    return memo[n][capacity]
+    if memo[n][capacity] != -1:
+        return memo[n][capacity]
 
-  if weights[n - 1] > capacity:
-    result = knapsack_01_recursive(values, weights, capacity, n - 1, memo)
-  else:
-    val_exclude = knapsack_01_recursive(values, weights, capacity, n - 1, memo)
-    val_include = values[n - 1] + knapsack_01_recursive(
-        values, weights, capacity - weights[n - 1], n - 1, memo)
-    result = max(val_exclude, val_include)
+    if weights[n - 1] > capacity:
+        result = knapsack_01_recursive(values, weights, capacity, n - 1, memo)
+    else:
+        val_exclude = knapsack_01_recursive(values, weights, capacity, n - 1, memo)
+        val_include = values[n - 1] + knapsack_01_recursive(
+            values, weights, capacity - weights[n - 1], n - 1, memo
+        )
+        result = max(val_exclude, val_include)
 
-  memo[n][capacity] = result
-  return result
+    memo[n][capacity] = result
+    return result
+
 
 class SolutionOptimal:
     """
     Smart Review Discussion (2026-05-24):
     -------------------------------------
     This is the 1D space-optimized dynamic programming approach for 0/1 Knapsack.
-    
+
     Instead of using a 2D array of size (n+1) x (capacity+1), we use a 1D array of size (capacity+1).
     The crucial detail is that the inner loop over weights MUST iterate backwards (from capacity down to weight[i]).
-    Iterating backwards guarantees we are using the results from the *previous* item (i-1) and we don't 
+    Iterating backwards guarantees we are using the results from the *previous* item (i-1) and we don't
     accidentally include the current item (i) multiple times, which preserves the "0/1" property.
     (If we iterated forwards, we would inadvertently solve the Unbounded Knapsack problem).
 
     Example Trace (values=[10, 40, 30], weights=[5, 4, 6], capacity=8):
     Initial dp: [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    
+
     i=0 (v=10, w=5): Iterating w backwards 8 down to 5
       dp[8..5] = max(0, 10 + dp[w-5]) -> all become 10
       dp array: [0, 0, 0, 0, 0, 10, 10, 10, 10]
-      
+
     i=1 (v=40, w=4): Iterating w backwards 8 down to 4
       dp[8] = max(dp[8], 40 + dp[4]) = max(10, 40+0) = 40
       dp[5] = max(dp[5], 40 + dp[1]) = max(10, 40+0) = 40
       ... (other updates similarly take the value 40)
       dp array: [0, 0, 0, 0, 40, 40, 40, 40, 40]
-      
+
     i=2 (v=30, w=6): Iterating w backwards 8 down to 6
       dp[8] = max(dp[8], 30 + dp[2]) = max(40, 30+0) = 40
       ... (other updates similarly stay at 40 since 40 > 30)
@@ -156,7 +157,10 @@ class SolutionOptimal:
     Time Complexity: O(N * W) where N is the number of items and W is the capacity.
     Space Complexity: O(W) for the 1D DP array.
     """
-    def solveKnapsack(self, values: list[int], weights: list[int], capacity: int) -> int:
+
+    def solveKnapsack(
+        self, values: list[int], weights: list[int], capacity: int
+    ) -> int:
         n = len(weights)
         dp = [0] * (capacity + 1)
 
@@ -165,4 +169,3 @@ class SolutionOptimal:
                 dp[w] = max(dp[w], values[i] + dp[w - weights[i]])
 
         return dp[capacity]
-

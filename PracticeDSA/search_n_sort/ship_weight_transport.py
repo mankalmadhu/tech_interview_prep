@@ -9,32 +9,32 @@ class Solution:
         Strategy: Binary Search on Answer
         ---------------------------------
         Instead of searching the array 'A', we search for the *capacity* itself.
-        
+
         1. Search Space Definition:
-           - Lower Bound (low): max(A). The ship MUST be large enough to carry 
+           - Lower Bound (low): max(A). The ship MUST be large enough to carry
              the single heaviest package.
-           - Upper Bound (high): sum(A). In the worst case (1 day), the ship 
+           - Upper Bound (high): sum(A). In the worst case (1 day), the ship
              must carry everything at once.
-        
+
         2. The Search (Minimization):
            - We pick a candidate capacity 'mid'.
-           - We run a greedy check (`canShipWeight`) to see if it's possible 
+           - We run a greedy check (`canShipWeight`) to see if it's possible
              to ship all packages within 'B' days using this capacity.
-           - If Possible (True): We record this as a potential answer and try 
+           - If Possible (True): We record this as a potential answer and try
              to find a *smaller* valid capacity (move high to left).
            - If Not Possible (False): We need a *larger* capacity (move low to right).
 
         Complexity Analysis:
         --------------------
         Time Complexity: O(N * log(Sum(A) - Max(A)))
-           - The Binary Search runs on the range of possible capacities (S). 
+           - The Binary Search runs on the range of possible capacities (S).
              The number of iterations is O(log S).
-           - Inside each iteration, `canShipWeight` iterates through the array 'A' 
+           - Inside each iteration, `canShipWeight` iterates through the array 'A'
              once to simulate the shipping. This takes O(N).
            - Total = O(N * log S).
 
         Space Complexity: O(1)
-           - We only use a few variables for pointers and sums. We do not use 
+           - We only use a few variables for pointers and sums. We do not use
              extra data structures proportional to the input size.
 
         Example Trace:
@@ -44,7 +44,7 @@ class Solution:
 
         1. Iteration 1:
            - mid = (3 + 6) // 2 = 4
-           - check(4): 
+           - check(4):
              - Day 1: Load 1, Load 2. (Current Load: 3). Next is 3 (3+3 > 4), so stop.
              - Day 2: Load 3. (Current Load: 3).
              - Success! Valid in 2 days.
@@ -85,5 +85,5 @@ class Solution:
                 cur_load = weight
             else:
                 cur_load += weight
-        
+
         return days <= B

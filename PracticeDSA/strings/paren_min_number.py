@@ -9,14 +9,14 @@ class Solution:
         -------------------------
         1. We use a Stack to track unmatched OPENING parentheses '('.
         2. We use a Counter to track unmatched CLOSING parentheses ')'.
-        
+
         Logic:
         - Iterate through the string.
         - Case '(': Always push to stack. It waits for a matching ')'.
         - Case ')':
           - If Stack is not empty: We found a match! Pop from stack.
           - If Stack is empty: This ')' has no matching opener. Increment Counter.
-        
+
         Final Result:
         - The counter holds the number of ')' that need an opener added.
         - The stack length holds the number of '(' that need a closer added.
@@ -30,7 +30,7 @@ class Solution:
         stack = []
         count = 0
         for i in A:
-            if i == '(':
+            if i == "(":
                 stack.append(i)
             else:
                 if stack:
@@ -47,5 +47,4 @@ if __name__ == "__main__":
 
     for idx, A in enumerate(inputs):
         result = sol.solve(A)
-        print(
-            f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+        print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")

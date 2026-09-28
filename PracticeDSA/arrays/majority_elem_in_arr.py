@@ -12,7 +12,7 @@ class Solution:
         for num in A:
             if count == 0:
                 candidate = num
-            count += (1 if num == candidate else -1)
+            count += 1 if num == candidate else -1
         return candidate
 
 
@@ -22,8 +22,8 @@ def main():
     for idx, A in enumerate(inputs):
         sol = Solution()
         result = sol.majorityElement(A)
-        print(
-            f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+        print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+
 
 if __name__ == "__main__":
     main()

@@ -1,10 +1,11 @@
 class Solution:
-  # @param A : list of integers
-  # @return a list of integers
-  def solve(self, A):
-      A_square = [elem*elem for elem in A]
-      A_square.sort()
-      return A_square
+    # @param A : list of integers
+    # @return a list of integers
+    def solve(self, A):
+        A_square = [elem * elem for elem in A]
+        A_square.sort()
+        return A_square
+
 
 """
 Optimal O(N) Two Pointer Solution:
@@ -18,12 +19,14 @@ Complexity Analysis:
 - Time Complexity: O(N) where N is the number of elements. We iterate through the array exactly once with the two pointers.
 - Space Complexity: O(N) strictly for the auxiliary `result` array required to hold the answers.
 """
+
+
 class SolutionOptimal:
     def sortedSquares(self, nums: list[int]) -> list[int]:
         n = len(nums)
         result = [0] * n
 
-        left, right, res_index = 0, n-1, n-1
+        left, right, res_index = 0, n - 1, n - 1
 
         while left <= right:
             l_squared = nums[left] * nums[left]
@@ -35,6 +38,6 @@ class SolutionOptimal:
             else:
                 result[res_index] = r_squared
                 right -= 1
-            
+
             res_index -= 1
         return result

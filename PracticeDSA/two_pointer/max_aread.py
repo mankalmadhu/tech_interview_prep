@@ -1,4 +1,3 @@
-
 """
 The Logic
 Let's say our left pointer is at a height of 3 and our right pointer is at a height of 8. The width is, say, 7.
@@ -17,21 +16,22 @@ If we move the shorter pointer (the '3') inward: We lose the current limiting li
 
 By moving the pointer of the shorter line, we get rid of the element that is limiting our area and create a chance to find a better one.
 """
+
+
 def calculate_max_area(height):
     left = 0
-    right = len(height) -1
+    right = len(height) - 1
 
     max_area = 0
 
     while left < right:
-        current_area = (right-left) * min(height[right], height[left])
+        current_area = (right - left) * min(height[right], height[left])
         if current_area > max_area:
             max_area = current_area
-        
+
         if height[left] < height[right]:
             left += 1
         else:
             right -= 1
 
     return max_area
-        

@@ -8,25 +8,26 @@ class Solution:
         if n < 3:
             return 0
 
-        a_max1, a_max2, a_max3 = float('-inf'), float('-inf'), float('-inf')
-        a_min1, a_min2 = float('inf'), float('inf')
-        b_max1, b_max2 = float('-inf'), float('-inf')
-        b_min1 = float('inf')
-        c_min1 = float('inf')
+        a_max1, a_max2, a_max3 = float("-inf"), float("-inf"), float("-inf")
+        a_min1, a_min2 = float("inf"), float("inf")
+        b_max1, b_max2 = float("-inf"), float("-inf")
+        b_min1 = float("inf")
+        c_min1 = float("inf")
 
         for i in range(n):
             num = float(A[i])
             if num < 2 / 3:
                 a_min1, a_min2 = self.get_abucket_min(num, a_min1, a_min2)
                 a_max1, a_max2, a_max3 = self.get_abucket_max(
-                    num, a_max1, a_max2, a_max3)
+                    num, a_max1, a_max2, a_max3
+                )
             elif num >= 2 / 3 and num < 1:
                 b_min1 = self.get_bbucket_min(num, b_min1)
                 b_max1, b_max2 = self.get_bbucket_max(num, b_max1, b_max2)
             elif num >= 1 and num < 2:
                 c_min1 = self.get_cbucket_min(num, c_min1)
 
-        #combine the print statements into one line
+        # combine the print statements into one line
         print(
             f"a_min1: {a_min1}, a_min2: {a_min2}, a_max1: {a_max1}, a_max2: {a_max2}, a_max3: {a_max3}, b_min1: {b_min1}, b_max1: {b_max1}, b_max2: {b_max2}, c_min1: {c_min1}"
         )
@@ -47,6 +48,7 @@ class Solution:
     def is_in_range(self, a, b, c):
 
         import math
+
         if math.isinf(a) or math.isinf(b) or math.isinf(c):
             return False
 
@@ -111,13 +113,23 @@ class Solution:
 
 
 def main():
-    inputs = [["0.6", "0.7", "0.8", "1.2", "0.4"], ["0.1", "0.2", "0.3", "0.4"],
-        ["0.8", "0.7", "0.9"], ["0.1", "0.8", "0.25", "1.5"],
-        ["0.2", "0.3", "2.5", "3.0"], ["1.1", "0.5"],
+    inputs = [
+        ["0.6", "0.7", "0.8", "1.2", "0.4"],
+        ["0.1", "0.2", "0.3", "0.4"],
+        ["0.8", "0.7", "0.9"],
+        ["0.1", "0.8", "0.25", "1.5"],
+        ["0.2", "0.3", "2.5", "3.0"],
+        ["1.1", "0.5"],
         [
-            "2.673662", "2.419159", "0.573816", "2.454376", "0.403605",
-            "2.503658", "0.806191"
-        ]]
+            "2.673662",
+            "2.419159",
+            "0.573816",
+            "2.454376",
+            "0.403605",
+            "2.503658",
+            "0.806191",
+        ],
+    ]
 
     expected_outputs = [1, 0, 0, 1, 0, 0, 1]
 
@@ -125,4 +137,3 @@ def main():
         sol = Solution()
         result = sol.solve(A)
         print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
-    

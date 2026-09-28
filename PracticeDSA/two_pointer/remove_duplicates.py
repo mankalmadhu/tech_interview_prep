@@ -1,5 +1,4 @@
 class Solution:
-
     def removeDuplicates(self, A):
         """
         Key line here is the  A[low] = A[high] inside not equal check.
@@ -25,6 +24,5 @@ if __name__ == "__main__":
     As = [[1, 1, 2], [1, 2, 2, 3, 3]]
     expected = [2, 3]
     for i in range(len(As)):
-
         result = sol.removeDuplicates(As[i])
-        print(f'result:{result},expected:{expected[i]}')
+        print(f"result:{result},expected:{expected[i]}")

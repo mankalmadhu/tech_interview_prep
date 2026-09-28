@@ -1,22 +1,46 @@
 class Solution:
     one = [
-        "", "one-", "two-", "three-", "four-", "five-", "six-", "seven-",
-        "eight-", "nine-", "ten-", "eleven-", "twelve-", "thirteen-",
-        "fourteen-", "fifteen-", "sixteen-", "seventeen-", "eighteen-",
-        "nineteen-"
+        "",
+        "one-",
+        "two-",
+        "three-",
+        "four-",
+        "five-",
+        "six-",
+        "seven-",
+        "eight-",
+        "nine-",
+        "ten-",
+        "eleven-",
+        "twelve-",
+        "thirteen-",
+        "fourteen-",
+        "fifteen-",
+        "sixteen-",
+        "seventeen-",
+        "eighteen-",
+        "nineteen-",
     ]
 
     # strings at index 0 and 1 are not used to make array indexing simple
     ten = [
-        "", "", "twenty-", "thirty-", "forty-", "fifty-", "sixty-", "seventy-",
-        "eighty-", "ninety-"
+        "",
+        "",
+        "twenty-",
+        "thirty-",
+        "forty-",
+        "fifty-",
+        "sixty-",
+        "seventy-",
+        "eighty-",
+        "ninety-",
     ]
 
     def solve(self, A, B):
         n = (int)(A)
         y = self.convertToWords(n)
 
-        if (y == B):
+        if y == B:
             return 1
 
         return 0
@@ -24,7 +48,7 @@ class Solution:
     # n is 1- or 2-digit number
     def numToWords(self, n, s):
         res = ""
-        if (n > 19):
+        if n > 19:
             res = res + self.ten[n // 10] + self.one[n % 10]
         else:
             res = res + self.one[n]
@@ -35,11 +59,11 @@ class Solution:
         return res
 
     def convertToWords(self, n):
-        ncrore = (n // 10000000)
+        ncrore = n // 10000000
         nlakh = (n // 100000) % 100
         nthousand = (n // 1000) % 100
         nten = (n // 100) % 10
-        nunit = (n % 100)
+        nunit = n % 100
 
         print(ncrore)
         print(nlakh)
@@ -52,7 +76,7 @@ class Solution:
         out += self.numToWords(nlakh, "lakh-")
         out += self.numToWords(nthousand, "thousand-")
         out += self.numToWords(nten, "hundred-")
-        if (n > 100 and n % 100):
+        if n > 100 and n % 100:
             out += "and-"
         out += self.numToWords(nunit, "")
         out = out[:-1]

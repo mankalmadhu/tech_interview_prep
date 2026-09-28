@@ -4,6 +4,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 """
 LeetCode Link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
@@ -22,22 +23,26 @@ Complexity Analysis:
 - Space Complexity: O(H) where H is the height of the tree. This is the auxiliary space used by the recursion call stack. In the worst case (a completely unbalanced, linked-list-like tree), this degrades to O(N).
 """
 
+
 class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        
+    def lowestCommonAncestor(
+        self, root: "TreeNode", p: "TreeNode", q: "TreeNode"
+    ) -> "TreeNode":
+
         if not root:
             return
-        
+
         if root == p or root == q:
             return root
-        
+
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
 
         if left and right:
             return root
-        
+
         return left if left else right
+
 
 if __name__ == "__main__":
     sol = Solution()
@@ -54,9 +59,11 @@ if __name__ == "__main__":
     root.left.right = TreeNode(2)
     root.right.left = TreeNode(0)
     root.right.right = TreeNode(8)
-    
+
     # Test 1: p=5, q=1 -> LCA=3
     print("Test 1:", sol.lowestCommonAncestor(root, root.left, root.right).val == 3)
-    
+
     # Test 2: p=5, q=2 -> LCA=5
-    print("Test 2:", sol.lowestCommonAncestor(root, root.left, root.left.right).val == 5)
+    print(
+        "Test 2:", sol.lowestCommonAncestor(root, root.left, root.left.right).val == 5
+    )

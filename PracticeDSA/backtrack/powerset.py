@@ -12,9 +12,9 @@ def build_powerset(nums):
         A list of lists, where each inner list is a unique subset of `nums`.
 
     Complexity:
-        - Time: O(N * 2^N) because the binary decision tree creates 2^N paths, 
+        - Time: O(N * 2^N) because the binary decision tree creates 2^N paths,
           and at each leaf node, making a deep copy of the subset takes O(N) time.
-        - Space: O(N) auxiliary space. The deepest the recursion stack will ever 
+        - Space: O(N) auxiliary space. The deepest the recursion stack will ever
           get is N frames, and the current_subset never exceeds N items.
 
     Trace for nums = [1, 2, 3]:
@@ -40,7 +40,7 @@ def build_powerset(nums):
              -> Calls `backtrack(1, [1])`. This will explore all paths starting
                 with `1`, generating `[1]`, `[1, 3]`, `[1, 2]`, and `[1, 2, 3]`.
              -> Backtrack: pop `1`. current_subset is `[]` again.
-        
+
         The final result is the collection of all subsets found at the base cases.
     """
     result = []
@@ -48,13 +48,14 @@ def build_powerset(nums):
     backtrack(0, [], nums, result)
     return result
 
+
 def backtrack(index, current_subset, nums, results):
     # Base case: if we've considered all numbers
     if index >= len(nums):
         # Add a copy of the current subset to the results
         results.append(current_subset[:])
         return
-    
+
     # --- Decision 1: Exclude the current number ---
     # Don't add nums[index] to the current_subset
     backtrack(index + 1, current_subset, nums, results)
