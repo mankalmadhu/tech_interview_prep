@@ -69,7 +69,7 @@
 | PracticeDSA/strings/palindrome.py | 2026-05-12 | 2026-05-31 | 1 | 1 | Strings |
 | PracticeDSA/strings/paren_min_number.py | 2026-05-12 | 2026-06-01 | 1 | 1 | Strings |
 | PracticeDSA/strings/salutes.py | 2026-05-12 | 2026-06-01 | 1 | 1 | Strings |
-| PracticeDSA/two_pointer/diffk.py | 2026-05-12 | 2026-06-01 | 1 | 1 | Two Pointer |
+| PracticeDSA/two_pointer/diffk.py | 2026-09-28 | 2026-10-12 | 4 | 2 | Two Pointer |
 | PracticeDSA/two_pointer/longest_substring.py | 2026-05-14 | 2026-06-13 | 5 | 1 | Two Pointer |
 | PracticeDSA/two_pointer/merge_sorted_lists.py | 2026-05-12 | 2026-06-02 | 1 | 1 | Two Pointer |
 | PracticeDSA/two_pointer/merge_soted_lists.py | 2026-05-12 | 2026-06-02 | 1 | 1 | Two Pointer |

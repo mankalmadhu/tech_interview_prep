@@ -14,12 +14,24 @@ class Solution:
                 j += 1
             else:
                 i += 1
+        return 0
 
 
 if __name__ == "__main__":
     sol = Solution()
-    As = [[1, 3, 5], [1, 2, 2, 3, 4]]
-    Bs = [4, 0]
-    expected = [1, 1]
+    As = [
+        [1, 3, 5],
+        [1, 2, 2, 3, 4],
+        [5],
+        [],
+        [1, 2, 3, 4, 5],
+        [1, 1, 1],
+        [1, 2, 3],
+    ]
+    Bs = [4, 0, 3, 0, 10, 0, 0]
+    expected = [1, 1, 0, 0, 0, 1, 0]
     for i in range(len(As)):
-        assert sol.diffPossible(As[i], Bs[i]) == expected[i]
+        assert sol.diffPossible(As[i], Bs[i]) == expected[i], (
+            f"A={As[i]}, B={Bs[i]}: expected {expected[i]}"
+        )
+    print("All tests passed!")
