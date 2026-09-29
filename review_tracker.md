@@ -61,7 +61,7 @@
 | PracticeDSA/search_n_sort/insertion_sort.py | 2026-06-03 | 2026-07-03 | 5 | 2 | Search N Sort |
 | PracticeDSA/search_n_sort/kth_smallest_elem.py | 2026-06-04 | 2026-06-05 | 2 | 2 | Search N Sort |
 | PracticeDSA/search_n_sort/max_blade_height.py | 2026-05-12 | 2026-05-29 | 1 | 1 | Search N Sort |
-| PracticeDSA/search_n_sort/merge_sort.py | 2026-05-12 | 2026-05-30 | 1 | 1 | Search N Sort |
+| PracticeDSA/search_n_sort/merge_sort.py | 2026-09-29 | 2026-10-13 | 4 | 2 | Search N Sort |
 | PracticeDSA/search_n_sort/quick_sort.py | 2026-05-12 | 2026-05-30 | 1 | 1 | Search N Sort |
 | PracticeDSA/search_n_sort/ship_weight_transport.py | 2026-05-12 | 2026-05-30 | 1 | 1 | Search N Sort |
 | PracticeDSA/strings/amazing_substring.py | 2026-05-12 | 2026-05-31 | 1 | 1 | Strings |
