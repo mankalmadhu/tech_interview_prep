@@ -22,15 +22,24 @@ def quick_sort(arr, low, high):
 
 def partition(arr, low, high):
     pivot = arr[high]
-    j = low - 1
-    for i in range(low, high):
-        if arr[i] <= pivot:
-           j += 1
-           arr[i], arr[j] =  arr[j], arr[i]
-    arr[j+1],arr[high] = arr[high], arr[j+1]
-    return j+1
+    print(f"pivot is:{pivot}")
+    i = low - 1
+
+    for j in range(low, high):
+        print(f"i is:{i}")
+        if arr[j] <= pivot:
+            i += 1
+            print(f"swapping in loop for i:{i} and j:{j}")
+            arr[i], arr[j] = arr[j], arr[i]
+        print(f"inside loop:{arr}")
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    print(f"before return:{arr}")
+    return i + 1
 
 
 if __name__ == "__main__":
     # add your own test calls here once implemented
-    pass
+    A = [4,3,1,2]
+    low = 0
+    high = len(A) -1
+    partition(A, low, high)

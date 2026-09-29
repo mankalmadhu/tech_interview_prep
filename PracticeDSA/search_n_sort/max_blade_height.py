@@ -66,3 +66,24 @@ if __name__ == "__main__":
     for idx, a in enumerate(A):
         result = sol.solve(a, B[idx])
         print(f"Expected Result: {expcted_output[idx]}.Actual Result:{result}")
+
+    # Randomized stress test against a brute-force scan of every candidate height.
+    import random
+
+    def brute_force(arr, target):
+        best = -1
+        for h in range(0, max(arr) + 1):
+            wood = sum(a - h for a in arr if a > h)
+            if wood >= target:
+                best = h
+        return best
+
+    random.seed(1)
+    for _ in range(2000):
+        n = random.randint(1, 8)
+        arr = [random.randint(1, 50) for _ in range(n)]
+        b = random.randint(1, sum(arr))
+        expected = brute_force(arr, b)
+        got = sol.solve(arr[:], b)
+        assert got == expected, f"FAIL {arr}, {b}: expected {expected}, got {got}"
+    print("2000 randomized stress trials passed.")
