@@ -11,6 +11,7 @@
       "source.organizeImports": "explicit"
     }
   },
+  "editor.inlineSuggest.enabled": false,
   "editor.rulers": [88],
   "editor.renderWhitespace": "boundary",
   "files.trimTrailingWhitespace": true,

@@ -22,8 +22,20 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
 
-    inputs = ["A man, a plan, a canal: Panama", "race a car"]
-    expected_outputs = [1, 0]
+    inputs = [
+        "A man, a plan, a canal: Panama",
+        "race a car",
+        "",
+        " ",
+        ".,",
+        "0P",
+        "a.",
+    ]
+    expected_outputs = [1, 0, 1, 1, 1, 0, 1]
     for idx, A in enumerate(inputs):
         result = sol.isPalindrome(A)
+        assert result == expected_outputs[idx], (
+            f"A={A!r}: expected {expected_outputs[idx]}, got {result}"
+        )
         print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+    print("All tests passed!")
