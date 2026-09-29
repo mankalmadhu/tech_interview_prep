@@ -29,9 +29,30 @@ class Solution:
 
 
 if __name__ == "__main__":
+    import random
+
     sol = Solution()
-    A = [1, 5, 8]
-    B = [6, 9]
-    expected = [1, 5, 6, 8, 9]
-    sol.merge(A, B)
-    print(A, expected)
+    cases = [
+        ([1, 5, 8], [6, 9], [1, 5, 6, 8, 9]),
+        ([], [1, 2], [1, 2]),
+        ([1, 2], [], [1, 2]),
+        ([1, 3, 5], [2, 4, 6], [1, 2, 3, 4, 5, 6]),
+        ([], [], []),
+    ]
+    for A, B, expected in cases:
+        A2 = list(A)
+        sol.merge(A2, list(B))
+        assert A2 == expected, f"A={A}, B={B}: expected {expected}, got {A2}"
+        print(f"A={A}, B={B} -> merged {A2}")
+
+    random.seed(42)
+    for _ in range(2000):
+        n, m = random.randint(0, 8), random.randint(0, 8)
+        A = sorted(random.randint(-5, 5) for _ in range(n))
+        B = sorted(random.randint(-5, 5) for _ in range(m))
+        expected = sorted(A + B)
+        A2 = list(A)
+        sol.merge(A2, list(B))
+        assert A2 == expected, f"A={A}, B={B}: expected {expected}, got {A2}"
+
+    print("All tests passed!")

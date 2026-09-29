@@ -67,12 +67,12 @@
 | PracticeDSA/strings/amazing_substring.py | 2026-09-29 | 2026-10-29 | 5 | 2 | Strings |
 | PracticeDSA/strings/amount_number_words.py | 2026-05-12 | 2026-05-31 | 1 | 1 | Strings |
 | PracticeDSA/strings/palindrome.py | 2026-09-29 | 2026-10-29 | 5 | 2 | Strings |
-| PracticeDSA/strings/paren_min_number.py | 2026-05-12 | 2026-06-01 | 1 | 1 | Strings |
+| PracticeDSA/strings/paren_min_number.py | 2026-09-29 | 2026-10-29 | 5 | 2 | Strings |
 | PracticeDSA/strings/salutes.py | 2026-09-29 | 2026-10-29 | 5 | 2 | Strings |
 | PracticeDSA/two_pointer/diffk.py | 2026-09-28 | 2026-10-12 | 4 | 2 | Two Pointer |
 | PracticeDSA/two_pointer/longest_substring.py | 2026-05-14 | 2026-06-13 | 5 | 1 | Two Pointer |
-| PracticeDSA/two_pointer/merge_sorted_lists.py | 2026-05-12 | 2026-06-02 | 1 | 1 | Two Pointer |
-| PracticeDSA/two_pointer/merge_soted_lists.py | 2026-05-12 | 2026-06-02 | 1 | 1 | Two Pointer |
+| PracticeDSA/two_pointer/merge_sorted_lists.py | 2026-09-29 | 2026-10-13 | 4 | 2 | Two Pointer |
+| PracticeDSA/two_pointer/merge_soted_lists.py | 2026-09-29 | 2026-10-13 | 4 | 2 | Two Pointer |
 | PracticeDSA/two_pointer/remove_duplicates.py | 2026-09-29 | 2026-10-29 | 5 | 2 | Two Pointer |
 | PracticeDSA/two_pointer/triplet_sum.py | 2026-09-29 | 2026-10-13 | 4 | 2 | Two Pointer |
 | PracticeDSA/arrays/merge_intervals.py | 2026-05-13 | 2026-06-12 | 5 | 1 | Arrays/Sorting |
