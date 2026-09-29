@@ -12,7 +12,12 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    A = "ABEC"
-    expected_output = 6
-    result = sol.solve(A)
-    print(f"Expected Result: {expected_output}.Actual Result:{result}")
+    inputs = ["ABEC", "", "bcd", "a", "aeiou"]
+    expected_outputs = [6, 0, 0, 1, 15]
+    for idx, A in enumerate(inputs):
+        result = sol.solve(A)
+        assert result == expected_outputs[idx], (
+            f"A={A!r}: expected {expected_outputs[idx]}, got {result}"
+        )
+        print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+    print("All tests passed!")
