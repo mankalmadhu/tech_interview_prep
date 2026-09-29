@@ -149,3 +149,35 @@ class QuickSelectSolution:
             return self.quickselect(A, left, pivot_idx - 1, k)
         else:
             return self.quickselect(A, pivot_idx + 1, right, k - rank)
+
+
+if __name__ == "__main__":
+    import random
+
+    fixed_cases = [
+        ([7, 10, 4, 3, 20, 15], 3, 7),
+        ([7, 10, 4, 3, 20, 15], 1, 3),
+        ([7, 10, 4, 3, 20, 15], 6, 20),
+        ([2, 2, 2, 2], 2, 2),
+        ([1], 1, 1),
+        ([-5, 3, -2, 0], 2, -2),
+    ]
+
+    for A, B, expected in fixed_cases:
+        got_binary = Solution().kthsmallest(A[:], B)
+        got_quickselect = QuickSelectSolution().kthsmallest(A[:], B)
+        assert got_binary == expected, f"binary-search failed: {A}, {B} -> {got_binary}"
+        assert got_quickselect == expected, (
+            f"quickselect failed: {A}, {B} -> {got_quickselect}"
+        )
+    print(f"All {len(fixed_cases)} fixed cases passed for both solutions.")
+
+    random.seed(42)
+    for _ in range(2000):
+        n = random.randint(1, 30)
+        A = [random.randint(-10, 10) for _ in range(n)]
+        B = random.randint(1, n)
+        expected = sorted(A)[B - 1]
+        assert Solution().kthsmallest(A[:], B) == expected
+        assert QuickSelectSolution().kthsmallest(A[:], B) == expected
+    print("2000 randomized stress trials passed for both solutions.")
