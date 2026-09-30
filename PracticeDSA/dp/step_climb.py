@@ -42,3 +42,22 @@ def climb_tabulate_space_optimised(k):
         one_step_before = current
 
     return current
+
+
+if __name__ == "__main__":
+    fixed_cases = [(1, 1), (2, 2), (3, 3), (4, 5), (5, 8), (10, 89)]
+    for k, expected in fixed_cases:
+        for fn in (climb, climb_tabulate, climb_tabulate_space_optimised):
+            got = fn(k)
+            assert got == expected, f"{fn.__name__}({k}) = {got}, expected {expected}"
+    print(f"All {len(fixed_cases)} fixed cases passed for all 3 implementations.")
+
+    import time
+
+    start = time.time()
+    climb(500)
+    elapsed = time.time() - start
+    assert elapsed < 0.01, (
+        f"climb(500) took {elapsed:.4f}s -- memoization may be broken"
+    )
+    print(f"climb(500) ran in {elapsed:.6f}s -- memoization confirmed working.")

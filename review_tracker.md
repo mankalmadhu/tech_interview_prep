@@ -10,7 +10,7 @@
 | PracticeDSA/search_n_sort/find_min_rotated.py | 2026-05-15 | 2026-06-14 | 5 | 1 | Binary Search/Rotated Array |
 | PracticeDSA/graphs/num_islands.py | 2026-05-16 | 2026-06-15 | 5 | 1 | Graphs/DFS |
 | PracticeDSA/arrays/top_k_frequent.py | 2026-05-12 | 2026-06-11 | 5 | 1 | Arrays/Heaps/Bucket Sort |
-| PracticeDSA/dp/step_climb.py | 2026-05-12 | 2026-06-11 | 5 | 1 | DP/Fibonacci |
+| PracticeDSA/dp/step_climb.py | 2026-09-30 | 2026-10-30 | 5 | 2 | DP/Fibonacci |
 | PracticeDSA/arrays/ar1.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/array_elem_greater_than_p.py | 2026-05-13 | 2026-06-12 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/bulbs_on.py | 2026-05-13 | 2026-06-12 | 5 | 1 | Arrays |
