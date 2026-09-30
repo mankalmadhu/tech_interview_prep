@@ -46,7 +46,7 @@
 | PracticeDSA/backtrack/generate_parenthesis.py | 2026-05-31 | 2026-06-30 | 5 | 1 | Backtrack |
 | PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Greedy Algo |
 
-| PracticeDSA/math/gcd.py | 2026-05-20 | 2026-06-19 | 5 | 1 | Math |
+| PracticeDSA/math/gcd.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Math |
 | PracticeDSA/math/highest_score.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Math |
 | PracticeDSA/math/is_rectangle.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Math |
 | PracticeDSA/math/palindrome_integer.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Math |
