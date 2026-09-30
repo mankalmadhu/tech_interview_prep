@@ -72,3 +72,35 @@ if __name__ == "__main__":
         sol.canFinish(4, [[1, 0], [2, 1], [3, 2], [1, 3]]),
     )
     print("All tests executed!")
+
+    # Randomized stress test against Kahn's algorithm (topological sort) as ground truth.
+    import random
+    from collections import defaultdict, deque
+
+    def has_cycle_kahn(n, edges):
+        indeg = [0] * n
+        adj = defaultdict(list)
+        for course, prereq in edges:
+            adj[prereq].append(course)
+            indeg[course] += 1
+        q = deque(i for i in range(n) if indeg[i] == 0)
+        seen = 0
+        while q:
+            u = q.popleft()
+            seen += 1
+            for v in adj[u]:
+                indeg[v] -= 1
+                if indeg[v] == 0:
+                    q.append(v)
+        return seen != n
+
+    random.seed(3)
+    for _ in range(2000):
+        n = random.randint(1, 8)
+        m = random.randint(0, n * 2)
+        edges = [[random.randint(0, n - 1), random.randint(0, n - 1)] for _ in range(m)]
+        edges = [e for e in edges if e[0] != e[1]]
+        expected = not has_cycle_kahn(n, edges)
+        got = sol.canFinish(n, edges)
+        assert got == expected, f"FAIL {n}, {edges}: expected {expected}, got {got}"
+    print("2000 randomized stress trials passed.")
