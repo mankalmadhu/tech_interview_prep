@@ -79,3 +79,20 @@ if __name__ == "__main__":
     print("Test 3: []          -> Expected: [], Got:", get_list_values(rev3))
 
     print("All tests executed!")
+
+    # Regression: empty-input must return None (not an empty list/other type).
+    assert rev3 is None, f"Expected None for empty input, got {rev3!r}"
+    print("Empty-input return-type check passed (returns None).")
+
+    import random
+
+    random.seed(9)
+    for _ in range(1000):
+        n = random.randint(0, 15)
+        vals = [random.randint(-10, 10) for _ in range(n)]
+        h = build_list(vals)
+        r = sol.reverseList(h)
+        got = get_list_values(r)
+        expected = list(reversed(vals))
+        assert got == expected, f"FAIL {vals}: got {got}, expected {expected}"
+    print("1000 randomized stress trials passed.")
