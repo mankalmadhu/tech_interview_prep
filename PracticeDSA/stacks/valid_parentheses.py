@@ -43,3 +43,35 @@ if __name__ == "__main__":
     print("Test 3: ([)]   -> Expected: False, Got:", sol.isValid("([)]"))
     print("Test 4: ]      -> Expected: False, Got:", sol.isValid("]"))
     print("All tests executed!")
+
+    # Extra edge cases discovered during review (unmatched closing after
+    # otherwise-balanced prefix, e.g. "()]").
+    edge_cases = [("", True), ("(])", False), ("}()", False), ("()]", False)]
+    for s, expected in edge_cases:
+        got = sol.isValid(s)
+        assert got == expected, f"isValid({s!r}) = {got}, expected {expected}"
+    print(f"All {len(edge_cases)} edge cases passed.")
+
+    import random
+
+    def brute(s):
+        stack = []
+        pairs = {")": "(", "}": "{", "]": "["}
+        for ch in s:
+            if ch in "({[":
+                stack.append(ch)
+            else:
+                if not stack or stack[-1] != pairs[ch]:
+                    return False
+                stack.pop()
+        return len(stack) == 0
+
+    random.seed(11)
+    chars = "(){}[]"
+    for _ in range(5000):
+        n = random.randint(0, 12)
+        s = "".join(random.choice(chars) for _ in range(n))
+        expected = brute(s)
+        got = sol.isValid(s)
+        assert got == expected, f"isValid({s!r}) = {got}, expected {expected}"
+    print("5000 randomized stress trials passed.")
