@@ -67,3 +67,23 @@ def backtrack(index, current_subset, nums, results):
     backtrack(index + 1, current_subset, nums, results)
     # Backtrack: remove the number to clean up for the next recursive calls
     current_subset.pop()
+
+
+if __name__ == "__main__":
+    import itertools
+
+    for n in range(0, 8):
+        nums = list(range(n))
+        result = build_powerset(nums)
+        assert len(result) == 2**n, (
+            f"count mismatch for n={n}: {len(result)} != {2**n}"
+        )
+        as_sets = {frozenset(s) for s in result}
+        assert len(as_sets) == len(result), f"duplicates found for n={n}"
+        expected = {
+            frozenset(c)
+            for r in range(n + 1)
+            for c in itertools.combinations(nums, r)
+        }
+        assert as_sets == expected, f"mismatch for n={n}"
+    print("All counts/uniqueness/content checks passed for n=0..7.")
