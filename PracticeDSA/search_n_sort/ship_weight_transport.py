@@ -87,3 +87,40 @@ class Solution:
                 cur_load += weight
 
         return days <= B
+
+
+if __name__ == "__main__":
+    import random
+
+    sol = Solution()
+    fixed_cases = [
+        ([1, 2, 3], 2, 3),
+        ([3, 2, 2, 4, 1, 4], 3, 6),
+    ]
+    for A, B, expected in fixed_cases:
+        got = sol.solve(A, B)
+        assert got == expected, f"FAIL {A}, {B}: expected {expected}, got {got}"
+    print(f"All {len(fixed_cases)} fixed cases passed.")
+
+    def brute_force(arr, days_allowed):
+        for cap in range(max(arr), sum(arr) + 1):
+            days, cur = 1, 0
+            for w in arr:
+                if cur + w <= cap:
+                    cur += w
+                else:
+                    cur = w
+                    days += 1
+            if days <= days_allowed:
+                return cap
+        return sum(arr)
+
+    random.seed(7)
+    for _ in range(2000):
+        n = random.randint(1, 8)
+        arr = [random.randint(1, 20) for _ in range(n)]
+        b = random.randint(1, n)
+        expected = brute_force(arr, b)
+        got = sol.solve(arr[:], b)
+        assert got == expected, f"FAIL {arr}, {b}: expected {expected}, got {got}"
+    print("2000 randomized stress trials passed.")
