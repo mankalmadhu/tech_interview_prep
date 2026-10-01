@@ -39,3 +39,32 @@ class Solution:
                 return True
 
         return False
+
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    n1 = ListNode(3)
+    n2 = ListNode(2)
+    n3 = ListNode(0)
+    n4 = ListNode(-4)
+    n1.next = n2
+    n2.next = n3
+    n3.next = n4
+    n4.next = n2
+    assert sol.hasCycle(n1) is True
+
+    m1 = ListNode(1)
+    m2 = ListNode(2)
+    m1.next = m2
+    assert sol.hasCycle(m1) is False
+
+    assert sol.hasCycle(ListNode(1)) is False
+
+    s1 = ListNode(1)
+    s1.next = s1
+    assert sol.hasCycle(s1) is True
+
+    assert sol.hasCycle(None) is False
+
+    print("All tests passed!")
