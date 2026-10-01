@@ -87,6 +87,6 @@
 | PracticeDSA/trees/level_order_traversal.py | 2026-05-19 | 2026-06-02 | 4 | 1 | Trees/BFS |
 | PracticeDSA/graphs/course_schedule.py | 2026-09-30 | 2026-10-07 | 3 | 2 | Graphs/Cycle Detection |
 | PracticeDSA/backtrack/word_search.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Backtrack/DFS |
-| PracticeDSA/trees/lowest_common_ancestor.py | 2026-05-25 | 2026-06-08 | 4 | 1 | Trees/DFS |
+| PracticeDSA/trees/lowest_common_ancestor.py | 2026-10-01 | 2026-10-31 | 5 | 2 | Trees/DFS |
 | PracticeDSA/trees/valid_bst.py | 2026-06-09 | 2026-07-09 | 5 | 1 | Trees/DFS |
 | PracticeDSA/trees/diameter_tree.py | 2026-06-11 | 2026-06-25 | 4 | 1 | Trees/DFS |

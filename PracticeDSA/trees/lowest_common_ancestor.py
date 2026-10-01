@@ -43,6 +43,42 @@ class Solution:
 
         return left if left else right
 
+    def lowestCommonAncestorIterative(
+        self, root: "TreeNode", p: "TreeNode", q: "TreeNode"
+    ) -> "TreeNode":
+        """
+        Iterative alternative: build a child->parent map via iterative DFS,
+        walk up from p collecting all its ancestors (including itself),
+        then walk up from q until hitting the first node already in that
+        ancestor set. Trades O(H) recursion-stack space for guaranteed
+        O(N) heap space, avoiding stack-overflow risk on deep/skewed trees.
+        Time: O(N) | Space: O(N)
+        """
+        child_to_parent = {}
+        stack = [root]
+        while stack:
+            cur = stack.pop()
+            if cur.left:
+                child_to_parent[cur.left] = cur
+                stack.append(cur.left)
+            if cur.right:
+                child_to_parent[cur.right] = cur
+                stack.append(cur.right)
+
+        p_ancestors = {p}
+        cur_child = p
+        while cur_child in child_to_parent:
+            cur_child = child_to_parent[cur_child]
+            p_ancestors.add(cur_child)
+
+        cur_child = q
+        while True:
+            if cur_child in p_ancestors:
+                return cur_child
+            if cur_child not in child_to_parent:
+                return None
+            cur_child = child_to_parent[cur_child]
+
 
 if __name__ == "__main__":
     sol = Solution()
@@ -59,6 +95,8 @@ if __name__ == "__main__":
     root.left.right = TreeNode(2)
     root.right.left = TreeNode(0)
     root.right.right = TreeNode(8)
+    root.left.right.left = TreeNode(7)
+    root.left.right.right = TreeNode(4)
 
     # Test 1: p=5, q=1 -> LCA=3
     print("Test 1:", sol.lowestCommonAncestor(root, root.left, root.right).val == 3)
@@ -67,3 +105,39 @@ if __name__ == "__main__":
     print(
         "Test 2:", sol.lowestCommonAncestor(root, root.left, root.left.right).val == 5
     )
+
+    assert sol.lowestCommonAncestor(root, root.left, root.right).val == 3
+    assert sol.lowestCommonAncestor(root, root.left, root.left.right).val == 5
+    assert sol.lowestCommonAncestor(root, root.left.left, root.left.right.right).val == 5
+    assert sol.lowestCommonAncestor(root, root.left.right.left, root.left.right.right).val == 2
+    assert sol.lowestCommonAncestor(root, root, root.right.right).val == 3
+
+    assert sol.lowestCommonAncestorIterative(root, root.left, root.right).val == 3
+    assert sol.lowestCommonAncestorIterative(root, root.left, root.left.right).val == 5
+    assert sol.lowestCommonAncestorIterative(root, root.left.left, root.left.right.right).val == 5
+    assert sol.lowestCommonAncestorIterative(root, root.left.right.left, root.left.right.right).val == 2
+    assert sol.lowestCommonAncestorIterative(root, root, root.right.right).val == 3
+    print("fixed cases passed (recursive + iterative)")
+
+    import random
+
+    def build_random_tree(nodes_left, next_val):
+        if nodes_left == 0:
+            return None, []
+        r = TreeNode(next_val[0])
+        next_val[0] += 1
+        nodes_left -= 1
+        left_count = random.randint(0, nodes_left)
+        right_count = nodes_left - left_count
+        r.left, left_nodes = build_random_tree(left_count, next_val)
+        r.right, right_nodes = build_random_tree(right_count, next_val)
+        return r, [r] + left_nodes + right_nodes
+
+    for _ in range(500):
+        n = random.randint(2, 30)
+        rand_root, all_nodes = build_random_tree(n, [0])
+        rp, rq = random.sample(all_nodes, 2)
+        rec = sol.lowestCommonAncestor(rand_root, rp, rq)
+        it = sol.lowestCommonAncestorIterative(rand_root, rp, rq)
+        assert rec is it, f"mismatch for p={rp.val}, q={rq.val}: rec={rec.val}, it={it.val}"
+    print("500 randomized trials passed (recursive vs iterative agree)")
