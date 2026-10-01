@@ -1,5 +1,17 @@
-def binary_search(arr, target):
+"""
+Review scratchpad — solve from scratch, do NOT peek at
+PracticeDSA/search_n_sort/binary_search.py until you're done.
 
+Problem (Binary Search, LeetCode 704):
+
+Given a sorted array and a target value, return the index of target
+if it exists, else return -1.
+
+Write your solution below (O(log N) time, O(1) space).
+"""
+
+
+def binary_search(arr, target):
     left = 0
     right = len(arr) - 1
 
@@ -12,6 +24,7 @@ def binary_search(arr, target):
         else:
             right = mid - 1
     return -1
+
 
 
 if __name__ == "__main__":
