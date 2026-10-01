@@ -58,4 +58,29 @@ if __name__ == "__main__":
     ]
     print("Test 2 -> Expected: 3, Got:", sol.numIslands(grid2))
 
+    grid3 = [["0"]]
+    print("Test 3 -> Expected: 0, Got:", sol.numIslands(grid3))
+
+    grid4 = [["1"]]
+    print("Test 4 -> Expected: 1, Got:", sol.numIslands(grid4))
+
+    assert sol.numIslands(
+        [
+            ["1", "1", "1", "1", "0"],
+            ["1", "1", "0", "1", "0"],
+            ["1", "1", "0", "0", "0"],
+            ["0", "0", "0", "0", "0"],
+        ]
+    ) == 1
+    assert sol.numIslands(
+        [
+            ["1", "1", "0", "0", "0"],
+            ["1", "1", "0", "0", "0"],
+            ["0", "0", "1", "0", "0"],
+            ["0", "0", "0", "1", "1"],
+        ]
+    ) == 3
+    assert sol.numIslands([["0"]]) == 0
+    assert sol.numIslands([["1"]]) == 1
+
     print("All tests executed!")

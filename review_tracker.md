@@ -8,7 +8,7 @@
 | PracticeDSA/linked_list/linked_list_cycle.py | 2026-05-03 | 2026-06-02 | 5 | 1 | Linked List/Fast & Slow Pointers |
 | PracticeDSA/backtrack/powerset.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Backtracking/Subsets |
 | PracticeDSA/search_n_sort/find_min_rotated.py | 2026-05-15 | 2026-06-14 | 5 | 1 | Binary Search/Rotated Array |
-| PracticeDSA/graphs/num_islands.py | 2026-05-16 | 2026-06-15 | 5 | 1 | Graphs/DFS |
+| PracticeDSA/graphs/num_islands.py | 2026-10-01 | 2026-10-31 | 5 | 2 | Graphs/DFS |
 | PracticeDSA/arrays/top_k_frequent.py | 2026-05-12 | 2026-06-11 | 5 | 1 | Arrays/Heaps/Bucket Sort |
 | PracticeDSA/dp/step_climb.py | 2026-09-30 | 2026-10-30 | 5 | 2 | DP/Fibonacci |
 | PracticeDSA/arrays/ar1.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays |
