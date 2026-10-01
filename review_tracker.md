@@ -84,7 +84,7 @@
 | PracticeDSA/linked_list/reverse_linked_list.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Linked List/Pointers |
 | PracticeDSA/dp/house_robber.py | 2026-05-28 | 2026-06-27 | 5 | 1 | DP/1D |
 | PracticeDSA/stacks/daily_temperatures.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Stacks/Monotonic Stack |
-| PracticeDSA/trees/level_order_traversal.py | 2026-05-19 | 2026-06-02 | 4 | 1 | Trees/BFS |
+| PracticeDSA/trees/level_order_traversal.py | 2026-10-01 | 2026-10-31 | 5 | 2 | Trees/BFS |
 | PracticeDSA/graphs/course_schedule.py | 2026-09-30 | 2026-10-07 | 3 | 2 | Graphs/Cycle Detection |
 | PracticeDSA/backtrack/word_search.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Backtrack/DFS |
 | PracticeDSA/trees/lowest_common_ancestor.py | 2026-10-01 | 2026-10-31 | 5 | 2 | Trees/DFS |
