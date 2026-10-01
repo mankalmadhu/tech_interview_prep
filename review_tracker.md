@@ -3,7 +3,7 @@
 | Problem Path | Last Review | Next Due | Rating (1-5) | Review Count | Topic Text |
 |--------------|-------------|----------|--------------|--------------|------------|
 | PracticeDSA/arrays/product_of_array_except_self.py | 2026-05-12 | 2026-06-11 | 5 | 1 | Arrays/Prefix-Suffix |
-| PracticeDSA/two_pointer/max_aread.py | 2026-05-02 | 2026-06-01 | 5 | 1 | Two Pointers |
+| PracticeDSA/two_pointer/max_aread.py | 2026-10-01 | 2026-10-31 | 5 | 2 | Two Pointers |
 | PracticeDSA/strings/character_replacement.py | 2026-05-14 | 2026-06-13 | 5 | 1 | Strings/Sliding Window |
 | PracticeDSA/linked_list/linked_list_cycle.py | 2026-05-03 | 2026-06-02 | 5 | 1 | Linked List/Fast & Slow Pointers |
 | PracticeDSA/backtrack/powerset.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Backtracking/Subsets |

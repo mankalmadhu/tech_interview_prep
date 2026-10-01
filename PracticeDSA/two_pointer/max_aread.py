@@ -35,3 +35,36 @@ def calculate_max_area(height):
             right -= 1
 
     return max_area
+
+
+def _brute_force(height):
+    n = len(height)
+    best = 0
+    for i in range(n):
+        for j in range(i + 1, n):
+            best = max(best, (j - i) * min(height[i], height[j]))
+    return best
+
+
+if __name__ == "__main__":
+    fixed_cases = [
+        ([1, 8, 6, 2, 5, 4, 8, 3, 7], 49),
+        ([1, 1], 1),
+        ([4, 3, 2, 1, 4], 16),
+        ([1, 2, 1], 2),
+        ([1], 0),
+        ([], 0),
+    ]
+    for arr, expected in fixed_cases:
+        got = calculate_max_area(arr)
+        assert got == expected, f"{arr}: expected {expected}, got {got}"
+    print("fixed cases passed")
+
+    import random
+    for _ in range(2000):
+        n = random.randint(0, 20)
+        arr = [random.randint(0, 50) for _ in range(n)]
+        got = calculate_max_area(arr)
+        want = _brute_force(arr)
+        assert got == want, f"{arr}: expected {want}, got {got}"
+    print("2000 randomized trials passed")
