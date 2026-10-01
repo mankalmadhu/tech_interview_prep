@@ -35,6 +35,25 @@ class Solution:
         root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
         return root
 
+    def invertTreeIterative(self, root: TreeNode) -> TreeNode:
+        """
+        Iterative DFS (explicit stack) alternative. Avoids Python's recursion
+        depth limit on deep/unbalanced trees; same O(N) time, O(H) space.
+        """
+        if not root:
+            return root
+
+        stack = [root]
+        while stack:
+            cur = stack.pop()
+            cur.left, cur.right = cur.right, cur.left
+            if cur.left:
+                stack.append(cur.left)
+            if cur.right:
+                stack.append(cur.right)
+
+        return root
+
 
 if __name__ == "__main__":
 
@@ -90,3 +109,15 @@ if __name__ == "__main__":
         get_level_order(sol.invertTree(t3)),
     )
     print("All tests executed!")
+
+    # Repeat the same fixed cases against the iterative implementation.
+    fixed_cases = [
+        ([4, 2, 7, 1, 3, 6, 9], [4, 7, 2, 9, 6, 3, 1]),
+        ([2, 1, 3], [2, 3, 1]),
+        ([], []),
+        ([1], [1]),
+    ]
+    for nodes, expected in fixed_cases:
+        got = get_level_order(sol.invertTreeIterative(build_tree(nodes)))
+        assert got == expected, f"invertTreeIterative({nodes}) = {got}, expected {expected}"
+    print(f"All {len(fixed_cases)} fixed cases passed for invertTreeIterative.")
