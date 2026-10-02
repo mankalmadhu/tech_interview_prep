@@ -54,3 +54,28 @@ if __name__ == "__main__":
     print("Test 4: [2,1]             -> Expected: 1,  Got:", sol.findMin([2, 1]))
     print("Test 5: [1]               -> Expected: 1,  Got:", sol.findMin([1]))
     print("All tests executed!")
+
+    fixed_cases = [
+        ([3, 4, 5, 1, 2], 1),
+        ([4, 5, 6, 7, 0, 1, 2], 0),
+        ([11, 13, 15, 17], 11),
+        ([2, 1], 1),
+        ([1], 1),
+        ([5, 1, 2, 3, 4], 1),
+    ]
+    for nums, expected in fixed_cases:
+        got = sol.findMin(nums)
+        assert got == expected, f"{nums}: expected {expected}, got {got}"
+    print("fixed cases passed")
+
+    import random
+
+    for _ in range(1000):
+        n = random.randint(1, 15)
+        base = sorted(random.sample(range(-50, 50), n))
+        rotation = random.randint(0, n - 1)
+        rotated = base[rotation:] + base[:rotation]
+        got = sol.findMin(rotated)
+        want = min(base)
+        assert got == want, f"{rotated}: expected {want}, got {got}"
+    print("1000 randomized trials passed")
