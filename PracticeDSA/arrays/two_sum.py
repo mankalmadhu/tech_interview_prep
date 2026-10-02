@@ -42,3 +42,25 @@ if __name__ == "__main__":
         "Test 3: [3,3], target 6       -> Expected: [0, 1], Got:", sol.twoSum([3, 3], 6)
     )
     print("All tests executed!")
+
+    fixed_cases = [
+        ([2, 7, 11, 15], 9, [0, 1]),
+        ([3, 2, 4], 6, [1, 2]),
+        ([3, 3], 6, [0, 1]),
+    ]
+    for nums, target, expected in fixed_cases:
+        got = sol.twoSum(nums, target)
+        assert got == expected, f"{nums},{target}: expected {expected}, got {got}"
+    print("fixed cases passed")
+
+    import random
+
+    for _ in range(500):
+        n = random.randint(2, 15)
+        nums = random.sample(range(-20, 20), n)
+        i, j = random.sample(range(n), 2)
+        target = nums[i] + nums[j]
+        got = sol.twoSum(nums, target)
+        assert nums[got[0]] + nums[got[1]] == target, f"{nums},{target}: got {got}"
+        assert got[0] != got[1]
+    print("500 randomized trials passed")

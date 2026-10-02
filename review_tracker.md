@@ -79,7 +79,7 @@
 | PracticeDSA/stacks/valid_parentheses.py | 2026-09-30 | 2026-10-14 | 4 | 2 | Stacks |
 | PracticeDSA/arrays/subarray_sum_k.py | 2026-06-08 | 2026-06-22 | 4 | 1 | Arrays |
 | PracticeDSA/arrays/buy_sell_stock.py | 2026-05-14 | 2026-06-13 | 5 | 1 | Arrays/Sliding Window |
-| PracticeDSA/arrays/two_sum.py | 2026-05-15 | 2026-06-14 | 5 | 1 | Arrays/Hash Map |
+| PracticeDSA/arrays/two_sum.py | 2026-10-02 | 2026-11-01 | 5 | 2 | Arrays/Hash Map |
 | PracticeDSA/trees/invert_tree.py | 2026-10-01 | 2026-10-31 | 5 | 2 | Trees/DFS |
 | PracticeDSA/linked_list/reverse_linked_list.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Linked List/Pointers |
 | PracticeDSA/dp/house_robber.py | 2026-10-02 | 2026-11-01 | 5 | 3 | DP/1D |
