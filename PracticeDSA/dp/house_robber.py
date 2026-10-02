@@ -29,3 +29,38 @@ if __name__ == "__main__":
     print("Test 4: []          -> Expected: 0, Got:", sol.rob([]))
     print("Test 5: [2,1,1,2]   -> Expected: 4, Got:", sol.rob([2, 1, 1, 2]))
     print("All tests executed!")
+
+    fixed_cases = [
+        ([1, 2, 3, 1], 4),
+        ([2, 7, 9, 3, 1], 12),
+        ([0], 0),
+        ([], 0),
+        ([2, 1, 1, 2], 4),
+        ([5, 5, 10, 100, 10, 5], 110),
+    ]
+    for nums, expected in fixed_cases:
+        got = sol.rob(nums)
+        assert got == expected, f"{nums}: expected {expected}, got {got}"
+    print("fixed cases passed")
+
+    import random
+    from functools import lru_cache
+
+    def brute_force(nums):
+        n = len(nums)
+
+        @lru_cache(maxsize=None)
+        def helper(i):
+            if i >= n:
+                return 0
+            return max(helper(i + 1), nums[i] + helper(i + 2))
+
+        return helper(0)
+
+    for _ in range(1000):
+        n = random.randint(0, 15)
+        nums = [random.randint(0, 50) for _ in range(n)]
+        got = sol.rob(nums)
+        want = brute_force(nums)
+        assert got == want, f"{nums}: expected {want}, got {got}"
+    print("1000 randomized trials passed")
