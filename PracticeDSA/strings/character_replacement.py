@@ -58,3 +58,41 @@ if __name__ == "__main__":
         sol.characterReplacement("ABAA", 0),
     )
     print("All tests executed!")
+
+    fixed_cases = [
+        ("ABAB", 2, 4),
+        ("AABABBA", 1, 4),
+        ("ABCABCBB", 2, 5),
+        ("AABCC", 1, 3),
+        ("A", 0, 1),
+        ("", 2, 0),
+        ("ABAA", 0, 2),
+    ]
+    for s, k, expected in fixed_cases:
+        got = sol.characterReplacement(s, k)
+        assert got == expected, f"{s!r},{k}: expected {expected}, got {got}"
+    print("fixed cases passed")
+
+    import random
+    from collections import Counter
+
+    def brute_force(s, k):
+        n = len(s)
+        best = 0
+        for i in range(n):
+            for j in range(i, n):
+                window = s[i:j + 1]
+                c = Counter(window)
+                maxf = max(c.values())
+                if len(window) - maxf <= k:
+                    best = max(best, len(window))
+        return best
+
+    for _ in range(500):
+        n = random.randint(0, 12)
+        s = "".join(random.choice("AB") for _ in range(n))
+        k = random.randint(0, n)
+        got = sol.characterReplacement(s, k)
+        want = brute_force(s, k)
+        assert got == want, f"{s!r},{k}: expected {want}, got {got}"
+    print("500 randomized trials passed")

@@ -20,13 +20,14 @@ Write your solution below.
 
 
 def product_except_self(nums):
+
     n = len(nums)
     result = [1] * n
 
     lp = 1
 
     for i in range(n):
-        result[i] = lp
+        result[i] *= lp
         lp *= nums[i]
 
     rp = 1
@@ -50,6 +51,8 @@ if __name__ == "__main__":
         got = product_except_self(nums)
         assert got == expected, f"{nums}: expected {expected}, got {got}"
     print("fixed cases passed")
+
+    print(product_except_self([1,2,3,4]))
 
     import random
 
