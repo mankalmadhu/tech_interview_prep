@@ -26,6 +26,24 @@ def rob(nums):
 
     return rob2
 
+def rob_full_dp(nums):
+
+
+    if len(nums) ==0:
+        return 0
+
+    if len(nums) ==1:
+        return nums[0]
+
+    dp = [0]*len(nums)
+    dp[0] = nums[0]
+    dp[1] = max(nums[0], nums[1])
+
+    for i in range(2, len(nums)):
+        dp[i] = max(dp[i-1], nums[i]+ dp[i-2])
+
+    return dp[-1]
+
 
 if __name__ == "__main__":
     fixed_cases = [
@@ -40,6 +58,8 @@ if __name__ == "__main__":
         got = rob(nums)
         assert got == expected, f"{nums}: expected {expected}, got {got}"
     print("fixed cases passed")
+
+    print(rob_full_dp([1,2,3,1]))
 
     import random
     from functools import lru_cache

@@ -20,6 +20,33 @@ class Solution:
             rob1, rob2 = rob2, max(n + rob1, rob2)
         return rob2
 
+    def rob_full_dp(self, nums: list[int]) -> int:
+        """
+        Same recurrence as `rob`, but keeps the full DP array instead of
+        rolling variables. Less space-efficient, but easier to read/debug
+        since dp[i] is explicitly "best money robbable using houses 0..i".
+
+        - Time Complexity: O(N)
+        - Space Complexity: O(N) for the dp array (vs O(1) for `rob`).
+
+        Base cases:
+        - dp[0] = nums[0] (only one house, must rob it)
+        - dp[1] = max(nums[0], nums[1]) (adjacent, can only take one)
+        """
+        if len(nums) == 0:
+            return 0
+        if len(nums) == 1:
+            return nums[0]
+
+        dp = [0] * len(nums)
+        dp[0] = nums[0]
+        dp[1] = max(nums[0], nums[1])
+
+        for i in range(2, len(nums)):
+            dp[i] = max(dp[i - 1], nums[i] + dp[i - 2])
+
+        return dp[-1]
+
 
 if __name__ == "__main__":
     sol = Solution()
@@ -64,3 +91,17 @@ if __name__ == "__main__":
         want = brute_force(nums)
         assert got == want, f"{nums}: expected {want}, got {got}"
     print("1000 randomized trials passed")
+
+    # rob_full_dp: same tests, full DP-array variant
+    for nums, expected in fixed_cases:
+        got = sol.rob_full_dp(nums)
+        assert got == expected, f"{nums}: expected {expected}, got {got}"
+    print("rob_full_dp: fixed cases passed")
+
+    for _ in range(1000):
+        n = random.randint(0, 15)
+        nums = [random.randint(0, 50) for _ in range(n)]
+        got = sol.rob_full_dp(nums)
+        want = brute_force(nums)
+        assert got == want, f"{nums}: expected {want}, got {got}"
+    print("rob_full_dp: 1000 randomized trials passed")
