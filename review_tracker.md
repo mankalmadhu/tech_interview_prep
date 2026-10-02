@@ -33,7 +33,7 @@
 | PracticeDSA/arrays/suqare_sort.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Arrays/Two Pointers |
 | PracticeDSA/arrays/total_steps_counter.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Arrays |
 
-| PracticeDSA/backtrack/permutations.py | 2026-05-20 | 2026-06-19 | 5 | 1 | Backtrack |
+| PracticeDSA/backtrack/permutations.py | 2026-10-02 | 2026-10-09 | 3 | 2 | Backtrack |
 | PracticeDSA/bit_manipulation/number_of_one_bits.py | 2026-05-18 | 2026-06-17 | 5 | 1 | Bit Manipulation |
 | PracticeDSA/bit_manipulation/single_number.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Bit Manipulation |
 | PracticeDSA/dp/coin_change.py | 2026-10-01 | 2026-10-15 | 4 | 2 | Dp |

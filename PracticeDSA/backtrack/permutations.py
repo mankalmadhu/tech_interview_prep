@@ -81,3 +81,16 @@ def backtrack(current_permutation, used, result, nums):
         # Un-choose (Backtrack)
         used.remove(i)
         current_permutation.pop()
+
+
+if __name__ == "__main__":
+        import itertools
+
+        def normalize(perms):
+            return sorted(tuple(p) for p in perms)
+
+        for nums in [[1, 2, 3], [0, 1], [5], []]:
+            got = normalize(permute(nums))
+            want = normalize(list(itertools.permutations(nums)))
+            assert got == want, f"{nums}: expected {want}, got {got}"
+        print("fixed cases passed")
