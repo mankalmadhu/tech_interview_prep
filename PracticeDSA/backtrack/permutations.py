@@ -83,6 +83,32 @@ def backtrack(current_permutation, used, result, nums):
         current_permutation.pop()
 
 
+def permute_iterative(nums):
+    """
+    Iterative alternative: insert-into-every-position.
+    Start with result = [[]] (the empty permutation). For each number in
+    nums, take every existing permutation already built and insert the
+    new number into every possible slot within it -- a permutation of
+    length k has k+1 valid insertion slots (before the first element,
+    between each adjacent pair, and after the last element). Missing the
+    "after the last element" slot (i.e. looping range(len(r)) instead of
+    range(len(r) + 1)) silently drops permutations.
+
+    Time Complexity: O(N * N!) | Space Complexity: O(N * N!) for the
+    growing result lists (no recursion stack).
+    """
+    result = [[]]
+
+    for num in nums:
+        next_result = []
+        for perm in result:
+            for i in range(len(perm) + 1):
+                next_result.append(perm[:i] + [num] + perm[i:])
+        result = next_result
+
+    return result
+
+
 if __name__ == "__main__":
         import itertools
 
@@ -94,3 +120,18 @@ if __name__ == "__main__":
             want = normalize(list(itertools.permutations(nums)))
             assert got == want, f"{nums}: expected {want}, got {got}"
         print("fixed cases passed")
+
+        for nums in [[1, 2, 3], [0, 1], [5], []]:
+            got_it = normalize(permute_iterative(nums))
+            want = normalize(list(itertools.permutations(nums)))
+            assert got_it == want, f"iterative {nums}: expected {want}, got {got_it}"
+        print("iterative fixed cases passed")
+
+        import random
+        for _ in range(300):
+            n = random.randint(0, 6)
+            nums = random.sample(range(0, 20), n)
+            want = normalize(list(itertools.permutations(nums)))
+            assert normalize(permute(nums)) == want
+            assert normalize(permute_iterative(nums)) == want
+        print("300 randomized trials passed (backtracking + iterative)")

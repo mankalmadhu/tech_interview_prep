@@ -41,6 +41,21 @@ def backtrack(nums, cur_perm, result, used):
         used.remove(i)
         cur_perm.pop()
 
+def permute_iterative(nums):
+    result = [[]]
+
+    for num in nums:
+        cur_perm = []
+        for r in result:
+            for i in range(len(r)+1):
+                cur_perm.append(r[:i] + [num] + r[i:])
+            result = cur_perm
+
+    return result
+
+
+
+
 
 
 if __name__ == "__main__":
@@ -51,6 +66,26 @@ if __name__ == "__main__":
 
     for nums in [[1, 2, 3], [0, 1], [5], []]:
         got = normalize(permute(nums))
+        print(f"got:{got}")
         want = normalize(list(itertools.permutations(nums)))
         assert got == want, f"{nums}: expected {want}, got {got}"
     print("fixed cases passed")
+
+    for nums in [[1, 2, 3], [0, 1], [5], []]:
+        got_it = normalize(permute_iterative(nums))
+        want = normalize(list(itertools.permutations(nums)))
+        assert got_it == want, f"iterative {nums}: expected {want}, got {got_it}"
+    print("iterative fixed cases passed")
+
+    import random
+    for _ in range(300):
+        n = random.randint(0, 6)
+        nums = random.sample(range(0, 20), n)
+        got = normalize(permute(nums))
+        got_it = normalize(permute_iterative(nums))
+        want = normalize(list(itertools.permutations(nums)))
+        assert got == want
+        assert got_it == want
+    print("300 randomized trials passed (backtracking + iterative)")
+
+    print(permute_iterative([0,1]))
