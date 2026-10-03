@@ -34,7 +34,7 @@
 | PracticeDSA/arrays/total_steps_counter.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Arrays |
 
 | PracticeDSA/backtrack/permutations.py | 2026-10-02 | 2026-11-01 | 4 | 3 | Backtrack |
-| PracticeDSA/bit_manipulation/number_of_one_bits.py | 2026-05-18 | 2026-06-17 | 5 | 1 | Bit Manipulation |
+| PracticeDSA/bit_manipulation/number_of_one_bits.py | 2026-10-03 | 2026-11-02 | 5 | 2 | Bit Manipulation |
 | PracticeDSA/bit_manipulation/single_number.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Bit Manipulation |
 | PracticeDSA/dp/coin_change.py | 2026-10-01 | 2026-10-15 | 4 | 2 | Dp |
 | PracticeDSA/dp/knapsack_01.py | 2026-10-03 | 2026-11-02 | 4 | 2 | Dp |
