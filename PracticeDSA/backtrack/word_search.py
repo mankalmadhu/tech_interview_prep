@@ -50,3 +50,70 @@ class Solution:
             return char_found
 
         return False
+
+
+if __name__ == "__main__":
+    def make_board():
+        return [
+            ["A", "B", "C", "E"],
+            ["S", "F", "C", "S"],
+            ["A", "D", "E", "E"],
+        ]
+
+    sol = Solution()
+    fixed_cases = [
+        ("ABCCED", True),
+        ("SEE", True),
+        ("ABCB", False),
+        ("A", True),
+        ("Z", False),
+    ]
+    for word, expected in fixed_cases:
+        got = sol.exist(make_board(), word)
+        assert got == expected, f"{word!r}: expected {expected}, got {got}"
+    print("fixed cases passed")
+
+    assert sol.exist([], "A") is False
+    assert sol.exist([["A"]], "A") is True
+    assert sol.exist([["A"]], "B") is False
+    print("edge cases passed")
+
+    import random
+
+    def brute_force(board, word):
+        rows, cols = len(board), len(board[0])
+
+        def helper(r, c, i, visited):
+            if i == len(word):
+                return True
+            if r < 0 or r >= rows or c < 0 or c >= cols:
+                return False
+            if (r, c) in visited or board[r][c] != word[i]:
+                return False
+            visited.add((r, c))
+            found = (
+                helper(r + 1, c, i + 1, visited)
+                or helper(r - 1, c, i + 1, visited)
+                or helper(r, c - 1, i + 1, visited)
+                or helper(r, c + 1, i + 1, visited)
+            )
+            visited.remove((r, c))
+            return found
+
+        for i in range(rows):
+            for j in range(cols):
+                if helper(i, j, 0, set()):
+                    return True
+        return False
+
+    for _ in range(300):
+        rows = random.randint(1, 4)
+        cols = random.randint(1, 4)
+        alphabet = "AB"
+        board = [[random.choice(alphabet) for _ in range(cols)] for _ in range(rows)]
+        word_len = random.randint(1, 4)
+        word = "".join(random.choice(alphabet) for _ in range(word_len))
+        got = sol.exist([row[:] for row in board], word)
+        want = brute_force([row[:] for row in board], word)
+        assert got == want, f"{board},{word!r}: expected {want}, got {got}"
+    print("300 randomized trials passed")
