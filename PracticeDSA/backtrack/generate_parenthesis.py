@@ -32,3 +32,35 @@ class Solution:
 
         if cc < oc:
             self.gen_rec(cur + ")", result, n, oc, cc + 1)
+
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    fixed_cases = {
+        1: ["()"],
+        2: ["(())", "()()"],
+        3: ["((()))", "(()())", "(())()", "()(())", "()()()"],
+    }
+    for n, expected in fixed_cases.items():
+        got = sol.generateParenthesis(n)
+        assert sorted(got) == sorted(expected), (
+            f"n={n}: expected {sorted(expected)}, got {sorted(got)}"
+        )
+    print("fixed cases passed")
+
+    def is_valid(s):
+        balance = 0
+        for ch in s:
+            balance += 1 if ch == "(" else -1
+            if balance < 0:
+                return False
+        return balance == 0
+
+    for n in range(1, 7):
+        results = sol.generateParenthesis(n)
+        assert len(results) == len(set(results)), f"n={n}: duplicates found"
+        for s in results:
+            assert len(s) == 2 * n, f"n={n}: {s!r} has wrong length"
+            assert is_valid(s), f"n={n}: {s!r} is not valid"
+    print("validity + no-duplicates checks passed for n=1..6")
