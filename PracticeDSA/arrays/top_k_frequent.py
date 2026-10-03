@@ -69,3 +69,35 @@ if __name__ == "__main__":
         sol.topKFrequentBucket([1], 1),
     )
     print("All tests executed!")
+
+    assert set(sol.topKFrequent([1, 1, 1, 2, 2, 3], 2)) == {1, 2}
+    assert set(sol.topKFrequentBucket([1, 1, 1, 2, 2, 3], 2)) == {1, 2}
+    assert set(sol.topKFrequent([1], 1)) == {1}
+    assert set(sol.topKFrequentBucket([1], 1)) == {1}
+    assert sol.topKFrequentBucket([4, 1, 1, 1, 2, 2, 3], 1) == [1]
+    print("fixed cases passed")
+
+    import random
+    from collections import Counter
+
+    def brute_force(nums, k):
+        counts = Counter(nums)
+        ranked = sorted(counts.items(), key=lambda kv: kv[1], reverse=True)
+        return [num for num, _ in ranked[:k]]
+
+    for _ in range(300):
+        n = random.randint(1, 30)
+        nums = [random.randint(1, 8) for _ in range(n)]
+        k = random.randint(1, len(set(nums)))
+        want = brute_force(nums, k)
+        want_freqs = sorted((Counter(nums)[x] for x in want), reverse=True)
+
+        for fn in (sol.topKFrequent, sol.topKFrequentBucket):
+            got = fn(nums, k)
+            got_freqs = sorted((Counter(nums)[x] for x in got), reverse=True)
+            assert len(got) == k, f"{fn.__name__}: nums={nums}, k={k}, got {got}"
+            assert got_freqs == want_freqs, (
+                f"{fn.__name__}: nums={nums}, k={k}: got {got} (freqs {got_freqs}), "
+                f"want {want} (freqs {want_freqs})"
+            )
+    print("300 randomized trials passed (both approaches)")
