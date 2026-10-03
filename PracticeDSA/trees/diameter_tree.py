@@ -68,3 +68,119 @@ class Solution:
 
         # Return the actual depth to the parent
         return 1 + max(left_depth, right_depth)
+
+    def diameterOfBinaryTreeIterative(self, root: Optional[TreeNode]) -> int:
+        """
+        Iterative version using an explicit two-stack post-order traversal.
+
+        Height must be computed bottom-up (children before parent), which is
+        exactly post-order's "left, right, node" ordering. To get a
+        parent-after-children visit order without recursion, we use the
+        classic two-stack trick:
+          - Pop from stack1, push onto stack2, then push left then right
+            onto stack1 (so right is popped before left).
+          - stack2 ends up in a "parent, then descendants" order; iterating
+            it in reverse guarantees every node's children are processed
+            before the node itself.
+
+        At each node (processed in that reversed order) we look up its
+        children's already-computed heights, update the global diameter
+        using left_height + right_height (a sum, NOT the node's own height),
+        and store this node's own height (1 + max(left, right)) for its
+        ancestors to use later.
+
+        Time Complexity: O(N) - each node is pushed/popped/visited a
+        constant number of times across both stacks.
+
+        Space Complexity: O(N) always - stack1, stack2, and the heights
+        dict each hold up to N entries, regardless of tree shape. This is
+        strictly worse-or-equal to the recursive version's O(H) call stack,
+        which can be as low as O(log N) for a balanced tree.
+        """
+        if not root:
+            return 0
+
+        stack1 = [root]
+        stack2 = []
+
+        while stack1:
+            node = stack1.pop()
+            stack2.append(node)
+            if node.left:
+                stack1.append(node.left)
+            if node.right:
+                stack1.append(node.right)
+
+        heights = {}
+        max_dia = 0
+
+        for node in reversed(stack2):
+            left_height = heights.get(node.left, 0)
+            right_height = heights.get(node.right, 0)
+            heights[node] = 1 + max(left_height, right_height)
+            max_dia = max(max_dia, left_height + right_height)
+
+        return max_dia
+
+
+if __name__ == "__main__":
+    import random
+
+    root = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3))
+    fixed_cases = [
+        (root, 3),
+        (TreeNode(1), 0),
+        (None, 0),
+        (TreeNode(1, TreeNode(2, TreeNode(3, TreeNode(4)))), 3),  # left-skewed chain
+    ]
+
+    for tree, expected in fixed_cases:
+        got_rec = Solution().diameterOfBinaryTree(tree)
+        got_it = Solution().diameterOfBinaryTreeIterative(tree)
+        assert got_rec == expected, f"recursive: expected {expected}, got {got_rec}"
+        assert got_it == expected, f"iterative: expected {expected}, got {got_it}"
+    print("fixed cases passed (recursive + iterative)")
+
+    def brute_force(node):
+        def height(n):
+            if not n:
+                return 0
+            return 1 + max(height(n.left), height(n.right))
+
+        def collect_nodes(n, acc):
+            if not n:
+                return
+            acc.append(n)
+            collect_nodes(n.left, acc)
+            collect_nodes(n.right, acc)
+
+        nodes = []
+        collect_nodes(node, nodes)
+        best = 0
+        for n in nodes:
+            best = max(best, height(n.left) + height(n.right))
+        return best
+
+    def build_random_tree(n):
+        if n == 0:
+            return None
+        nodes = [TreeNode(i) for i in range(n)]
+        for i in range(1, n):
+            parent = nodes[random.randint(0, i - 1)]
+            if parent.left is None and random.random() < 0.5:
+                parent.left = nodes[i]
+            elif parent.right is None:
+                parent.right = nodes[i]
+            else:
+                parent.left = nodes[i]
+        return nodes[0]
+
+    for _ in range(300):
+        n = random.randint(0, 12)
+        tree = build_random_tree(n)
+        want = brute_force(tree)
+        got_rec = Solution().diameterOfBinaryTree(tree)
+        got_it = Solution().diameterOfBinaryTreeIterative(tree)
+        assert got_rec == want, f"recursive n={n}: expected {want}, got {got_rec}"
+        assert got_it == want, f"iterative n={n}: expected {want}, got {got_it}"
+    print("300 randomized trials passed (recursive + iterative)")
