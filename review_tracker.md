@@ -44,7 +44,7 @@
 | PracticeDSA/graphs/dfs.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Graphs |
 | PracticeDSA/graphs/dijkstras.py | 2026-05-31 | 2026-06-14 | 4 | 2 | Graphs |
 | PracticeDSA/backtrack/generate_parenthesis.py | 2026-10-03 | 2026-10-17 | 4 | 2 | Backtrack |
-| PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Greedy Algo |
+| PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-10-03 | 2026-10-17 | 4 | 3 | Greedy Algo |
 
 | PracticeDSA/math/gcd.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Math |
 | PracticeDSA/math/highest_score.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Math |
