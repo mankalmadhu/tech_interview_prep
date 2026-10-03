@@ -39,3 +39,33 @@ def longest_substring_lenth(s):
         max_length = max(max_length, right - left + 1)
 
     return max_length
+
+
+if __name__ == "__main__":
+    assert longest_substring_lenth("abcabcbb") == 3
+    assert longest_substring_lenth("bbbbb") == 1
+    assert longest_substring_lenth("pwwkew") == 3
+    assert longest_substring_lenth("") == 0
+    assert longest_substring_lenth("abba") == 2
+    print("fixed cases passed")
+
+    import random
+
+    def brute_force(s):
+        best = 0
+        for i in range(len(s)):
+            seen = set()
+            for j in range(i, len(s)):
+                if s[j] in seen:
+                    break
+                seen.add(s[j])
+            best = max(best, len(seen))
+        return best
+
+    for _ in range(300):
+        n = random.randint(0, 15)
+        s = "".join(random.choice("ab") for _ in range(n))
+        got = longest_substring_lenth(s)
+        want = brute_force(s)
+        assert got == want, f"s={s!r}: expected {want}, got {got}"
+    print("300 randomized trials passed")

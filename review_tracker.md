@@ -70,7 +70,7 @@
 | PracticeDSA/strings/paren_min_number.py | 2026-09-29 | 2026-10-29 | 5 | 2 | Strings |
 | PracticeDSA/strings/salutes.py | 2026-09-29 | 2026-10-29 | 5 | 2 | Strings |
 | PracticeDSA/two_pointer/diffk.py | 2026-09-28 | 2026-10-12 | 4 | 2 | Two Pointer |
-| PracticeDSA/two_pointer/longest_substring.py | 2026-05-14 | 2026-06-13 | 5 | 1 | Two Pointer |
+| PracticeDSA/two_pointer/longest_substring.py | 2026-10-03 | 2026-10-10 | 3 | 2 | Two Pointer |
 | PracticeDSA/two_pointer/merge_sorted_lists.py | 2026-09-29 | 2026-10-13 | 4 | 2 | Two Pointer |
 | PracticeDSA/two_pointer/merge_soted_lists.py | 2026-09-29 | 2026-10-13 | 4 | 2 | Two Pointer |
 | PracticeDSA/two_pointer/remove_duplicates.py | 2026-09-29 | 2026-10-29 | 5 | 2 | Two Pointer |
