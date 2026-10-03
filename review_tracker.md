@@ -37,7 +37,7 @@
 | PracticeDSA/bit_manipulation/number_of_one_bits.py | 2026-05-18 | 2026-06-17 | 5 | 1 | Bit Manipulation |
 | PracticeDSA/bit_manipulation/single_number.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Bit Manipulation |
 | PracticeDSA/dp/coin_change.py | 2026-10-01 | 2026-10-15 | 4 | 2 | Dp |
-| PracticeDSA/dp/knapsack_01.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Dp |
+| PracticeDSA/dp/knapsack_01.py | 2026-10-03 | 2026-11-02 | 4 | 2 | Dp |
 | PracticeDSA/dp/lcs.py | 2026-10-02 | 2026-11-01 | 5 | 2 | Dp/2D |
 | PracticeDSA/graphs/bfs.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Graphs |
 | PracticeDSA/graphs/connected_components.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Graphs |

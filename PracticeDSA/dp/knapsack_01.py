@@ -169,3 +169,55 @@ class SolutionOptimal:
                 dp[w] = max(dp[w], values[i] + dp[w - weights[i]])
 
         return dp[capacity]
+
+
+if __name__ == "__main__":
+    fixed_cases = [
+        ([10, 40, 30], [5, 4, 6], 10, 70),
+        ([60, 100, 120], [10, 20, 30], 50, 220),
+        ([10], [5], 10, 10),
+        ([10], [11], 10, 0),
+        ([], [], 10, 0),
+        ([10, 20], [5, 5], 0, 0),
+    ]
+    sol_optimal = SolutionOptimal()
+    for values, weights, capacity, expected in fixed_cases:
+        n = len(values)
+        memo = [[-1 for _ in range(capacity + 1)] for _ in range(n + 1)]
+        got = knapsack_01_recursive(values, weights, capacity, n, memo)
+        assert got == expected, (
+            f"{values},{weights},{capacity}: expected {expected}, got {got}"
+        )
+        got_opt = sol_optimal.solveKnapsack(values, weights, capacity)
+        assert got_opt == expected, (
+            f"{values},{weights},{capacity}: expected {expected}, got {got_opt}"
+        )
+    print("fixed cases passed (both top-down and space-optimized)")
+
+    import random
+    from itertools import combinations
+
+    def brute_force(values, weights, capacity):
+        n = len(values)
+        best = 0
+        for r in range(n + 1):
+            for combo in combinations(range(n), r):
+                w = sum(weights[i] for i in combo)
+                if w <= capacity:
+                    best = max(best, sum(values[i] for i in combo))
+        return best
+
+    for _ in range(300):
+        n = random.randint(0, 8)
+        values = [random.randint(1, 50) for _ in range(n)]
+        weights = [random.randint(1, 10) for _ in range(n)]
+        capacity = random.randint(0, 30)
+        memo = [[-1 for _ in range(capacity + 1)] for _ in range(n + 1)]
+        got = knapsack_01_recursive(values, weights, capacity, n, memo)
+        want = brute_force(values, weights, capacity)
+        assert got == want, f"{values},{weights},{capacity}: expected {want}, got {got}"
+        got_opt = sol_optimal.solveKnapsack(values, weights, capacity)
+        assert got_opt == want, (
+            f"{values},{weights},{capacity}: expected {want}, got {got_opt}"
+        )
+    print("300 randomized trials passed (both top-down and space-optimized)")
