@@ -50,3 +50,36 @@ class Solution:
             prefix_count[cur_prefix] += 1
 
         return count
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    assert sol.subarraySum([1, 1, 1], 2) == 2
+    assert sol.subarraySum([1, 2, 3], 3) == 2
+    assert sol.subarraySum([1], 0) == 0
+    assert sol.subarraySum([], 0) == 0
+    assert sol.subarraySum([-1, -1, 1], 0) == 1
+    assert sol.subarraySum([1, 2, 3, -2, 3], 3) == 4
+    print("fixed cases passed")
+
+    import random
+
+    def brute_force(nums, k):
+        n = len(nums)
+        count = 0
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if s == k:
+                    count += 1
+        return count
+
+    for _ in range(300):
+        n = random.randint(0, 15)
+        nums = [random.randint(-5, 5) for _ in range(n)]
+        k = random.randint(-10, 10)
+        got = sol.subarraySum(nums, k)
+        want = brute_force(nums, k)
+        assert got == want, f"nums={nums}, k={k}: expected {want}, got {got}"
+    print("300 randomized trials passed")
