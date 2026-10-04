@@ -52,3 +52,27 @@ if __name__ == "__main__":
     for idx, A in enumerate(A):
         result = sol.primeSum(A)
         print(f"Expected Result: {expected_output}.Actual Result:{result}")
+
+    def is_prime_slow(n):
+        if n < 2:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    def check_valid(a, pair):
+        assert len(pair) == 2, f"a={a}: expected a pair, got {pair}"
+        p, q = pair
+        assert p + q == a, f"a={a}: {p}+{q} != {a}"
+        assert is_prime_slow(p), f"a={a}: {p} is not prime"
+        assert is_prime_slow(q), f"a={a}: {q} is not prime"
+
+    check_valid(4, sol.primeSum(4))
+    check_valid(10, sol.primeSum(10))
+    check_valid(100, sol.primeSum(100))
+    print("fixed cases passed")
+
+    for a in range(4, 2000, 2):
+        check_valid(a, sol.primeSum(a))
+    print("exhaustive even 4..1998 trials passed")
