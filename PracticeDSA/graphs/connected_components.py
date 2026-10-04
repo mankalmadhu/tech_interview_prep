@@ -81,3 +81,50 @@ def __bfs(graph, start, visited):
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append(neighbor)
+
+
+def _brute_force_components(graph):
+    """Independent check via union-find over the same adjacency dict."""
+    parent = {node: node for node in graph}
+
+    def find(x):
+        while parent[x] != x:
+            x = parent[x]
+        return x
+
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+
+    for node, neighbors in graph.items():
+        for neighbor in neighbors:
+            union(node, neighbor)
+
+    return len({find(node) for node in graph})
+
+
+if __name__ == "__main__":
+    print(connected_components({0: [1], 1: [0], 2: []}))  # expect 2
+    print(connected_components({0: [1], 1: [0, 2], 2: [1], 3: [4], 4: [3]}))  # expect 2
+    print(connected_components({0: [], 1: [], 2: [], 3: []}))  # expect 4
+
+    import random
+
+    for trial in range(300):
+        n = random.randint(1, 20)
+        possible_edges = [(u, v) for u in range(n) for v in range(u + 1, n)]
+        random.shuffle(possible_edges)
+        num_edges = random.randint(0, len(possible_edges))
+        chosen = possible_edges[:num_edges]
+
+        graph = {i: [] for i in range(n)}
+        for u, v in chosen:
+            graph[u].append(v)
+            graph[v].append(u)
+
+        got = connected_components(graph)
+        expected = _brute_force_components(graph)
+        assert got == expected, f"Mismatch n={n}, graph={graph}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")
