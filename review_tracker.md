@@ -57,7 +57,7 @@
 | PracticeDSA/random/r1.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Random |
 | PracticeDSA/random/r2.py | 2026-05-12 | 2026-05-27 | 1 | 1 | Random |
 | PracticeDSA/search_n_sort/binary_search.py | 2026-10-01 | 2026-10-31 | 5 | 3 | Search N Sort |
-| PracticeDSA/search_n_sort/bubble_sort.py | 2026-06-03 | 2026-07-03 | 5 | 2 | Search N Sort |
+| PracticeDSA/search_n_sort/bubble_sort.py | 2026-10-04 | 2026-11-03 | 4 | 3 | Search N Sort |
 | PracticeDSA/search_n_sort/insertion_sort.py | 2026-06-03 | 2026-07-03 | 5 | 2 | Search N Sort |
 | PracticeDSA/search_n_sort/kth_smallest_elem.py | 2026-09-29 | 2026-10-13 | 4 | 3 | Search N Sort |
 | PracticeDSA/search_n_sort/max_blade_height.py | 2026-09-29 | 2026-10-06 | 3 | 2 | Search N Sort |
