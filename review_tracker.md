@@ -11,7 +11,7 @@
 | PracticeDSA/graphs/num_islands.py | 2026-10-01 | 2026-10-31 | 5 | 2 | Graphs/DFS |
 | PracticeDSA/arrays/top_k_frequent.py | 2026-10-03 | 2026-10-10 | 3 | 2 | Arrays/Heaps/Bucket Sort |
 | PracticeDSA/dp/step_climb.py | 2026-09-30 | 2026-10-30 | 5 | 2 | DP/Fibonacci |
-| PracticeDSA/arrays/ar1.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays |
+| PracticeDSA/arrays/ar1.py | 2026-10-04 | 2026-11-03 | 4 | 2 | Arrays |
 | PracticeDSA/arrays/array_elem_greater_than_p.py | 2026-05-13 | 2026-06-12 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/bulbs_on.py | 2026-05-13 | 2026-06-12 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/even_product.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays/Combinatorics |
