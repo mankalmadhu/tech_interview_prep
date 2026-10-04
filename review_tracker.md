@@ -47,7 +47,7 @@
 | PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-10-03 | 2026-10-17 | 4 | 3 | Greedy Algo |
 
 | PracticeDSA/math/gcd.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Math |
-| PracticeDSA/math/highest_score.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Math |
+| PracticeDSA/math/highest_score.py | 2026-10-04 | 2026-11-03 | 5 | 3 | Math |
 | PracticeDSA/math/is_rectangle.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Math |
 | PracticeDSA/math/palindrome_integer.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Math |
 | PracticeDSA/math/power_of_two_ints.py | 2026-10-04 | 2026-11-03 | 4 | 3 | Math |
