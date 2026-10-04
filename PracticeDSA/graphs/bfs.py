@@ -44,3 +44,68 @@ def bfs(graph, start):
                 queue.append(neighbor)
 
     return result
+
+
+if __name__ == "__main__":
+    graph = {
+        "A": ["B", "C"],
+        "B": ["A", "D"],
+        "C": ["A", "D"],
+        "D": ["B", "C"],
+    }
+    assert bfs(graph, "A") == ["A", "B", "C", "D"]
+    assert bfs({"A": []}, "A") == ["A"]
+    assert bfs({"A": ["B"], "B": ["A"]}, "A") == ["A", "B"]
+    chain = {"A": ["B"], "B": ["A", "C"], "C": ["B"]}
+    assert bfs(chain, "A") == ["A", "B", "C"]
+    print("fixed cases passed")
+
+    import random
+
+    def build_random_graph(n, extra_edges):
+        nodes = list(range(n))
+        g = {i: [] for i in nodes}
+        for i in range(1, n):
+            parent = random.randint(0, i - 1)
+            g[parent].append(i)
+            g[i].append(parent)
+        for _ in range(extra_edges):
+            a, b = random.randint(0, n - 1), random.randint(0, n - 1)
+            if a != b and b not in g[a]:
+                g[a].append(b)
+                g[b].append(a)
+        return g
+
+    def depth_map(order_list, g, start):
+        depth = {start: 0}
+        for node in order_list:
+            for nb in g.get(node, []):
+                if nb not in depth or depth[nb] > depth[node] + 1:
+                    depth[nb] = depth[node] + 1
+        return depth
+
+    def true_bfs_depth(g, start):
+        # independent re-derivation via explicit frontier levels (no queue)
+        depth = {start: 0}
+        frontier = [start]
+        d = 0
+        while frontier:
+            next_frontier = []
+            for node in frontier:
+                for nb in g.get(node, []):
+                    if nb not in depth:
+                        depth[nb] = d + 1
+                        next_frontier.append(nb)
+            frontier = next_frontier
+            d += 1
+        return depth
+
+    for _ in range(300):
+        n = random.randint(1, 12)
+        g = build_random_graph(n, random.randint(0, n))
+        got = bfs(g, 0)
+        assert set(got) == set(g.keys()), f"graph={g}: node coverage mismatch, got {got}"
+        got_depth = depth_map(got, g, 0)
+        want_depth = true_bfs_depth(g, 0)
+        assert got_depth == want_depth, f"graph={g}: depth mismatch {got_depth} vs {want_depth}"
+    print("300 randomized trials passed")

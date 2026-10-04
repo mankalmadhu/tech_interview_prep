@@ -39,7 +39,7 @@
 | PracticeDSA/dp/coin_change.py | 2026-10-01 | 2026-10-15 | 4 | 2 | Dp |
 | PracticeDSA/dp/knapsack_01.py | 2026-10-03 | 2026-11-02 | 4 | 2 | Dp |
 | PracticeDSA/dp/lcs.py | 2026-10-02 | 2026-11-01 | 5 | 2 | Dp/2D |
-| PracticeDSA/graphs/bfs.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Graphs |
+| PracticeDSA/graphs/bfs.py | 2026-10-04 | 2026-11-03 | 4 | 3 | Graphs |
 | PracticeDSA/graphs/connected_components.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Graphs |
 | PracticeDSA/graphs/dfs.py | 2026-05-31 | 2026-06-30 | 5 | 2 | Graphs |
 | PracticeDSA/graphs/dijkstras.py | 2026-05-31 | 2026-06-14 | 4 | 2 | Graphs |
