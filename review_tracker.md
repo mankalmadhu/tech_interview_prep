@@ -18,7 +18,7 @@
 | PracticeDSA/arrays/flip.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays/Kadane |
 | PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-15 | 2026-06-14 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/log_sorting.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays/Sorting |
-| PracticeDSA/arrays/majority_elem_in_arr.py | 2026-05-15 | 2026-06-14 | 5 | 1 | Arrays |
+| PracticeDSA/arrays/majority_elem_in_arr.py | 2026-10-04 | 2026-11-03 | 4 | 2 | Arrays |
 | PracticeDSA/arrays/max_contigious_sum.py | 2026-05-20 | 2026-06-19 | 5 | 1 | Arrays/Kadane |
 | PracticeDSA/arrays/max_min_sum.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/max_psotitive_sum.py | 2026-05-23 | 2026-06-22 | 5 | 1 | Arrays |
