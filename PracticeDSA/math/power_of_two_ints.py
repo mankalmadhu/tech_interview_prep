@@ -43,3 +43,58 @@ class Solution:
             if math.ceil(p) == math.floor(p):
                 return 1
         return 0
+
+    def isPowerExactCheck(self, A):
+        """
+        Same idea, but verifies the candidate exponent with exact integer
+        exponentiation instead of rounding the float log value. This avoids
+        relying on a fixed decimal precision (e.g. round(p, 6) could still
+        be fooled for sufficiently large A where floating-point error
+        exceeds that tolerance) - the final check is always exact.
+
+        Time Complexity: O(sqrt(A))
+        Space Complexity: O(1)
+        """
+        import math
+
+        if A == 1:
+            return 1
+        for i in range(2, int(math.sqrt(A)) + 1):
+            p = math.log(A, i)
+            if i ** round(p) == A:
+                return 1
+        return 0
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    for fn in (sol.isPower, sol.isPowerExactCheck):
+        assert fn(16) == 1
+        assert fn(10) == 0
+        assert fn(1) == 1
+        assert fn(512) == 1  # 8^3
+        assert fn(2) == 0
+        assert fn(4) == 1
+        assert fn(2401) == 1  # 7^4
+    print("fixed cases passed (both approaches)")
+
+    def brute_force(a):
+        if a == 1:
+            return 1
+        for x in range(2, int(a**0.5) + 2):
+            y = 2
+            val = x**y
+            while val < a:
+                y += 1
+                val = x**y
+            if val == a:
+                return 1
+        return 0
+
+    for n in range(1, 2000):
+        want = brute_force(n)
+        got1 = sol.isPower(n)
+        got2 = sol.isPowerExactCheck(n)
+        assert got1 == want, f"isPower: n={n}, expected {want}, got {got1}"
+        assert got2 == want, f"isPowerExactCheck: n={n}, expected {want}, got {got2}"
+    print("exhaustive 1..2000 trials passed (both approaches)")
