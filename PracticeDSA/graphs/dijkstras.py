@@ -250,3 +250,66 @@ class Solution:
                     heapq.heappush(min_priority_queue, (new_dist, neighbor))
 
         return distances, prdecessor
+
+
+def _brute_force_shortest(graph, start):
+    # Bellman-Ford style: relax all edges |V|-1 times (independent technique)
+    distances = {node: float("inf") for node in graph}
+    distances[start] = 0
+    for _ in range(len(graph) - 1):
+        updated = False
+        for node, neighbors in graph.items():
+            if distances[node] == float("inf"):
+                continue
+            for neighbor, weight in neighbors:
+                if distances[node] + weight < distances[neighbor]:
+                    distances[neighbor] = distances[node] + weight
+                    updated = True
+        if not updated:
+            break
+    return distances
+
+
+if __name__ == "__main__":
+    graph = {
+        'S': [('A', 10), ('C', 3)],
+        'A': [('B', 2), ('C', 1)],
+        'B': [('D', 4)],
+        'C': [('A', 4), ('B', 8), ('D', 2)],
+        'D': [('B', 6)],
+    }
+    print(find_shortest_path(graph, 'S'))
+    # expect ({'S': 0, 'A': 7, 'B': 9, 'C': 3, 'D': 5}, {...predecessors...})
+
+    import random
+
+    for trial in range(300):
+        n = random.randint(1, 15)
+        nodes = list(range(n))
+        g = {node: [] for node in nodes}
+        possible_edges = [(u, v) for u in nodes for v in nodes if u != v]
+        random.shuffle(possible_edges)
+        num_edges = random.randint(0, len(possible_edges))
+        for u, v in possible_edges[:num_edges]:
+            g[u].append((v, random.randint(1, 20)))
+
+        start = random.choice(nodes)
+        got_distances, _ = find_shortest_path(g, start)
+        expected = _brute_force_shortest(g, start)
+        assert got_distances == expected, (
+            f"find_shortest_path mismatch n={n}, start={start}, g={g}: "
+            f"got {got_distances}, expected {expected}"
+        )
+
+        edges = [(u, v, w) for u, neighbors in g.items() for v, w in neighbors]
+        sol = Solution()
+        got_edge_distances, _ = sol.shortestPath(n, edges, start)
+        for node in nodes:
+            exp = expected.get(node, float("inf"))
+            got = got_edge_distances.get(node, float("inf"))
+            assert got == exp, (
+                f"Solution.shortestPath mismatch n={n}, start={start}, edges={edges}: "
+                f"node {node} got {got}, expected {exp}"
+            )
+
+    print("All stress tests passed!")

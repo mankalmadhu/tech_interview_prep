@@ -42,7 +42,7 @@
 | PracticeDSA/graphs/bfs.py | 2026-10-04 | 2026-11-03 | 4 | 3 | Graphs |
 | PracticeDSA/graphs/connected_components.py | 2026-10-04 | 2026-10-11 | 3 | 3 | Graphs |
 | PracticeDSA/graphs/dfs.py | 2026-10-04 | 2026-11-03 | 4 | 3 | Graphs |
-| PracticeDSA/graphs/dijkstras.py | 2026-05-31 | 2026-06-14 | 4 | 2 | Graphs |
+| PracticeDSA/graphs/dijkstras.py | 2026-10-05 | 2026-10-12 | 3 | 3 | Graphs |
 | PracticeDSA/backtrack/generate_parenthesis.py | 2026-10-03 | 2026-10-17 | 4 | 2 | Backtrack |
 | PracticeDSA/greedy_algo/knapsack_weight_value.py | 2026-10-03 | 2026-10-17 | 4 | 3 | Greedy Algo |
 
