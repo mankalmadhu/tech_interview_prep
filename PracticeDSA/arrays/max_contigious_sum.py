@@ -63,3 +63,32 @@ class Solution:
             max_sum = max(max_sum, cur_sum)
 
         return max_sum
+
+
+def _brute_force_max_subarray(A):
+    best = A[0]
+    for i in range(len(A)):
+        cur = 0
+        for j in range(i, len(A)):
+            cur += A[j]
+            best = max(best, cur)
+    return best
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))  # expect 6
+    print(sol.maxSubArray([1]))  # expect 1
+    print(sol.maxSubArray([-1, -2, -3]))  # expect -1 (all negative)
+    print(sol.maxSubArray([1, 2, -5, 4]))  # expect 4
+
+    import random
+
+    for trial in range(300):
+        n = random.randint(1, 50)
+        arr = [random.randint(-20, 20) for _ in range(n)]
+        got = sol.maxSubArray(arr)
+        expected = _brute_force_max_subarray(arr)
+        assert got == expected, f"Mismatch on {arr}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")
