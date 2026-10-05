@@ -32,6 +32,14 @@ class Solution:
         return max_profit
 
 
+def _brute_force_profit(prices):
+    best = 0
+    for i in range(len(prices)):
+        for j in range(i + 1, len(prices)):
+            best = max(best, prices[j] - prices[i])
+    return best
+
+
 if __name__ == "__main__":
     sol = Solution()
     print(
@@ -40,3 +48,14 @@ if __name__ == "__main__":
     print("Test 2: [7,6,4,3,1]   -> Expected: 0, Got:", sol.maxProfit([7, 6, 4, 3, 1]))
     print("Test 3: [2,4,1]       -> Expected: 2, Got:", sol.maxProfit([2, 4, 1]))
     print("All tests executed!")
+
+    import random
+
+    for trial in range(300):
+        n = random.randint(0, 50)
+        prices = [random.randint(1, 100) for _ in range(n)]
+        got = sol.maxProfit(prices)
+        expected = _brute_force_profit(prices)
+        assert got == expected, f"Mismatch on {prices}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")

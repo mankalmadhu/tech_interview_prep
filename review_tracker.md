@@ -78,7 +78,7 @@
 | PracticeDSA/arrays/merge_intervals.py | 2026-10-03 | 2026-11-02 | 4 | 2 | Arrays/Sorting |
 | PracticeDSA/stacks/valid_parentheses.py | 2026-09-30 | 2026-10-14 | 4 | 2 | Stacks |
 | PracticeDSA/arrays/subarray_sum_k.py | 2026-10-03 | 2026-10-10 | 3 | 2 | Arrays |
-| PracticeDSA/arrays/buy_sell_stock.py | 2026-05-14 | 2026-06-13 | 5 | 1 | Arrays/Sliding Window |
+| PracticeDSA/arrays/buy_sell_stock.py | 2026-10-05 | 2026-11-04 | 4 | 2 | Arrays/Sliding Window |
 | PracticeDSA/arrays/two_sum.py | 2026-10-02 | 2026-11-01 | 5 | 2 | Arrays/Hash Map |
 | PracticeDSA/trees/invert_tree.py | 2026-10-01 | 2026-10-31 | 5 | 2 | Trees/DFS |
 | PracticeDSA/linked_list/reverse_linked_list.py | 2026-09-30 | 2026-10-30 | 5 | 2 | Linked List/Pointers |
