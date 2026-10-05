@@ -67,6 +67,18 @@ class Solution:
         return n
 
 
+def _brute_force_min_steps(target):
+    if target == 0:
+        return 0
+    reachable = {0}
+    n = 0
+    while True:
+        n += 1
+        reachable = {r + n for r in reachable} | {r - n for r in reachable}
+        if target in reachable:
+            return n
+
+
 if __name__ == "__main__":
     sol = Solution()
     A = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
@@ -76,3 +88,15 @@ if __name__ == "__main__":
         print(
             f"For input :{aS}, Expected Result: {expected_output[idx]}.Actual Result:{result}"
         )
+
+    import random
+
+    for trial in range(200):
+        target = random.randint(0, 200)
+        got = sol.solve(target)
+        expected = _brute_force_min_steps(target)
+        assert got == expected, f"Mismatch on {target}: got {got}, expected {expected}"
+        got_neg = sol.solve(-target)
+        assert got_neg == expected, f"Mismatch on {-target}: got {got_neg}, expected {expected}"
+
+    print("All stress tests passed!")
