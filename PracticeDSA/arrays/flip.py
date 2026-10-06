@@ -43,3 +43,52 @@ class Solution:
         ans.append(right + 1)
 
         return ans
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    inputs = ["010", "111", "0000", "1011000"]
+    expected_outputs = [[1, 1], [], [1, 4], [5, 7]]
+
+    for idx, A in enumerate(inputs):
+        result = sol.flip(A)
+        assert result == expected_outputs[idx], (
+            f"A={A}: expected {expected_outputs[idx]}, got {result}"
+        )
+        print(f"Expected Result: {expected_outputs[idx]}. Actual Result: {result}")
+    print("All example tests passed!")
+
+    import random
+
+    def ones_count_after_flip(A, l, r):
+        count = 0
+        for i, ch in enumerate(A):
+            pos = i + 1
+            bit = ch
+            if l <= pos <= r:
+                bit = "1" if ch == "0" else "0"
+            if bit == "1":
+                count += 1
+        return count
+
+    def brute_force(A):
+        n = len(A)
+        base_ones = A.count("1")
+        best_gain = 0
+        best = []
+        for l in range(1, n + 1):
+            for r in range(l, n + 1):
+                gain = ones_count_after_flip(A, l, r) - base_ones
+                if gain > best_gain:
+                    best_gain = gain
+                    best = [l, r]
+        return best
+
+    for trial in range(300):
+        n = random.randint(0, 10)
+        A = "".join(random.choice("01") for _ in range(n))
+        got = Solution().flip(A)
+        expected = brute_force(A)
+        assert got == expected, f"Mismatch on A={A!r}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")
