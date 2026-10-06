@@ -25,7 +25,7 @@
 | PracticeDSA/arrays/max_sum_contigious_subarray.py | 2026-05-23 | 2026-06-22 | 5 | 1 | Arrays/Kadane Duplicate |
 | PracticeDSA/arrays/missing_positive_int.py | 2026-05-17 | 2026-06-16 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/noble_integer.py | 2026-05-23 | 2026-06-22 | 5 | 1 | Arrays Duplicate |
-| PracticeDSA/arrays/number_occurence.py | 2026-05-23 | 2026-06-22 | 5 | 1 | Arrays |
+| PracticeDSA/arrays/number_occurence.py | 2026-10-06 | 2026-11-05 | 5 | 2 | Arrays |
 | PracticeDSA/arrays/pick_both_sides.py | 2026-10-05 | 2026-11-04 | 4 | 2 | Arrays/Sliding Window |
 | PracticeDSA/arrays/postivie_negative.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/rect_conc_pattern.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Arrays |
