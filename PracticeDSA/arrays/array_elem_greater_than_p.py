@@ -58,4 +58,32 @@ if __name__ == "__main__":
 
     for idx, A in enumerate(inputs):
         result = sol.solve(A)
+        assert result == expected_outputs[idx], (
+            f"A={A}: expected {expected_outputs[idx]}, got {result}"
+        )
         print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+    print("All example tests passed!")
+
+    import random
+
+    def brute_force(A):
+        n = len(A)
+        seen_values = set()
+        count = 0
+        for p in A:
+            if p in seen_values:
+                continue
+            seen_values.add(p)
+            greater_count = sum(1 for x in A if x > p)
+            if greater_count == p:
+                count += 1
+        return count if count > 0 else -1
+
+    for trial in range(300):
+        n = random.randint(0, 15)
+        A = [random.randint(0, 10) for _ in range(n)]
+        got = Solution().solve(A[:])
+        expected = brute_force(A[:])
+        assert got == expected, f"Mismatch on {A}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")
