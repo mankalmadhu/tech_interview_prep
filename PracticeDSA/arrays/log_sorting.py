@@ -59,6 +59,42 @@ class Solution:
         return alpha_list + digit_list
 
 
-A = ["dig1-8-1-5-1", "let1-art-can", "dig2-3-6", "let2-own-kit-dig", "let3-art-zero"]
-output = Solution().reorderLogs(A)
-print(output)
+if __name__ == "__main__":
+    A = ["dig1-8-1-5-1", "let1-art-can", "dig2-3-6", "let2-own-kit-dig", "let3-art-zero"]
+    output = Solution().reorderLogs(A)
+    print(output)
+
+    import random
+    import string
+
+    def brute_force_reorder(logs):
+        digit_logs = []
+        letter_logs = []
+        for log in logs:
+            identifier, content = log.split("-", 1)
+            if content[0].isdigit():
+                digit_logs.append(log)
+            else:
+                letter_logs.append((content, identifier, log))
+        letter_logs.sort(key=lambda t: (t[0], t[1]))
+        return [t[2] for t in letter_logs] + digit_logs
+
+    for trial in range(300):
+        n = random.randint(0, 20)
+        logs = []
+        for i in range(n):
+            identifier = f"id{i}"
+            if random.random() < 0.5:
+                words = [
+                    "".join(random.choices(string.ascii_lowercase, k=random.randint(1, 5)))
+                    for _ in range(random.randint(1, 3))
+                ]
+            else:
+                words = [str(random.randint(0, 9)) for _ in range(random.randint(1, 3))]
+            logs.append(identifier + "-" + "-".join(words))
+
+        got = Solution().reorderLogs(logs)
+        expected = brute_force_reorder(logs)
+        assert got == expected, f"Mismatch on {logs}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")
