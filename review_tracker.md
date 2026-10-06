@@ -14,7 +14,7 @@
 | PracticeDSA/arrays/ar1.py | 2026-10-04 | 2026-11-03 | 4 | 2 | Arrays |
 | PracticeDSA/arrays/array_elem_greater_than_p.py | 2026-05-13 | 2026-06-12 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/bulbs_on.py | 2026-05-13 | 2026-06-12 | 5 | 1 | Arrays |
-| PracticeDSA/arrays/even_product.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays/Combinatorics |
+| PracticeDSA/arrays/even_product.py | 2026-10-06 | 2026-10-07 | 2 | 2 | Arrays/Combinatorics |
 | PracticeDSA/arrays/flip.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays/Kadane |
 | PracticeDSA/arrays/largest_concatenated_number.py | 2026-05-15 | 2026-06-14 | 5 | 1 | Arrays |
 | PracticeDSA/arrays/log_sorting.py | 2026-05-22 | 2026-06-21 | 5 | 1 | Arrays/Sorting |
