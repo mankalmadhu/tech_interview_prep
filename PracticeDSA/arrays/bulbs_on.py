@@ -75,3 +75,25 @@ if __name__ == "__main__":
     sol = Solution()
     A = [1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1]
     print(sol.bulbs(A))
+
+    import random
+
+    def brute_force(A):
+        A = A[:]
+        n = len(A)
+        presses = 0
+        for i in range(n):
+            if A[i] == 0:
+                presses += 1
+                for j in range(i, n):
+                    A[j] = 1 - A[j]
+        return presses
+
+    for trial in range(300):
+        n = random.randint(0, 15)
+        test_A = [random.randint(0, 1) for _ in range(n)]
+        got = Solution().bulbs(test_A[:])
+        expected = brute_force(test_A[:])
+        assert got == expected, f"Mismatch on {test_A}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")
