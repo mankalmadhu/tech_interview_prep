@@ -96,3 +96,75 @@ class Solution:
             result = start_to_end_index_tuple_list[0]
 
         return A[result[0] : result[1] + 1]
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    inputs = [
+        [1, 2, 5, -7, 2, 3],
+        [-1, -2, -3],
+        [0, 0, -1, 0],
+        [1, 2, -3, 4, 5],
+        [],
+        [1, -100, 10],
+    ]
+    expected_outputs = [
+        [1, 2, 5],
+        [],
+        [0, 0],
+        [4, 5],
+        [],
+        [10],
+    ]
+
+    for idx, A in enumerate(inputs):
+        result = sol.maxset(A[:])
+        result1 = sol.maxset1(A[:])
+        assert result == expected_outputs[idx], (
+            f"maxset: A={A}: expected {expected_outputs[idx]}, got {result}"
+        )
+        assert result1 == expected_outputs[idx], (
+            f"maxset1: A={A}: expected {expected_outputs[idx]}, got {result1}"
+        )
+        print(f"Expected Result: {expected_outputs[idx]}. Actual Result: {result}")
+    print("All example tests passed!")
+
+    import random
+
+    def brute_force(A):
+        n = len(A)
+        best_sum = None
+        best_start, best_end = 0, -1
+        i = 0
+        while i < n:
+            if A[i] < 0:
+                i += 1
+                continue
+            start = i
+            seg_sum = 0
+            while i < n and A[i] >= 0:
+                seg_sum += A[i]
+                i += 1
+            end = i - 1
+            seg_len = end - start
+            if best_sum is None or seg_sum > best_sum:
+                best_sum = seg_sum
+                best_start, best_end = start, end
+            elif seg_sum == best_sum:
+                best_len = best_end - best_start
+                if seg_len > best_len or (seg_len == best_len and start < best_start):
+                    best_start, best_end = start, end
+        if best_sum is None:
+            return []
+        return A[best_start:best_end + 1]
+
+    for trial in range(300):
+        n = random.randint(0, 15)
+        A = [random.randint(-5, 5) for _ in range(n)]
+        expected = brute_force(A[:])
+        got = Solution().maxset(A[:])
+        got1 = Solution().maxset1(A[:])
+        assert got == expected, f"maxset mismatch on {A}: got {got}, expected {expected}"
+        assert got1 == expected, f"maxset1 mismatch on {A}: got {got1}, expected {expected}"
+
+    print("All stress tests passed!")
