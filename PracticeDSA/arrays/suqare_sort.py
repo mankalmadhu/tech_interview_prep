@@ -41,3 +41,25 @@ class SolutionOptimal:
 
             res_index -= 1
         return result
+
+
+def _brute_force_sorted_squares(nums):
+    return sorted(x * x for x in nums)
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    opt = SolutionOptimal()
+    print(sol.solve([-4, -1, 0, 3, 10]))
+    print(opt.sortedSquares([-4, -1, 0, 3, 10]))  # expect [0,1,9,16,100]
+
+    import random
+
+    for trial in range(300):
+        n = random.randint(1, 50)
+        arr = sorted(random.randint(-30, 30) for _ in range(n))
+        expected = _brute_force_sorted_squares(arr)
+        assert sol.solve(arr) == expected, f"Solution mismatch on {arr}"
+        assert opt.sortedSquares(arr) == expected, f"SolutionOptimal mismatch on {arr}"
+
+    print("All stress tests passed!")
