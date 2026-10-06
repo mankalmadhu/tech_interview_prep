@@ -62,6 +62,9 @@ class Solution:
 
         A_sorted = sorted(A, key=cmp_to_key(compare_adjacent))
 
+        if not A_sorted:
+            return ""
+
         return "".join(map(str, A_sorted)) if A_sorted[0] != 0 else "0"
 
 
@@ -74,9 +77,41 @@ def main():
             0,
             0,
         ],
+        [1],
+        [10, 2],
     ]
-    expected_outputs = ["9534330", "0"]
+    expected_outputs = ["9534330", "0", "1", "210"]
     for idx, A in enumerate(inputs):
         sol = Solution()
         result = sol.largestNumber(A)
+        assert result == expected_outputs[idx], (
+            f"A={A}: expected {expected_outputs[idx]}, got {result}"
+        )
         print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+    print("All example tests passed!")
+
+    import random
+    from itertools import permutations
+
+    def brute_force(A):
+        best = None
+        for perm in permutations(A):
+            candidate = "".join(map(str, perm))
+            if best is None or candidate > best:
+                best = candidate
+        if best and best[0] == "0":
+            return "0"
+        return best if best is not None else ""
+
+    for trial in range(200):
+        n = random.randint(0, 6)
+        A = [random.randint(0, 50) for _ in range(n)]
+        got = Solution().largestNumber(A[:])
+        expected = brute_force(A[:])
+        assert got == expected, f"Mismatch on {A}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")
+
+
+if __name__ == "__main__":
+    main()
