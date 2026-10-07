@@ -30,7 +30,7 @@
 | PracticeDSA/arrays/postivie_negative.py | 2026-10-07 | 2026-11-06 | 5 | 2 | Arrays |
 | PracticeDSA/arrays/total_steps_counter.py | 2026-10-07 | 2026-11-06 | 4 | 1 | Arrays/Math |
 | PracticeDSA/arrays/rect_conc_pattern.py | 2026-10-07 | 2026-11-06 | 4 | 2 | Arrays |
-| PracticeDSA/arrays/set_zeroes-on_matrix.py | 2026-05-24 | 2026-06-23 | 5 | 1 | Arrays |
+| PracticeDSA/arrays/set_zeroes-on_matrix.py | 2026-10-07 | 2026-10-14 | 3 | 2 | Arrays |
 | PracticeDSA/arrays/suqare_sort.py | 2026-10-06 | 2026-11-05 | 5 | 2 | Arrays/Two Pointers |
 | PracticeDSA/arrays/total_steps_counter.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Arrays |
 

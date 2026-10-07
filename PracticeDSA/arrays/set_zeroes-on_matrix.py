@@ -5,32 +5,20 @@ class Solution:
         """
         Sets entire row and column to zeroes if an element is 0, in-place.
 
-        Strategy: O(1) Space Optimization (Using Matrix as Storage)
-        -----------------------------------------------------------
-        Instead of using separate sets for 'rows_to_zero' and 'cols_to_zero',
-        we use the first row and first column of the matrix itself as flags.
+        Strategy: O(M+N) Space (Row/Col Sets)
+        -------------------------------------
+        Track which rows and columns contain a 0 using two sets, then
+        zero out every cell whose row or column is in those sets.
 
-        1. Handle Flags:
-           - Iterate through the matrix.
-           - If matrix[i][j] == 0, mark the headers: matrix[i][0] = 0 and matrix[0][j] = 0.
-           - Special Case: matrix[0][0] belongs to both Row 0 and Col 0.
-             We use matrix[0][0] for Row 0 flag, and a separate 'col0' var for Col 0 flag.
-
-        2. Process Inner Matrix:
-           - Iterate from (1,1) to (M,N).
-           - If row header or col header is 0, set cell to 0.
-           - (Must be done BEFORE processing borders to avoid corrupting flags).
-
-        3. Process Borders (Order Matters!):
-           - Handle Row 0 first (using matrix[0][0]) to avoid data dependency issues.
-           - Handle Col 0 last (using col0).
+        See SolutionOptimal below for the O(1) space variant that uses
+        the first row/column of the matrix itself as flag storage.
 
         Complexity Analysis:
         --------------------
         Time Complexity: O(M * N)
            - Two passes over the matrix.
-        Space Complexity: O(1)
-           - No extra data structures used.
+        Space Complexity: O(M + N)
+           - Two sets to track affected rows/columns.
         """
         rows = set()
         cols = set()
@@ -93,3 +81,58 @@ class SolutionOptimal:
                 A[i][0] = 0
 
         return A
+
+
+if __name__ == "__main__":
+    import random
+
+    def make_cases():
+        return [
+            ([[1, 1, 1], [1, 0, 1], [1, 1, 1]], [[1, 0, 1], [0, 0, 0], [1, 0, 1]]),
+            (
+                [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]],
+                [[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]],
+            ),
+            ([[1, 2], [3, 4]], [[1, 2], [3, 4]]),
+        ]
+
+    for A, expected in make_cases():
+        A_copy = [row[:] for row in A]
+        Solution().setZeroes(A_copy)
+        assert A_copy == expected, f"Solution: A={A}, got={A_copy}, expected={expected}"
+
+    for A, expected in make_cases():
+        A_copy = [row[:] for row in A]
+        got = SolutionOptimal().setZeroes(A_copy)
+        assert got == expected, (
+            f"SolutionOptimal: A={A}, got={got}, expected={expected}"
+        )
+
+    def brute_force(A):
+        m = len(A)
+        n = len(A[0])
+        rows, cols = set(), set()
+        for i in range(m):
+            for j in range(n):
+                if A[i][j] == 0:
+                    rows.add(i)
+                    cols.add(j)
+        for i in range(m):
+            for j in range(n):
+                if i in rows or j in cols:
+                    A[i][j] = 0
+        return A
+
+    for _ in range(300):
+        m = random.randint(1, 6)
+        n = random.randint(1, 6)
+        A = [[random.randint(0, 3) for _ in range(n)] for _ in range(m)]
+        A1 = [row[:] for row in A]
+        A2 = [row[:] for row in A]
+        A3 = [row[:] for row in A]
+        expected = brute_force(A1)
+        Solution().setZeroes(A2)
+        assert A2 == expected
+        assert SolutionOptimal().setZeroes(A3) == expected
+
+    print("All tests passed!")
