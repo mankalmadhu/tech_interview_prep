@@ -55,6 +55,20 @@ def print_pattern(matrix):
 
 # Generate and print the pattern
 if __name__ == "__main__":
+    assert generate_pattern(1) == [[1]]
+    assert generate_pattern(2) == [
+        [2, 2, 2],
+        [2, 1, 2],
+        [2, 2, 2],
+    ]
+    assert generate_pattern(3) == [
+        [3, 3, 3, 3, 3],
+        [3, 2, 2, 2, 3],
+        [3, 2, 1, 2, 3],
+        [3, 2, 2, 2, 3],
+        [3, 3, 3, 3, 3],
+    ]
+
     A = 4
     result = generate_pattern(A)
     print_pattern(result)
