@@ -137,3 +137,49 @@ def main():
         sol = Solution()
         result = sol.solve(A)
         print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+
+
+if __name__ == "__main__":
+    import random
+    from itertools import combinations
+
+    main()
+
+    inputs = [
+        ["0.6", "0.7", "0.8", "1.2", "0.4"],
+        ["0.1", "0.2", "0.3", "0.4"],
+        ["0.8", "0.7", "0.9"],
+        ["0.1", "0.8", "0.25", "1.5"],
+        ["0.2", "0.3", "2.5", "3.0"],
+        ["1.1", "0.5"],
+        [
+            "2.673662",
+            "2.419159",
+            "0.573816",
+            "2.454376",
+            "0.403605",
+            "2.503658",
+            "0.806191",
+        ],
+    ]
+    expected_outputs = [1, 0, 0, 1, 0, 0, 1]
+
+    for A, expected in zip(inputs, expected_outputs):
+        assert Solution().solve_two_pointer(A) == expected, A
+
+    def brute_force(A):
+        nums = [float(s) for s in A]
+        for a, b, c in combinations(nums, 3):
+            s = a + b + c
+            if 1 < s < 2:
+                return 1
+        return 0
+
+    for _ in range(300):
+        n = random.randint(3, 8)
+        A = [f"{random.uniform(0, 3):.4f}" for _ in range(n)]
+        expected = brute_force(A)
+        got = Solution().solve_two_pointer(A)
+        assert got == expected, f"A={A}, got={got}, expected={expected}"
+
+    print("All tests passed!")
