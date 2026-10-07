@@ -62,3 +62,39 @@ class Solution:
             A[i] = A[i] + (A[A[i]] % n) * n
         for i in range(n):
             A[i] = A[i] // n
+
+
+if __name__ == "__main__":
+    import random
+
+    A1 = [1, 0]
+    Solution().arrange(A1)
+    assert A1 == [0, 1], A1
+
+    A2 = [2, 0, 1]
+    Solution().arrange(A2)
+    assert A2 == [1, 2, 0], A2
+
+    A3 = [0]
+    Solution().arrange(A3)
+    assert A3 == [0], A3
+
+    A4 = [3, 2, 1, 0]
+    Solution().arrange(A4)
+    assert A4 == [0, 1, 2, 3], A4
+
+    def brute_force(A):
+        n = len(A)
+        orig = A[:]
+        return [orig[orig[i]] for i in range(n)]
+
+    for _ in range(300):
+        n = random.randint(1, 10)
+        perm = list(range(n))
+        random.shuffle(perm)
+        expected = brute_force(perm)
+        got = perm[:]
+        Solution().arrange(got)
+        assert got == expected, f"A={perm}, got={got}, expected={expected}"
+
+    print("All tests passed!")
