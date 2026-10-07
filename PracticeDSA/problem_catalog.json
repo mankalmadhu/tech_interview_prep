@@ -1,0 +1,583 @@
+[
+  {
+    "file_path": "PracticeDSA/arrays/ar1.py",
+    "problem_name": "Array Rotation",
+    "primary_data_structure": "Array",
+    "primary_technique": "In-place Array Manipulation",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/array_elem_greater_than_p.py",
+    "problem_name": "Noble Integer",
+    "primary_data_structure": "Array",
+    "primary_technique": "Sorting-based",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/bulbs_on.py",
+    "problem_name": "Bulbs",
+    "primary_data_structure": "Array",
+    "primary_technique": "Greedy",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/buy_sell_stock.py",
+    "problem_name": "Best Time to Buy and Sell Stock",
+    "primary_data_structure": "Array",
+    "primary_technique": "Greedy",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/even_product.py",
+    "problem_name": "Even Product",
+    "primary_data_structure": "Array",
+    "primary_technique": "Combinatorics",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/flip.py",
+    "problem_name": "Flip to Maximize Ones",
+    "primary_data_structure": "Array",
+    "primary_technique": "Kadane's/Max Subarray",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/largest_concatenated_number.py",
+    "problem_name": "Largest Number",
+    "primary_data_structure": "Array",
+    "primary_technique": "Sorting-based (custom comparator)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/log_sorting.py",
+    "problem_name": "Reorder Data in Log Files",
+    "primary_data_structure": "Array",
+    "primary_technique": "Sorting-based (custom comparator)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/majority_elem_in_arr.py",
+    "problem_name": "Majority Element",
+    "primary_data_structure": "Array",
+    "primary_technique": "Boyer-Moore Voting",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/max_contigious_sum.py",
+    "problem_name": "Maximum Sum Contiguous Subarray",
+    "primary_data_structure": "Array",
+    "primary_technique": "Kadane's/Max Subarray",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/max_min_sum.py",
+    "problem_name": "Max-Min Sum",
+    "primary_data_structure": "Array",
+    "primary_technique": "Linear Scan",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/max_psotitive_sum.py",
+    "problem_name": "Maximum Non-Negative Subarray",
+    "primary_data_structure": "Array",
+    "primary_technique": "Greedy / Linear Scan",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/merge_intervals.py",
+    "problem_name": "Merge Intervals",
+    "primary_data_structure": "Array",
+    "primary_technique": "Sorting-based",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/missing_positive_int.py",
+    "problem_name": "First Missing Positive",
+    "primary_data_structure": "Array",
+    "primary_technique": "In-place Index Mapping (cyclic sort style)",
+    "difficulty_signal": "Hard"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/number_occurence.py",
+    "problem_name": "Count Number Occurrences",
+    "primary_data_structure": "Array",
+    "primary_technique": "Hashing/Counting",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/pick_both_sides.py",
+    "problem_name": "Pick from Both Sides",
+    "primary_data_structure": "Array",
+    "primary_technique": "Sliding Window",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/postivie_negative.py",
+    "problem_name": "Separate Positive and Negative Numbers",
+    "primary_data_structure": "Array",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/product_of_array_except_self.py",
+    "problem_name": "Product of Array Except Self",
+    "primary_data_structure": "Array",
+    "primary_technique": "Prefix/Suffix Products",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/rect_conc_pattern.py",
+    "problem_name": "Rectangle Concentric Pattern",
+    "primary_data_structure": "Matrix",
+    "primary_technique": "Matrix Traversal (Chebyshev Distance)",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/set_zeroes-on_matrix.py",
+    "problem_name": "Set Matrix Zeroes",
+    "primary_data_structure": "Matrix",
+    "primary_technique": "In-place Matrix Manipulation",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/subarray_sum_k.py",
+    "problem_name": "Subarray Sum Equals K",
+    "primary_data_structure": "Array",
+    "primary_technique": "Prefix Sum + Hashing",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/suqare_sort.py",
+    "problem_name": "Squares of a Sorted Array",
+    "primary_data_structure": "Array",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/top_k_frequent.py",
+    "problem_name": "Top K Frequent Elements",
+    "primary_data_structure": "Hash Map/Set",
+    "primary_technique": "Heap-based (top-k)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/total_steps_counter.py",
+    "problem_name": "Steps by Steps (Infinite Grid)",
+    "primary_data_structure": "Array",
+    "primary_technique": "Chebyshev Distance/Simulation",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/triplet_sum_in_range.py",
+    "problem_name": "Triplets with Sum in Range",
+    "primary_data_structure": "Array",
+    "primary_technique": "Two Pointer (sorted)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/arrays/two_sum.py",
+    "problem_name": "Two Sum",
+    "primary_data_structure": "Hash Map/Set",
+    "primary_technique": "Hashing/Counting",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/backtrack/generate_parenthesis.py",
+    "problem_name": "Generate Parentheses",
+    "primary_data_structure": "String",
+    "primary_technique": "Backtracking (Combinatorics)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/backtrack/permutations.py",
+    "problem_name": "Permutations",
+    "primary_data_structure": "Array",
+    "primary_technique": "Backtracking (Permutations)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/backtrack/powerset.py",
+    "problem_name": "Subsets / Power Set",
+    "primary_data_structure": "Array",
+    "primary_technique": "Backtracking (Subsets)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/backtrack/word_search.py",
+    "problem_name": "Word Search",
+    "primary_data_structure": "Matrix",
+    "primary_technique": "Backtracking (Grid DFS)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/bit_manipulation/number_of_one_bits.py",
+    "problem_name": "Number of 1 Bits",
+    "primary_data_structure": "None/Pure Math",
+    "primary_technique": "Bit Manipulation",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/bit_manipulation/single_number.py",
+    "problem_name": "Single Number",
+    "primary_data_structure": "Array",
+    "primary_technique": "Bit Manipulation",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/dp/coin_change.py",
+    "problem_name": "Coin Change",
+    "primary_data_structure": "Array",
+    "primary_technique": "Dynamic Programming (Knapsack)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/dp/house_robber.py",
+    "problem_name": "House Robber",
+    "primary_data_structure": "Array",
+    "primary_technique": "Dynamic Programming (1D)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/dp/knapsack_01.py",
+    "problem_name": "0/1 Knapsack",
+    "primary_data_structure": "Array",
+    "primary_technique": "Dynamic Programming (Knapsack)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/dp/lcs.py",
+    "problem_name": "Longest Common Subsequence",
+    "primary_data_structure": "Array",
+    "primary_technique": "Dynamic Programming (2D)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/dp/step_climb.py",
+    "problem_name": "Climbing Stairs",
+    "primary_data_structure": "None/Pure Math",
+    "primary_technique": "Dynamic Programming (Fibonacci-style)",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/graphs/bfs.py",
+    "problem_name": "Breadth-First Search",
+    "primary_data_structure": "Graph",
+    "primary_technique": "BFS",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/graphs/connected_components.py",
+    "problem_name": "Connected Components",
+    "primary_data_structure": "Graph",
+    "primary_technique": "DFS",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/graphs/course_schedule.py",
+    "problem_name": "Course Schedule",
+    "primary_data_structure": "Graph",
+    "primary_technique": "Topological Sort",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/graphs/dfs.py",
+    "problem_name": "Depth-First Search",
+    "primary_data_structure": "Graph",
+    "primary_technique": "DFS",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/graphs/dijkstras.py",
+    "problem_name": "Dijkstra's Shortest Path",
+    "primary_data_structure": "Graph",
+    "primary_technique": "Dijkstra's (Heap-based)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/graphs/num_islands.py",
+    "problem_name": "Number of Islands",
+    "primary_data_structure": "Matrix",
+    "primary_technique": "DFS",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/greedy_algo/knapsack_weight_value.py",
+    "problem_name": "Fractional Knapsack",
+    "primary_data_structure": "Array",
+    "primary_technique": "Greedy",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/linked_list/linked_list_cycle.py",
+    "problem_name": "Linked List Cycle",
+    "primary_data_structure": "Linked List",
+    "primary_technique": "Fast & Slow Pointers",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/linked_list/reverse_linked_list.py",
+    "problem_name": "Reverse Linked List",
+    "primary_data_structure": "Linked List",
+    "primary_technique": "In-place Pointer Manipulation",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/math/gcd.py",
+    "problem_name": "Greatest Common Divisor",
+    "primary_data_structure": "None/Pure Math",
+    "primary_technique": "Math/Number Theory",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/math/highest_score.py",
+    "problem_name": "Highest Score",
+    "primary_data_structure": "Array",
+    "primary_technique": "Hashing/Counting",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/math/is_rectangle.py",
+    "problem_name": "Valid Rectangle",
+    "primary_data_structure": "Array",
+    "primary_technique": "Math/Number Theory",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/math/palindrome_integer.py",
+    "problem_name": "Palindrome Number",
+    "primary_data_structure": "None/Pure Math",
+    "primary_technique": "Math/Number Theory",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/math/power_of_two_ints.py",
+    "problem_name": "Power of Two",
+    "primary_data_structure": "None/Pure Math",
+    "primary_technique": "Bit Manipulation",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/math/prime_sum_of_num.py",
+    "problem_name": "Prime Sum",
+    "primary_data_structure": "None/Pure Math",
+    "primary_technique": "Math/Number Theory",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/math/reaarange_array.py",
+    "problem_name": "Rearrange Array",
+    "primary_data_structure": "Array",
+    "primary_technique": "In-place Index Mapping (encoding trick)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/math/step_by_step.py",
+    "problem_name": "Step-by-Step Directions",
+    "primary_data_structure": "None/Pure Math",
+    "primary_technique": "Simulation",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/binary_search.py",
+    "problem_name": "Binary Search",
+    "primary_data_structure": "Array",
+    "primary_technique": "Binary Search (classic)",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/bubble_sort.py",
+    "problem_name": "Bubble Sort",
+    "primary_data_structure": "Array",
+    "primary_technique": "Sorting-based",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/find_min_rotated.py",
+    "problem_name": "Find Minimum in Rotated Sorted Array",
+    "primary_data_structure": "Array",
+    "primary_technique": "Binary Search (rotated array)",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/insertion_sort.py",
+    "problem_name": "Insertion Sort",
+    "primary_data_structure": "Array",
+    "primary_technique": "Sorting-based",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/kth_smallest_elem.py",
+    "problem_name": "Kth Smallest Element",
+    "primary_data_structure": "Array",
+    "primary_technique": "Sorting-based / Quickselect",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/max_blade_height.py",
+    "problem_name": "Maximum Blade Height",
+    "primary_data_structure": "Array",
+    "primary_technique": "Binary Search on Answer",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/merge_sort.py",
+    "problem_name": "Merge Sort",
+    "primary_data_structure": "Array",
+    "primary_technique": "Recursion/Divide & Conquer",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/quick_sort.py",
+    "problem_name": "Quick Sort",
+    "primary_data_structure": "Array",
+    "primary_technique": "Recursion/Divide & Conquer",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/search_n_sort/ship_weight_transport.py",
+    "problem_name": "Capacity to Ship Packages Within D Days",
+    "primary_data_structure": "Array",
+    "primary_technique": "Binary Search on Answer",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/stacks/daily_temperatures.py",
+    "problem_name": "Daily Temperatures",
+    "primary_data_structure": "Stack",
+    "primary_technique": "Monotonic Stack",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/stacks/valid_parentheses.py",
+    "problem_name": "Valid Parentheses",
+    "primary_data_structure": "Stack",
+    "primary_technique": "Stack-based",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/strings/amazing_substring.py",
+    "problem_name": "Amazing Subarrays",
+    "primary_data_structure": "String",
+    "primary_technique": "Combinatorics",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/strings/amount_number_words.py",
+    "problem_name": "Integer to English Words",
+    "primary_data_structure": "String",
+    "primary_technique": "Recursion/Divide & Conquer",
+    "difficulty_signal": "Hard"
+  },
+  {
+    "file_path": "PracticeDSA/strings/character_replacement.py",
+    "problem_name": "Longest Repeating Character Replacement",
+    "primary_data_structure": "String",
+    "primary_technique": "Sliding Window",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/strings/palindrome.py",
+    "problem_name": "Valid Palindrome",
+    "primary_data_structure": "String",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/strings/paren_min_number.py",
+    "problem_name": "Minimum Number from Parenthesis Pattern",
+    "primary_data_structure": "String",
+    "primary_technique": "Stack-based",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/strings/salutes.py",
+    "problem_name": "Salutes",
+    "primary_data_structure": "String",
+    "primary_technique": "Counting",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/trees/diameter_tree.py",
+    "problem_name": "Diameter of Binary Tree",
+    "primary_data_structure": "Tree",
+    "primary_technique": "Tree DFS",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/trees/invert_tree.py",
+    "problem_name": "Invert Binary Tree",
+    "primary_data_structure": "Tree",
+    "primary_technique": "Tree DFS/BFS",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/trees/level_order_traversal.py",
+    "problem_name": "Binary Tree Level Order Traversal",
+    "primary_data_structure": "Tree",
+    "primary_technique": "Tree BFS",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/trees/lowest_common_ancestor.py",
+    "problem_name": "Lowest Common Ancestor of a Binary Tree",
+    "primary_data_structure": "Tree",
+    "primary_technique": "Tree DFS",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/trees/valid_bst.py",
+    "problem_name": "Validate Binary Search Tree",
+    "primary_data_structure": "Tree",
+    "primary_technique": "Tree DFS",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/two_pointer/diffk.py",
+    "problem_name": "Pairs with Given Difference",
+    "primary_data_structure": "Array",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/two_pointer/longest_substring.py",
+    "problem_name": "Longest Substring Without Repeating Characters",
+    "primary_data_structure": "String",
+    "primary_technique": "Sliding Window",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/two_pointer/max_aread.py",
+    "problem_name": "Container With Most Water",
+    "primary_data_structure": "Array",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/two_pointer/merge_sorted_lists.py",
+    "problem_name": "Merge Two Sorted Lists",
+    "primary_data_structure": "Linked List",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/two_pointer/merge_soted_lists.py",
+    "problem_name": "Merge Two Sorted Lists (in-place, back-to-front)",
+    "primary_data_structure": "Array",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Medium"
+  },
+  {
+    "file_path": "PracticeDSA/two_pointer/remove_duplicates.py",
+    "problem_name": "Remove Duplicates from Sorted Array",
+    "primary_data_structure": "Array",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Easy"
+  },
+  {
+    "file_path": "PracticeDSA/two_pointer/triplet_sum.py",
+    "problem_name": "3Sum",
+    "primary_data_structure": "Array",
+    "primary_technique": "Two Pointer",
+    "difficulty_signal": "Medium"
+  }
+]

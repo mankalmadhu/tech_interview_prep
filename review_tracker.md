@@ -22,9 +22,7 @@
 | PracticeDSA/arrays/max_contigious_sum.py | 2026-10-05 | 2026-10-12 | 3 | 2 | Arrays/Kadane |
 | PracticeDSA/arrays/max_min_sum.py | 2026-10-06 | 2026-11-05 | 5 | 2 | Arrays |
 | PracticeDSA/arrays/max_psotitive_sum.py | 2026-10-06 | 2026-11-05 | 4 | 2 | Arrays |
-| PracticeDSA/arrays/max_sum_contigious_subarray.py | 2026-05-23 | 2026-06-22 | 5 | 1 | Arrays/Kadane Duplicate |
 | PracticeDSA/arrays/missing_positive_int.py | 2026-10-07 | 2026-10-14 | 3 | 2 | Arrays |
-| PracticeDSA/arrays/noble_integer.py | 2026-05-23 | 2026-06-22 | 5 | 1 | Arrays Duplicate |
 | PracticeDSA/arrays/number_occurence.py | 2026-10-06 | 2026-11-05 | 5 | 2 | Arrays |
 | PracticeDSA/arrays/pick_both_sides.py | 2026-10-05 | 2026-11-04 | 4 | 2 | Arrays/Sliding Window |
 | PracticeDSA/arrays/postivie_negative.py | 2026-10-07 | 2026-11-06 | 5 | 2 | Arrays |
@@ -33,7 +31,6 @@
 | PracticeDSA/arrays/set_zeroes-on_matrix.py | 2026-10-07 | 2026-10-14 | 3 | 2 | Arrays |
 | PracticeDSA/arrays/triplet_sum_in_range.py | 2026-10-07 | 2026-11-06 | 4 | 1 | Arrays/Two Pointer |
 | PracticeDSA/arrays/suqare_sort.py | 2026-10-06 | 2026-11-05 | 5 | 2 | Arrays/Two Pointers |
-| PracticeDSA/arrays/total_steps_counter.py | 2026-05-28 | 2026-06-27 | 5 | 1 | Arrays |
 
 | PracticeDSA/backtrack/permutations.py | 2026-10-02 | 2026-11-01 | 4 | 3 | Backtrack |
 | PracticeDSA/bit_manipulation/number_of_one_bits.py | 2026-10-03 | 2026-11-02 | 5 | 2 | Bit Manipulation |
@@ -56,8 +53,6 @@
 | PracticeDSA/math/prime_sum_of_num.py | 2026-10-04 | 2026-11-03 | 4 | 3 | Math |
 | PracticeDSA/math/reaarange_array.py | 2026-10-07 | 2026-10-14 | 3 | 3 | Math |
 | PracticeDSA/math/step_by_step.py | 2026-10-05 | 2026-10-12 | 3 | 3 | Math |
-| PracticeDSA/random/r1.py | 2026-06-02 | 2026-07-02 | 5 | 2 | Random |
-| PracticeDSA/random/r2.py | 2026-05-12 | 2026-05-27 | 1 | 1 | Random |
 | PracticeDSA/search_n_sort/binary_search.py | 2026-10-01 | 2026-10-31 | 5 | 3 | Search N Sort |
 | PracticeDSA/search_n_sort/bubble_sort.py | 2026-10-04 | 2026-11-03 | 4 | 3 | Search N Sort |
 | PracticeDSA/search_n_sort/insertion_sort.py | 2026-10-04 | 2026-11-03 | 5 | 3 | Search N Sort |
