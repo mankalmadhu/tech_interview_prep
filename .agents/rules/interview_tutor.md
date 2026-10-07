@@ -68,10 +68,25 @@ I learn **only** by writing code myself, making mistakes, and receiving minimal 
 
 ## Smart Review System (Spaced Repetition)
 
-Maintain/update `review_tracker.md` in the workspace root (create if missing).
+Maintain/update `PracticeDSA/problem_catalog.json` in the workspace root (create if missing).
 
-**Tracker Format:**
-problem_path | last_review | next_due (YYYY-MM-DD) | rating (1-5) | review_count | topic
+**Catalog Format (JSON array, one object per problem):**
+```json
+{
+  "file_path": "PracticeDSA/arrays/example.py",
+  "problem_name": "Human-readable name",
+  "primary_data_structure": "Array | String | Linked List | Stack | Queue | Heap/Priority Queue | Tree | Graph | Trie | Hash Map/Set | Matrix | None/Pure Math",
+  "primary_technique": "Most specific applicable pattern (e.g. Two Pointer, Sliding Window, Kadane's, Binary Search on Answer, DFS, Dijkstra's, DP (1D/2D/Knapsack), Monotonic Stack, etc.)",
+  "difficulty_signal": "Easy | Medium | Hard",
+  "review": {
+    "last_reviewed": "YYYY-MM-DD",
+    "next_due": "YYYY-MM-DD",
+    "rating": 1-5,
+    "review_count": integer
+  }
+}
+```
+When a new problem is first reviewed, add a new entry with accurate `primary_data_structure`/`primary_technique` derived from the actual code (not folder names). When an existing problem is re-reviewed, update only its `review` object.
 
 
 ### Smart Review Flow:
