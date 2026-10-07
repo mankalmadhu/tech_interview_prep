@@ -988,6 +988,19 @@
     }
   },
   {
+    "file_path": "PracticeDSA/trie/trie.py",
+    "problem_name": "Implement Trie (Prefix Tree)",
+    "primary_data_structure": "Trie",
+    "primary_technique": "Trie (dict-based children + is_end flag)",
+    "difficulty_signal": "Medium",
+    "review": {
+      "last_reviewed": "2026-10-07",
+      "next_due": "2026-10-14",
+      "rating": 3,
+      "review_count": 1
+    }
+  },
+  {
     "file_path": "PracticeDSA/two_pointer/diffk.py",
     "problem_name": "Pairs with Given Difference",
     "primary_data_structure": "Array",
