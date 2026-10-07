@@ -77,4 +77,30 @@ def main():
     for idx, A in enumerate(inputs):
         sol = Solution()
         result = sol.firstMissingPositive(A)
+        assert result == expected_outputs[idx], (
+            f"A={A}: expected {expected_outputs[idx]}, got {result}"
+        )
         print(f"Expected Result: {expected_outputs[idx]}.Actual Result:{result}")
+    print("All example tests passed!")
+
+    import random
+
+    def brute_force(A):
+        present = set(x for x in A if x > 0)
+        i = 1
+        while i in present:
+            i += 1
+        return i
+
+    for trial in range(300):
+        n = random.randint(0, 15)
+        A = [random.randint(-10, 15) for _ in range(n)]
+        got = Solution().firstMissingPositive(A[:])
+        expected = brute_force(A[:])
+        assert got == expected, f"Mismatch on {A}: got {got}, expected {expected}"
+
+    print("All stress tests passed!")
+
+
+if __name__ == "__main__":
+    main()
