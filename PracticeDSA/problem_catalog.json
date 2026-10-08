@@ -1090,5 +1090,18 @@
       "rating": 4,
       "review_count": 2
     }
+  },
+  {
+    "file_path": "PracticeDSA/trie/longest_word.py",
+    "problem_name": "Longest Word in Dictionary",
+    "primary_data_structure": "Trie",
+    "primary_technique": "Trie traversal (sorted prefix-walk + pure trie DFS)",
+    "difficulty_signal": "Medium",
+    "review": {
+      "last_reviewed": "2026-10-08",
+      "next_due": "2026-10-15",
+      "rating": 3,
+      "review_count": 1
+    }
   }
 ]
