@@ -1103,5 +1103,18 @@
       "rating": 3,
       "review_count": 1
     }
+  },
+  {
+    "file_path": "PracticeDSA/trie/word_search_ii.py",
+    "problem_name": "Word Search II",
+    "primary_data_structure": "Trie",
+    "primary_technique": "Trie-pruned grid backtracking (DFS)",
+    "difficulty_signal": "Hard",
+    "review": {
+      "last_reviewed": "2026-10-09",
+      "next_due": "2026-10-16",
+      "rating": 3,
+      "review_count": 1
+    }
   }
 ]
