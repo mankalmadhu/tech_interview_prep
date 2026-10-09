@@ -9,28 +9,45 @@ adjacent cells (horizontally or vertically neighboring, any
 direction, can turn). The same cell may not be used more than once
 per word.
 
-Approach: insert every word into a trie, then backtrack from every
-cell in the grid, extending the current path one neighbor at a time.
-At each step, `trie.starts_with(path_so_far)` prunes any branch whose
-accumulated path isn't a prefix of any word, and `trie.search` checks
-whether the path so far is itself a complete word (appended once,
-even if reached via multiple distinct paths). Recursion continues
-past a found word (no early return) so that a word which is itself a
-prefix of a longer word (e.g. "eta" / "etab") doesn't block the
-longer match. `visited` is reset per starting cell and unmarked on
-backtrack (mark/unmark), so a cell is only off-limits within the
-current in-progress path, not across unrelated starting cells or
-sibling branches.
+Two approaches are implemented, both inserting every word into a
+trie first, then backtracking from every cell in the grid:
+
+1. `solve` - at each step, re-derives the accumulated path string and
+   calls `trie.starts_with(path)` / `trie.search(path)`, which walk
+   the trie from the root every single call.
+
+2. `solve_node` - instead of re-walking from the root, carries a
+   direct reference to the current `TrieNode` down the recursion,
+   advancing it one child at a time (`node.children_lookup[char]`)
+   and checking `is_end` directly on that node. Avoids re-deriving
+   and re-walking the path string for every pruning/match check.
+
+In both, recursion continues past a found word (no early return) so
+a word that's itself a prefix of a longer word (e.g. "eta"/"etab")
+doesn't block the longer match, `next_result not in result` guards
+against the same word being appended twice via two distinct paths,
+and `visited` is reset per starting cell and unmarked on backtrack
+(mark/unmark), so a cell is only off-limits within the current
+in-progress path.
 
 Complexity Analysis:
 --------------------
-Time:  O(M * N * 4^L * L) - M*N starting cells, up to 4^L paths of
-       length L from each (branching factor 4, depth bounded by L
-       thanks to the `starts_with` prefix pruning), and each call
-       does O(L) work building/looking up the accumulated string.
-Space: O(W * L) for the trie (W words of avg length L, no shared
-       prefixes) + O(L) for the recursion stack / `visited` / the
-       strings built along a single path.
+`solve`:
+  Time:  O(M * N * 4^L * L) - M*N starting cells, up to 4^L paths of
+         length L from each (branching factor 4, depth bounded by L
+         thanks to `starts_with` prefix pruning), and each call does
+         O(L) work building/walking the accumulated string.
+  Space: O(W * L) for the trie (W words of avg length L, no shared
+         prefixes) + O(L) for the recursion stack / `visited` / the
+         strings built along a single path.
+
+`solve_node`:
+  Time:  O(M * N * 4^L) - same branching/depth bound as `solve`, but
+         each call's pruning/match check is a O(1) dict lookup /
+         attribute check on the current node instead of an O(L)
+         string walk.
+  Space: same as `solve` - O(W * L) for the trie + O(L) recursion
+         stack / `visited` / strings.
 """
 
 import os
@@ -82,6 +99,49 @@ def backtrack(trie, board, r, c, result, cur_result, visited):
     return result
 
 
+def solve_node(board, words):
+    if not words:
+        return []
+
+    result = []
+    trie = Trie()
+    for word in words:
+        trie.insert(word)
+
+    m = len(board)
+    n = len(board[0])
+
+    for i in range(m):
+        for j in range(n):
+            visited = set()
+            backtrack_node(board, i, j, result, trie.root, "", visited)
+
+    return result
+
+
+def backtrack_node(board, r, c, result, node, cur_result, visited):
+    if r >= len(board) or r < 0 or c >= len(board[0]) or c < 0 or (r, c) in visited:
+        return result
+
+    if board[r][c] not in node.children_lookup:
+        return result
+
+    next_node = node.children_lookup[board[r][c]]
+    next_result = cur_result + board[r][c]
+
+    if next_result not in result and next_node.is_end:
+        result.append(next_result)
+
+    visited.add((r, c))
+    backtrack_node(board, r + 1, c, result, next_node, next_result, visited)
+    backtrack_node(board, r, c + 1, result, next_node, next_result, visited)
+    backtrack_node(board, r - 1, c, result, next_node, next_result, visited)
+    backtrack_node(board, r, c - 1, result, next_node, next_result, visited)
+    visited.remove((r, c))
+
+    return result
+
+
 if __name__ == "__main__":
     board1 = [
         ["o", "a", "a", "n"],
@@ -90,26 +150,27 @@ if __name__ == "__main__":
         ["i", "f", "l", "v"],
     ]
     words1 = ["oei", "eta", "ieo", "vre"]
-    assert sorted(solve(board1, words1)) == sorted(["oei", "eta", "ieo", "vre"])
 
-    # prefix-of-another-word case: "eta" and "etab" both real paths
     board2 = [
         ["e", "t", "x"],
         ["z", "a", "b"],
         ["z", "z", "z"],
     ]
     words2 = ["eta", "etab", "nope"]
-    assert sorted(solve(board2, words2)) == sorted(["eta", "etab"])
 
-    # single cell, single-letter word
     board3 = [["a"]]
     words3 = ["a", "b"]
-    assert sorted(solve(board3, words3)) == ["a"]
 
-    # empty words list
-    assert solve(board1, []) == []
+    for fn in (solve, solve_node):
+        assert sorted(fn(board1, words1)) == sorted(["oei", "eta", "ieo", "vre"])
+        # prefix-of-another-word case: "eta" and "etab" both real paths
+        assert sorted(fn(board2, words2)) == sorted(["eta", "etab"])
+        # single cell, single-letter word
+        assert sorted(fn(board3, words3)) == ["a"]
+        # empty words list
+        assert fn(board1, []) == []
 
-    print("Example tests passed!")
+    print("Example tests passed (solve + solve_node)!")
 
     # ---- stress test vs independent brute force ----
     import random
@@ -193,11 +254,12 @@ if __name__ == "__main__":
         words = random_words(board, count=random.randint(1, 5), alphabet="abcd")
 
         expected = sorted(set(brute_force(board, words)))
-        actual = sorted(set(solve(board, words)))
 
-        assert expected == actual, (
-            f"mismatch on trial {t}\nboard={board}\nwords={words}\n"
-            f"expected={expected}\nactual={actual}"
-        )
+        for fn in (solve, solve_node):
+            actual = sorted(set(fn(board, words)))
+            assert expected == actual, (
+                f"{fn.__name__} mismatch on trial {t}\nboard={board}\nwords={words}\n"
+                f"expected={expected}\nactual={actual}"
+            )
 
-    print(f"Stress test passed: {trials} trials.")
+    print(f"Stress test passed: {trials} trials (solve + solve_node).")

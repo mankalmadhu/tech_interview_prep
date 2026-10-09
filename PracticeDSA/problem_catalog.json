@@ -1108,7 +1108,7 @@
     "file_path": "PracticeDSA/trie/word_search_ii.py",
     "problem_name": "Word Search II",
     "primary_data_structure": "Trie",
-    "primary_technique": "Trie-pruned grid backtracking (DFS)",
+    "primary_technique": "Trie-pruned grid backtracking (string-based + node-reference optimization)",
     "difficulty_signal": "Hard",
     "review": {
       "last_reviewed": "2026-10-09",
