@@ -1129,5 +1129,18 @@
       "rating": 3,
       "review_count": 1
     }
+  },
+  {
+    "file_path": "PracticeDSA/union_find/redundant_connection.py",
+    "problem_name": "Redundant Connection",
+    "primary_data_structure": "Union-Find",
+    "primary_technique": "Cycle detection via connected-before-union check",
+    "difficulty_signal": "Medium",
+    "review": {
+      "last_reviewed": "2026-10-10",
+      "next_due": "2026-10-24",
+      "rating": 4,
+      "review_count": 1
+    }
   }
 ]
