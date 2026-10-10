@@ -1116,5 +1116,18 @@
       "rating": 3,
       "review_count": 1
     }
+  },
+  {
+    "file_path": "PracticeDSA/union_find/union_find.py",
+    "problem_name": "Union-Find (Disjoint Set Union)",
+    "primary_data_structure": "Union-Find",
+    "primary_technique": "Path compression + union by size",
+    "difficulty_signal": "Medium",
+    "review": {
+      "last_reviewed": "2026-10-10",
+      "next_due": "2026-10-17",
+      "rating": 3,
+      "review_count": 1
+    }
   }
 ]
