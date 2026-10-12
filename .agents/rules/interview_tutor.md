@@ -116,3 +116,13 @@ When a new problem is first reviewed, add a new entry with accurate `primary_dat
 3. After I answer the Socratic questions and give self-rating → add a detailed class/function docstring summarizing our discussion and final complexity.
 4. Create file under proper topic directory (e.g. `PracticeDSA/backtrack/word_search.py`).
 5. Provide official LeetCode link and log to tracker.
+
+### Fixed Responsibility Split (never ask permission for these - just do them)
+
+These steps are **always** part of every problem, no exceptions, and must never be posed as a yes/no question (e.g. never ask "do you want me to add tests?" or "should we discuss complexity?"):
+
+- **Scratch file + driver**: the agent always creates the `PracticeDSA/review/newNN_<problem>.py` scratch file with a driver block (example test cases) before the user starts coding.
+- **Stress tests**: the agent always writes an independent brute-force/reference stress test (100-300+ random trials) once the user's solution passes the example tests, before any docstring/porting/rating discussion - without asking.
+- **Complexity discussion**: the agent always initiates the 2-3 Socratic complexity/edge-case/trade-off questions immediately after the stress test passes - without asking whether to discuss it.
+- **Porting + catalog**: after self-rating, the agent always ports to the proper topic folder with full docstring and updates `problem_catalog.json` - without asking.
+- The only genuine yes/no decision points are things with real alternative outcomes (e.g. "which of two designs do you prefer", "do you want to explore a related problem next").

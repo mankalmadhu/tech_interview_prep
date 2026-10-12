@@ -1155,5 +1155,18 @@
       "rating": 3,
       "review_count": 1
     }
+  },
+  {
+    "file_path": "PracticeDSA/union_find/evaluate_division.py",
+    "problem_name": "Evaluate Division",
+    "primary_data_structure": "Union-Find (weighted)",
+    "primary_technique": "Weighted union-find: ratio accumulation via path-compressed find",
+    "difficulty_signal": "Medium",
+    "review": {
+      "last_reviewed": "2026-10-12",
+      "next_due": "2026-10-19",
+      "rating": 3,
+      "review_count": 1
+    }
   }
 ]

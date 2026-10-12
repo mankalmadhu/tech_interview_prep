@@ -41,43 +41,55 @@ Space: O(n) for the parent_lookup dict (one entry per element).
 
 class UnionFind:
     def __init__(self, elements):
-        self.parent_lookup = {el: (el, 0) for el in elements}
+        self.parent_lookup = {el: (el, 0,1) for el in elements}
 
-    def find(self, x):
-        if x not in self.parent_lookup:
-            return None
+    def _find_with_weight(self, x):
 
         cur = x
+        path_to_root = []
         while self.parent_lookup[cur][0] != cur:
+            path_to_root.append(cur)
             cur = self.parent_lookup[cur][0]
         root = cur
 
         # path compression: point every visited node directly at root
-        cur = x
-        while self.parent_lookup[cur][0] != cur:
+        for cur in reversed(path_to_root):
             next_cur = self.parent_lookup[cur][0]
-            self.parent_lookup[cur] = (root, self.parent_lookup[cur][1])
-            cur = next_cur
+            new_weight = self.parent_lookup[cur][2] * self.parent_lookup[next_cur][2]
+            self.parent_lookup[cur] = (root, self.parent_lookup[cur][1],new_weight)
 
+        return root, self.parent_lookup[x][2]
+
+
+    def find(self, x):
+        if x not in self.parent_lookup:
+            return None
+        root, _ = self._find_with_weight(x)
         return root
 
-    def union(self, x, y):
+    def get_node_weight(self, x):
+        _, weight = self._find_with_weight(x)
+        return weight
+
+
+    def union(self, x, y, weight=1.0):
         if x not in self.parent_lookup or y not in self.parent_lookup:
             return
 
-        root_x = self.find(x)
-        root_y = self.find(y)
+        root_x, weight_x= self._find_with_weight(x)
+        root_y ,weight_y= self._find_with_weight(y)
         if root_x == root_y:
             return
 
-        _, size_x = self.parent_lookup[root_x]
-        _, size_y = self.parent_lookup[root_y]
+        _, size_x,_ = self.parent_lookup[root_x]
+        _, size_y,_ = self.parent_lookup[root_y]
+        new_weight = weight_x / (weight * weight_y)
 
         # union by size: attach smaller tree under larger tree's root
         if size_x >= size_y:
-            self.parent_lookup[root_y] = (root_x, size_x + size_y)
+            self.parent_lookup[root_y] = (root_x, size_x + size_y, new_weight)
         else:
-            self.parent_lookup[root_x] = (root_y, size_x + size_y)
+            self.parent_lookup[root_x] = (root_y, size_x + size_y,1/new_weight)
 
     def connected(self, x, y):
         return self.find(x) == self.find(y)
@@ -99,6 +111,23 @@ if __name__ == "__main__":
     assert uf0.connected(0, 2) is False
 
     print("Example tests passed!")
+
+    # ---- direct weight-chain test (bypasses union, checks compression) ----
+    uf_w = UnionFind(["a", "b", "c", "root"])
+    uf_w.parent_lookup["a"] = ("b", 0, 2)
+    uf_w.parent_lookup["b"] = ("c", 0, 3)
+    uf_w.parent_lookup["c"] = ("root", 0, 5)
+    uf_w.parent_lookup["root"] = ("root", 0, 1)
+
+    root, weight = uf_w._find_with_weight("a")
+    assert root == "root", f"expected root='root', got {root}"
+    assert abs(weight - 30) < 1e-9, f"expected weight=30, got {weight}"
+    # confirm path compression actually flattened a and b to point at root
+    assert uf_w.parent_lookup["a"][0] == "root"
+    assert uf_w.parent_lookup["b"][0] == "root"
+    assert abs(uf_w.parent_lookup["b"][2] - 15) < 1e-9
+
+    print("Weight-chain test passed!")
 
     # ---- stress test vs independent brute-force groups ----
     import random
@@ -155,3 +184,81 @@ if __name__ == "__main__":
             )
 
     print(f"Stress test passed: {trials} trials.")
+
+    # ---- weighted stress test vs independent brute-force graph ----
+    class BruteForceWeightedGraph:
+        """Independent reference: builds its own weighted adjacency
+        graph (two directed edges per union: x->y with value, y->x
+        with 1/value), then DFS's between two nodes multiplying edge
+        weights along the path. Doesn't reuse any parent-pointer/
+        weight-compression logic at all."""
+
+        def __init__(self, elements):
+            self.graph = {el: {} for el in elements}
+
+        def ratio(self, x, y):
+            if x == y:
+                return 1.0
+
+            def dfs(src, dst, visited):
+                visited.add(src)
+                for nxt, w in self.graph[src].items():
+                    if nxt in visited:
+                        continue
+                    if nxt == dst:
+                        return w
+                    sub = dfs(nxt, dst, visited)
+                    if sub is not None:
+                        return w * sub
+                return None
+
+            return dfs(x, y, set())
+
+        def union(self, x, y, value):
+            # mirror real union-find semantics: a redundant union on
+            # an already-connected pair is a no-op (first-established
+            # ratio wins), otherwise the test's own random values could
+            # create an inconsistent graph with conflicting paths.
+            if self.ratio(x, y) is not None:
+                return
+            self.graph[x][y] = value
+            self.graph[y][x] = 1.0 / value
+
+    random.seed(7)
+    trials = 300
+    for t in range(trials):
+        n = random.randint(2, 10)
+        elements = [f"n{i}" for i in range(n)]
+
+        uf = UnionFind(elements)
+        bf = BruteForceWeightedGraph(elements)
+
+        num_ops = random.randint(0, 15)
+        for _ in range(num_ops):
+            x, y = random.sample(elements, 2)
+            value = round(random.uniform(0.1, 10.0), 3)
+            uf.union(x, y, value)
+            bf.union(x, y, value)
+
+        for _ in range(20):
+            x, y = random.sample(elements, 2)
+            expected_ratio = bf.ratio(x, y)
+            connected = uf.connected(x, y)
+
+            if expected_ratio is None:
+                assert not connected, (
+                    f"mismatch on trial {t}: {x}/{y} expected disconnected, "
+                    f"but uf says connected, elements={elements}"
+                )
+            else:
+                assert connected, (
+                    f"mismatch on trial {t}: {x}/{y} expected connected "
+                    f"(ratio={expected_ratio}), but uf says disconnected"
+                )
+                actual_ratio = uf.get_node_weight(x) / uf.get_node_weight(y)
+                assert abs(actual_ratio - expected_ratio) < 1e-6, (
+                    f"mismatch on trial {t}: {x}/{y} expected={expected_ratio} "
+                    f"actual={actual_ratio}, elements={elements}"
+                )
+
+    print(f"Weighted stress test passed: {trials} trials.")
