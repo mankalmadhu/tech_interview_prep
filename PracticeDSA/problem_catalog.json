@@ -1181,5 +1181,18 @@
       "rating": 3,
       "review_count": 1
     }
+  },
+  {
+    "file_path": "PracticeDSA/graphs/cheapest_flights_k_stops.py",
+    "problem_name": "Cheapest Flights Within K Stops",
+    "primary_data_structure": "Graph",
+    "primary_technique": "Bellman-Ford (edge relaxation capped at k+1 rounds)",
+    "difficulty_signal": "Medium",
+    "review": {
+      "last_reviewed": "2026-10-12",
+      "next_due": "2026-10-19",
+      "rating": 3,
+      "review_count": 1
+    }
   }
 ]
