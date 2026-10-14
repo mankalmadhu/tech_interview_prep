@@ -1194,5 +1194,18 @@
       "rating": 3,
       "review_count": 1
     }
+  },
+  {
+    "file_path": "PracticeDSA/graphs/city_smallest_neighbors_threshold.py",
+    "problem_name": "Find the City With the Smallest Number of Neighbors at a Threshold Distance",
+    "primary_data_structure": "Graph",
+    "primary_technique": "Floyd-Warshall (all-pairs shortest path)",
+    "difficulty_signal": "Medium",
+    "review": {
+      "last_reviewed": "2026-10-14",
+      "next_due": "2026-10-21",
+      "rating": 3,
+      "review_count": 1
+    }
   }
 ]
