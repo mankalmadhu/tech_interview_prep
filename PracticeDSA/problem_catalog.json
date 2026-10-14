@@ -1207,5 +1207,18 @@
       "rating": 3,
       "review_count": 1
     }
+  },
+  {
+    "file_path": "PracticeDSA/heaps/merge_k_sorted_lists.py",
+    "problem_name": "Merge K Sorted Lists",
+    "primary_data_structure": "Heap/Priority Queue",
+    "primary_technique": "K-way merge via min-heap",
+    "difficulty_signal": "Hard",
+    "review": {
+      "last_reviewed": "2026-10-14",
+      "next_due": "2026-10-21",
+      "rating": 3,
+      "review_count": 1
+    }
   }
 ]
