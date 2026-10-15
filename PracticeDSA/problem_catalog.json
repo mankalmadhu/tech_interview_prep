@@ -1220,5 +1220,18 @@
       "rating": 3,
       "review_count": 1
     }
+  },
+  {
+    "file_path": "PracticeDSA/heaps/find_median_data_stream.py",
+    "problem_name": "Find Median from Data Stream",
+    "primary_data_structure": "Heap/Priority Queue",
+    "primary_technique": "Two-heap design (max-heap lower half + min-heap upper half)",
+    "difficulty_signal": "Hard",
+    "review": {
+      "last_reviewed": "2026-10-15",
+      "next_due": "2026-10-22",
+      "rating": 3,
+      "review_count": 1
+    }
   }
 ]
